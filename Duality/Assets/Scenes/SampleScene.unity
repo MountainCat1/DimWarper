@@ -470,8 +470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9951afb4aa391584281ae5a49a36a6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 80
-  jumpForce: 200
+  speed: 150
+  jumpForce: 350
+  diveSpeed: 500
   rb: {fileID: 342452413}
   spriteAnimator: {fileID: 1945878892}
   m_WhatIsGround:
@@ -2011,7 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e387c473fad4994f8f60f9126c85cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 1
+  speedMultiplier: 8
   playAnimationOnStart: 
   animations: []
   playing: 0
