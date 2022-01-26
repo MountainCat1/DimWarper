@@ -19,6 +19,8 @@ public abstract class SpriteAnimator : MonoBehaviour
     [HideInInspector] private int currentFrame = 0;
     [HideInInspector] private bool loop = true;
 
+    public event Action<SpriteAnimation> animationFinishedEvent;
+
     public int RedererSortingOrder { get => spriteRenderer.sortingOrder; set => spriteRenderer.sortingOrder = value; }
 
     protected virtual void Awake()
@@ -41,7 +43,7 @@ public abstract class SpriteAnimator : MonoBehaviour
     public void Play(string name, bool loop = true, int startFrame = 0)
     {
         SpriteAnimation animation = GetAnimation(name);
-        if (animation != null)
+        if (animation != null && animation.Frames.Length > 0)
         {
             if (animation != currentAnimation)
             {
@@ -50,7 +52,7 @@ public abstract class SpriteAnimator : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("could not find animation: " + name);
+            Debug.LogWarning("could not find animation, or frames are empty: " + name);
         }
     }
     public void ForcePlay(string name, bool loop = true, int startFrame = 0)
@@ -97,6 +99,7 @@ public abstract class SpriteAnimator : MonoBehaviour
             spriteRenderer.sprite = animation.Frames[currentFrame];
         }
 
+        animationFinishedEvent?.Invoke(animation);
         currentAnimation = null;
         playing = false;
     }
@@ -122,6 +125,7 @@ public abstract class SpriteAnimator : MonoBehaviour
                 if (currentFrame >= animation.Frames.Length)
                 {
                     currentFrame = 0;
+                    animationFinishedEvent?.Invoke(animation);
                 }
             break;
             case SpriteAnimation.AnimationType.PingPong:
@@ -132,6 +136,7 @@ public abstract class SpriteAnimator : MonoBehaviour
                     if (currentFrame >= animation.Frames.Length - 1)
                     {
                         direction = false;
+                        animationFinishedEvent?.Invoke(animation);
                     }
                 }
                 else
@@ -141,6 +146,7 @@ public abstract class SpriteAnimator : MonoBehaviour
                     if (currentFrame <= 0)
                     {
                         direction = true;
+                        animationFinishedEvent?.Invoke(animation);
                     }
                 }
             break;
@@ -156,7 +162,7 @@ public class SpriteAnimation
 {
     public enum AnimationType
     {
-        Normal, PingPong, PingPongFull, Reversed
+        Normal, PingPong
     }
 
     public string Name { get; set; }

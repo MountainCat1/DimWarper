@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; set; }
+
     public float speed = 1f;
     public float jumpForce = 200f;
     public float diveSpeed = 0.25f;
@@ -11,14 +13,27 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public CharacterAnimator spriteAnimator;
 
-    [SerializeField] private LayerMask m_WhatIsGround;
-    [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
-    [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
+    [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
     private bool grounded;            // Whether or not the player is grounded.
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
-    const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+    const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 
+    [SerializeField] private string jumpParticleAnimation = "jump";
+    [SerializeField] private AudioClip jumpSound;
+
+    private void Awake()
+    {
+        if(Instance!= null)
+        {
+            Debug.LogError("Singeleton duplicated!");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Update()
     {
@@ -28,6 +43,9 @@ public class PlayerController : MonoBehaviour
             // Add a vertical force to the player.
             grounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
+
+            AnimationManager.PlayAnimationAtPoint(transform.position, jumpParticleAnimation, 2.5f);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
     }
     private void FixedUpdate()
@@ -42,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
