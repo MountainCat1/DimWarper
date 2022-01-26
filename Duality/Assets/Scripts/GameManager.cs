@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             RemoveBottomFloor();
         }
-        if (PlayerController.Instance.transform.position.y - renderRangeDown > deathDistance)
+        if (PlayerController.Instance.transform.position.y + deathDistance < bottomFloorHeight)
         {
             Lose();
         }
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
+        Debug.Log("Defeat!!!");
         Application.Quit();
     }
 
