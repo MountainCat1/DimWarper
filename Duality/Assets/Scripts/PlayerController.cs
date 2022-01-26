@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CharacterAnimator))]
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1f;
     public float jumpForce = 200f;
+    public float diveSpeed = 0.25f;
 
-    private Rigidbody2D rb;
-    private CharacterAnimator spriteAnimator;
-
+    public Rigidbody2D rb;
+    public CharacterAnimator spriteAnimator;
 
     [SerializeField] private LayerMask m_WhatIsGround;
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
@@ -20,12 +18,6 @@ public class PlayerController : MonoBehaviour
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        spriteAnimator = GetComponent<CharacterAnimator>();
-    }
 
 
     private void Update()
@@ -64,19 +56,27 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 move = new Vector2();
 
+        // Horizontal Movement
         if (Input.GetKey(KeyCode.A))
             move += new Vector2(-1, 0);
         if (Input.GetKey(KeyCode.D))
             move += new Vector2(1, 0);
+        move.x *= speed * Time.fixedDeltaTime;
+
+        // Diving
+        if (!grounded)
+        {
+            if (Input.GetKey(KeyCode.S))
+                move += new Vector2(0, -1);
+
+            move.y *= diveSpeed * Time.fixedDeltaTime;
+        }
+        
+
+        rb.velocity = new Vector2(move.x, rb.velocity.y + move.y);
 
 
-        move *= speed * Time.fixedDeltaTime;
-
-        rb.velocity = new Vector2(move.x, rb.velocity.y);
-
-
-
-
+        // Animation stuff...
         if(move.x != 0)
             spriteAnimator.flipped = move.x > 0;
 
