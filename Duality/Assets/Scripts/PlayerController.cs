@@ -71,13 +71,18 @@ public class PlayerController : MonoBehaviour
 
             move.y *= diveSpeed * Time.fixedDeltaTime;
         }
-        
 
-        rb.velocity = new Vector2(move.x, rb.velocity.y + move.y);
+        Vector2 newVelocity;
+        if(move.y == 0)
+            newVelocity = new Vector2(move.x, rb.velocity.y);
+        else
+            newVelocity = new Vector2(move.x, move.y);
 
+
+        rb.velocity = newVelocity;
 
         // Animation stuff...
-        if(move.x != 0)
+        if (move.x != 0)
             spriteAnimator.flipped = move.x > 0;
 
         if (grounded)
