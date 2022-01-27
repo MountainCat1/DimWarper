@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private int bottomFloor = 1;
 
     public Animator blackScreeAnimator;
+    public Animator soundtrackAnimator;
     public GameObject deathScreen;
     public float timeToShowGameOverScreen = 1f;
 
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Defeat!!!");
         blackScreeAnimator.SetBool("fade", true);
+        soundtrackAnimator.SetBool("slowDown", true);
 
         StartCoroutine(ShowGameOverScreenCoroutine());
         //deathScreen.SetActive(true);
