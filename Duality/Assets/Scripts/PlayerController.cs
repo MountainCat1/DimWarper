@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 
     [SerializeField] private string jumpParticleAnimation = "jump";
+    [SerializeField] private float jumpForceAnimationSpeed = 4f;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip diveSound;
 
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
             grounded = false;
             rb.AddForce(new Vector2(0f, jumpForce));
 
-            AnimationManager.PlayAnimationAtPoint(transform.position, jumpParticleAnimation, 2.5f);
+            AnimationManager.PlayAnimationAtPoint(transform.position, jumpParticleAnimation, jumpForceAnimationSpeed);
             AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
