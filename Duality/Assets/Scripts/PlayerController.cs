@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip diveSound;
     [SerializeField] private string changeDimensionParticle = "warp";
     [SerializeField] private float changeDimensionAnimationSpeed = 4f;
+
     public Transform Floor { private set; get; }
+    private bool UsedEnergyAction { get; set; } = false;
 
     private void Awake()
     {
@@ -43,10 +46,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // If the player should jump...
-        if (grounded && Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && (grounded || TryUseEnergyAction()))
         {
             // Add a vertical force to the player.
-            grounded = false;
+            if (grounded)
+                grounded = false;
+
+
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+
             rb.AddForce(new Vector2(0f, jumpForce));
 
             AnimationManager.PlayAnimationAtPoint(transform.position, jumpParticleAnimation, jumpForceAnimationSpeed);
@@ -64,6 +72,20 @@ public class PlayerController : MonoBehaviour
             DimensionManager.Instance.SwitchDimension();
         }
     }
+
+    private bool TryUseEnergyAction()
+    {
+        if (UsedEnergyAction)
+            return false;
+
+        if (GameManager.Instance.actionEnergyCost > GameManager.Instance.Energy)
+            return false;
+        
+        GameManager.Instance.Energy -= GameManager.Instance.actionEnergyCost;
+        UsedEnergyAction = true;
+        return true;
+    }
+
     private void FixedUpdate()
     {
         CheckGround();
@@ -82,6 +104,7 @@ public class PlayerController : MonoBehaviour
         {
             if (colliders[i].gameObject != gameObject)
             {
+                UsedEnergyAction = false;
                 grounded = true;
                 Floor = colliders[i].transform;
             }

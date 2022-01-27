@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 
     // Game properties
     public int Coins { get; set; }
-    public float Energy { get; set; }
+    public float Energy { get => energy; set => energy = value > maxEnergy ? maxEnergy : value; }
+    private float energy;
 
     // Editor 
     public float towerWidth = 8;
@@ -41,6 +42,9 @@ public class GameManager : MonoBehaviour
     public float energyRegen = 0.2f;
     public float actionEnergyCost = 25f;
 
+    public EnergyPickup energyPickupPrefab;
+    public float energyPickUpChance = 0.05f;
+
     private void Awake()
     {
         if (Instance != null)
@@ -54,6 +58,8 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = 2;
+
+        Energy = 100f;
     }
 
     private void Start()
@@ -84,7 +90,6 @@ public class GameManager : MonoBehaviour
         MoveCamera();
 
         Energy += energyRegen * Time.deltaTime;
-        if (Energy > maxEnergy) Energy = maxEnergy;
     }
 
     private void MoveCamera()
@@ -100,7 +105,7 @@ public class GameManager : MonoBehaviour
 
         Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(0, expectedHeight, -10), step);
 
-        if(playerHeight + deathDistance < expectedHeight)
+        if (playerHeight + deathDistance < expectedHeight)
         {
             Lose();
         }
@@ -150,7 +155,7 @@ public class GameManager : MonoBehaviour
     public void GenerateNextFloor()
     {
         Debug.Log($"Placed floor on level: {topFloor + 1}");
-        GenerateFloor(GetRandomFloor(), topFloor + 1 );
+        GenerateFloor(GetRandomFloor(), topFloor + 1);
     }
 
     public Floor GetRandomFloor()
@@ -168,10 +173,32 @@ public class GameManager : MonoBehaviour
     {
         Vector2 position = new Vector2(0, level * floorHeight);
         var go = Instantiate(floor.gameObject, position, Quaternion.identity, container);
-        
-        instantinatedFloors.Add(level, go.GetComponent<Floor>());
+        var newFloor = go.GetComponent<Floor>();
+
+
+        instantinatedFloors.Add(level, newFloor);
+
+        if(Random.Range(0f, 1f) <= energyPickUpChance)
+        {
+            SpawnEnergyPrefab(newFloor);
+        }
 
         if (level > topFloor)
             topFloor = level;
+    }
+
+    private void SpawnEnergyPrefab(Floor floor)
+    {
+        float minDistanceToWall = 0.5f;
+        float yOffset = 0.5f;
+
+        float maxRadius = (towerWidth - minDistanceToWall) / 2;
+        float minRadius = (-towerWidth + minDistanceToWall) / 2;
+
+        float positionX = Mathf.Lerp(minRadius, maxRadius, Random.Range(0f, 1f));
+
+
+        Vector2 position = new Vector2(positionX, floor.transform.position.y + yOffset);
+        Instantiate(energyPickupPrefab, position, Quaternion.identity, floor.transform);
     }
 }
