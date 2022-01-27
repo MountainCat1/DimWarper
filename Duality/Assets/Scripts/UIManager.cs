@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text heightDisplay;
-    [SerializeField] private Text coinDisplay;
 
     private float maxHeight = -1f;
 
@@ -17,7 +16,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        UpdateCoinDisplay();
         UpdateHeightDisplay();
     }
 
@@ -27,10 +25,5 @@ public class UIManager : MonoBehaviour
             maxHeight = PlayerController.Instance.transform.position.y;
 
         heightDisplay.text = (Mathf.Round(maxHeight * 10) / 10f).ToString();
-    }
-
-    void UpdateCoinDisplay()
-    {
-        coinDisplay.text = GameManager.Instance.Coins.ToString();
     }
 }
