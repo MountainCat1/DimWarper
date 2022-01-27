@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private string jumpParticleAnimation = "jump";
     [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip diveSound;
+
+    public Transform Floor { private set; get; }
 
     private void Awake()
     {
@@ -47,6 +50,16 @@ public class PlayerController : MonoBehaviour
             AnimationManager.PlayAnimationAtPoint(transform.position, jumpParticleAnimation, 2.5f);
             AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
+
+        if(!grounded && Input.GetKeyDown(KeyCode.S))
+        {
+            AudioSource.PlayClipAtPoint(diveSound, transform.position);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            DimensionManager.Instance.SwitchDimension();
+        }
     }
     private void FixedUpdate()
     {
@@ -57,6 +70,7 @@ public class PlayerController : MonoBehaviour
     private void CheckGround()
     {
         grounded = false;
+        Floor = null;
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -66,6 +80,7 @@ public class PlayerController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 grounded = true;
+                Floor = colliders[i].transform;
             }
         }
     }

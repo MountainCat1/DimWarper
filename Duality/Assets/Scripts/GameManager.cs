@@ -11,14 +11,23 @@ public class GameManager : MonoBehaviour
     public float towerWidth = 8;
     public float floorHeight = 3f;
     public float renderRangeUp = 10f;
-    public float renderRangeDown = 25f;
+    public float renderRangeDown = 20f;
     public float deathDistance = 30f;
+    public float dangerDistance = 25f;
     public Transform container;
     public List<Floor> floorList = new List<Floor>();
+
+    public float cameraRotationSpeed = 1f;
+    public float cameraSpeed = 1f;
+    public float cameraCatchUpSpeed = 6f;
+    public float breakHeight = 2f;
+    private float expectedHeight = 0f;
 
     private Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
     private int topFloor = 0;
     private int bottomFloor = 1;
+
+    public GameObject deathScreen;
 
     private void Awake()
     {
@@ -47,25 +56,62 @@ public class GameManager : MonoBehaviour
         float bottomFloorHeight = bottomFloor * floorHeight;
 
 
-        if (PlayerController.Instance.transform.position.y + renderRangeUp   > topFloorHeight)
+        if (expectedHeight + renderRangeUp > topFloorHeight)
         {
             GenerateNextFloor();
         }
-        if (PlayerController.Instance.transform.position.y - renderRangeDown  > bottomFloorHeight)
+        if (expectedHeight - renderRangeDown > bottomFloorHeight)
         {
             RemoveBottomFloor();
         }
-        if (PlayerController.Instance.transform.position.y + deathDistance < bottomFloorHeight)
+        if (expectedHeight + deathDistance < bottomFloorHeight)
         {
             Lose();
         }
-        
+
+        MoveCamera();
+    }
+
+    private void MoveCamera()
+    {
+        float playerHeight = PlayerController.Instance.transform.position.y;
+
+        if (playerHeight - breakHeight > expectedHeight)
+            expectedHeight += Time.deltaTime * cameraCatchUpSpeed;
+
+        expectedHeight += Time.deltaTime * cameraSpeed;
+
+        float step = Time.deltaTime * cameraCatchUpSpeed;
+
+        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(0, expectedHeight, -10), step);
+
+        if(playerHeight + deathDistance < expectedHeight)
+        {
+            Lose();
+        }
+
+        float rotateStep = Time.deltaTime * cameraRotationSpeed;
+        Quaternion targetRotation;
+        if (playerHeight + dangerDistance < expectedHeight)
+        {
+            Vector3 relativePos = PlayerController.Instance.transform.position - Camera.main.transform.position;
+
+            targetRotation = Quaternion.LookRotation(relativePos, Vector3.up);
+            targetRotation = Quaternion.Euler(targetRotation.eulerAngles.x, 0, 0);
+        }
+        else
+        {
+            targetRotation = Quaternion.identity;
+        }
+
+        float smoothFactor = Quaternion.Angle(Camera.main.transform.rotation, targetRotation);
+        Camera.main.transform.rotation = Quaternion.RotateTowards(Camera.main.transform.rotation, targetRotation, rotateStep * smoothFactor);
     }
 
     public void Lose()
     {
         Debug.Log("Defeat!!!");
-        Application.Quit();
+        deathScreen.SetActive(true);
     }
 
     public void RemoveBottomFloor()
@@ -83,7 +129,13 @@ public class GameManager : MonoBehaviour
 
     public Floor GetRandomFloor()
     {
-        return floorList[Random.Range(0, floorList.Count - 1)];
+        WeightedRandomBag<Floor> randomBag = new WeightedRandomBag<Floor>();
+        foreach (var floor in floorList)
+        {
+            randomBag.AddEntry(floor, floor.weight);
+        }
+
+        return randomBag.GetRandom(new System.Random());
     }
 
     public void GenerateFloor(Floor floor, int level)
