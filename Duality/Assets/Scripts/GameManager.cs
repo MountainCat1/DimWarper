@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     // Game properties
     public int Coins { get; set; }
+    public float Energy { get; set; }
 
     // Editor 
     public float towerWidth = 8;
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
     public Animator soundtrackAnimator;
     public GameObject deathScreen;
     public float timeToShowGameOverScreen = 1f;
+
+    public float maxEnergy = 100f;
+    public float energyRegen = 0.2f;
+    public float actionEnergyCost = 25f;
 
     private void Awake()
     {
@@ -77,6 +82,9 @@ public class GameManager : MonoBehaviour
         }
 
         MoveCamera();
+
+        Energy += energyRegen * Time.deltaTime;
+        if (Energy > maxEnergy) Energy = maxEnergy;
     }
 
     private void MoveCamera()

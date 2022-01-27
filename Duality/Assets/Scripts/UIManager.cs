@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text heightDisplay;
+    [SerializeField] private Slider energyBar;
 
     private float maxHeight = -1f;
 
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         UpdateHeightDisplay();
+        UpdateEnergyBar();
     }
 
     void UpdateHeightDisplay()
@@ -25,5 +27,11 @@ public class UIManager : MonoBehaviour
             maxHeight = PlayerController.Instance.transform.position.y;
 
         heightDisplay.text = (Mathf.Round(maxHeight * 10) / 10f).ToString();
+    }
+
+    void UpdateEnergyBar()
+    {
+        energyBar.maxValue = Mathf.RoundToInt( GameManager.Instance.maxEnergy / GameManager.Instance.actionEnergyCost);
+        energyBar.value = Mathf.RoundToInt( GameManager.Instance.Energy / GameManager.Instance.actionEnergyCost);
     }
 }
