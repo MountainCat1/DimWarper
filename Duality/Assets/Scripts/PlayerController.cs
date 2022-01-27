@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForceAnimationSpeed = 4f;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip diveSound;
-
+    [SerializeField] private string changeDimensionParticle = "warp";
+    [SerializeField] private float changeDimensionAnimationSpeed = 4f;
     public Transform Floor { private set; get; }
 
     private void Awake()
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, changeDimensionAnimationSpeed);
             DimensionManager.Instance.SwitchDimension();
         }
     }

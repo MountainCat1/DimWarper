@@ -503,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666217028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 49.5, z: 0}
+  m_LocalPosition: {x: 0, y: 49.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337159778}
@@ -553,7 +553,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 8, y: 100}
+  m_Size: {x: 9, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1920,9 +1920,11 @@ MonoBehaviour:
   groundCheck: {fileID: 1727324164}
   ceilingCheck: {fileID: 1470668557}
   jumpParticleAnimation: jump v2
-  jumpForceAnimationSpeed: 8
+  jumpForceAnimationSpeed: 12
   jumpSound: {fileID: 8300000, guid: 25541f28bcc61a44a8285ecb3b0eebea, type: 3}
   diveSound: {fileID: 8300000, guid: ea268f181c42e394cafcb30c3e3dc3b5, type: 3}
+  changeDimensionParticle: warp
+  changeDimensionAnimationSpeed: 12
 --- !u!4 &2058008024
 Transform:
   m_ObjectHideFlags: 0

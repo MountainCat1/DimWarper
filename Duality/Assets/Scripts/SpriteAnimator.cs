@@ -114,6 +114,7 @@ public abstract class SpriteAnimator : MonoBehaviour
             {
                 currentFrame = animation.Frames.Length - 1;
             }
+            return;
         }
 
 
