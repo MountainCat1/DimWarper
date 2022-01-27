@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018f21bf4e09c8048a80fb312ea84d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomWeight: 1
+  hitAudioClip: {fileID: 8300000, guid: 6c6b96766ef615e47b8913ddb03cf8f1, type: 3}
   movementSpeed: 1.2
   chasing: 1
 --- !u!114 &1688498448310286703

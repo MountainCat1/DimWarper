@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
     {
         Dead = true;
         collider.enabled = false;
+        GameManager.Instance.Lose();
     }
 
 

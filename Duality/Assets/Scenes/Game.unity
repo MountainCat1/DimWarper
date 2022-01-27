@@ -362,10 +362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   towerWidth: 8
   renderRangeUp: 9
   renderRangeDown: 10
-  deathDistance: 9
+  deathDistance: 10
   dangerDistance: 5
   cameraTransform: {fileID: 350499276}
   cameraRotationSpeed: 0.8
@@ -2110,7 +2110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1167189372
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,7 +2137,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.451
   m_Pitch: 1
   Loop: 1
   Mute: 0

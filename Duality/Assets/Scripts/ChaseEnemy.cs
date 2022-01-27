@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ChaseEnemy : Enemy
 {
+    public AudioClip hitAudioClip;
     public float movementSpeed = 5f;
 
     public bool chasing = true;
@@ -47,5 +48,16 @@ public class ChaseEnemy : Enemy
         lastDirection = goal - transform.position;
 
         transform.position = Vector3.MoveTowards(transform.position, goal, step);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject == PlayerController.Instance.gameObject)
+        {
+            if (hitAudioClip != null)
+                AudioSource.PlayClipAtPoint(hitAudioClip, transform.position);
+
+            PlayerController.Instance.Kill();
+        }
     }
 }
