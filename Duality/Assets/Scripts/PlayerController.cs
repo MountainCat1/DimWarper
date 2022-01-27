@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance { get; set; }
 
     public bool Dead { get; set; } = false;
+    public AudioSource deathSoundAudioSource;
+    public GameObject bloodParticleSystem;
 
     public float speed = 1f;
     public float jumpForce = 200f;
@@ -85,6 +87,8 @@ public class PlayerController : MonoBehaviour
     {
         Dead = true;
         collider.enabled = false;
+        bloodParticleSystem.SetActive(true);
+        deathSoundAudioSource.Play();
         GameManager.Instance.Lose();
     }
 

@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
     public float deathDistance = 30f;
     public float dangerDistance = 25f;
 
+
+    public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
+    public int TopFloor { get; set; } = 0;
+    public int BottomFloor { get; set; } = 1;
+
+
     public Transform cameraTransform;
     public float cameraRotationSpeed = 1f;
     public float cameraSpeed = 1f;
@@ -69,7 +75,7 @@ public class GameManager : MonoBehaviour
         activeLevelGenerator.Generate();
 
         //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;
-        float bottomFloorHeight = activeLevelGenerator.BottomFloor * activeLevelGenerator.floorHeight;
+        float bottomFloorHeight = BottomFloor * activeLevelGenerator.floorHeight;
 
         if (ExpectedHeight + deathDistance < bottomFloorHeight)
         {
