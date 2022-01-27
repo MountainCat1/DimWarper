@@ -15,23 +15,16 @@ public class GameManager : MonoBehaviour
 
     // Editor 
     public float towerWidth = 8;
-    public float floorHeight = 3f;
     public float renderRangeUp = 10f;
     public float renderRangeDown = 20f;
     public float deathDistance = 30f;
     public float dangerDistance = 25f;
-    public Transform container;
-    public List<Floor> floorList = new List<Floor>();
 
     public float cameraRotationSpeed = 1f;
     public float cameraSpeed = 1f;
     public float cameraCatchUpSpeed = 6f;
     public float breakHeight = 2f;
-    private float expectedHeight = 0f;
-
-    private Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
-    private int topFloor = 0;
-    private int bottomFloor = 1;
+    public float ExpectedHeight { get; set; } = 0f;
 
     public Animator blackScreeAnimator;
     public Animator soundtrackAnimator;
@@ -42,8 +35,10 @@ public class GameManager : MonoBehaviour
     public float energyRegen = 0.2f;
     public float actionEnergyCost = 25f;
 
-    public EnergyPickup energyPickupPrefab;
-    public float energyPickUpChance = 0.05f;
+
+    public LevelGenerator activeLevelGenerator;
+
+
 
     private void Awake()
     {
@@ -64,25 +59,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        GenerateNextFloor();
+        activeLevelGenerator.GenerateNextFloor();
 
     }
 
     private void Update()
     {
-        float topFloorHeight = topFloor * floorHeight;
-        float bottomFloorHeight = bottomFloor * floorHeight;
+        activeLevelGenerator.Generate();
 
+        //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;
+        float bottomFloorHeight = activeLevelGenerator.BottomFloor * activeLevelGenerator.floorHeight;
 
-        if (expectedHeight + renderRangeUp > topFloorHeight)
-        {
-            GenerateNextFloor();
-        }
-        if (expectedHeight - renderRangeDown > bottomFloorHeight)
-        {
-            RemoveBottomFloor();
-        }
-        if (expectedHeight + deathDistance < bottomFloorHeight)
+        if (ExpectedHeight + deathDistance < bottomFloorHeight)
         {
             Lose();
         }
@@ -96,23 +84,23 @@ public class GameManager : MonoBehaviour
     {
         float playerHeight = PlayerController.Instance.transform.position.y;
 
-        if (playerHeight - breakHeight > expectedHeight)
-            expectedHeight += Time.deltaTime * cameraCatchUpSpeed;
+        if (playerHeight - breakHeight > ExpectedHeight)
+            ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
 
-        expectedHeight += Time.deltaTime * cameraSpeed;
+        ExpectedHeight += Time.deltaTime * cameraSpeed;
 
         float step = Time.deltaTime * cameraCatchUpSpeed;
 
-        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(0, expectedHeight, -10), step);
+        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(0, ExpectedHeight, -10), step);
 
-        if (playerHeight + deathDistance < expectedHeight)
+        if (playerHeight + deathDistance < ExpectedHeight)
         {
             Lose();
         }
 
         float rotateStep = Time.deltaTime * cameraRotationSpeed;
         Quaternion targetRotation;
-        if (playerHeight + dangerDistance < expectedHeight)
+        if (playerHeight + dangerDistance < ExpectedHeight)
         {
             Vector3 relativePos = PlayerController.Instance.transform.position - Camera.main.transform.position;
 
@@ -145,60 +133,5 @@ public class GameManager : MonoBehaviour
         deathScreen.SetActive(true);
     }
 
-    public void RemoveBottomFloor()
-    {
-        Debug.Log($"Removed floor on level: {bottomFloor}");
-        Destroy(instantinatedFloors[bottomFloor].gameObject);
-        instantinatedFloors.Remove(bottomFloor);
-        bottomFloor++;
-    }
-    public void GenerateNextFloor()
-    {
-        Debug.Log($"Placed floor on level: {topFloor + 1}");
-        GenerateFloor(GetRandomFloor(), topFloor + 1);
-    }
-
-    public Floor GetRandomFloor()
-    {
-        WeightedRandomBag<Floor> randomBag = new WeightedRandomBag<Floor>();
-        foreach (var floor in floorList)
-        {
-            randomBag.AddEntry(floor, floor.weight);
-        }
-
-        return randomBag.GetRandom(new System.Random());
-    }
-
-    public void GenerateFloor(Floor floor, int level)
-    {
-        Vector2 position = new Vector2(0, level * floorHeight);
-        var go = Instantiate(floor.gameObject, position, Quaternion.identity, container);
-        var newFloor = go.GetComponent<Floor>();
-
-
-        instantinatedFloors.Add(level, newFloor);
-
-        if(Random.Range(0f, 1f) <= energyPickUpChance)
-        {
-            SpawnEnergyPrefab(newFloor);
-        }
-
-        if (level > topFloor)
-            topFloor = level;
-    }
-
-    private void SpawnEnergyPrefab(Floor floor)
-    {
-        float minDistanceToWall = 0.5f;
-        float yOffset = 0.5f;
-
-        float maxRadius = (towerWidth - minDistanceToWall) / 2;
-        float minRadius = (-towerWidth + minDistanceToWall) / 2;
-
-        float positionX = Mathf.Lerp(minRadius, maxRadius, Random.Range(0f, 1f));
-
-
-        Vector2 position = new Vector2(positionX, floor.transform.position.y + yOffset);
-        Instantiate(energyPickupPrefab, position, Quaternion.identity, floor.transform);
-    }
+    
 }

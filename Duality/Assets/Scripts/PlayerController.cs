@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
+    [SerializeField] private Collider2D collider;                          // A position marking where to check for ceilings
     private bool grounded;            // Whether or not the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip diveSound;
     [SerializeField] private string changeDimensionParticle = "warp";
     [SerializeField] private float changeDimensionAnimationSpeed = 4f;
+    [SerializeField] private AudioClip noEnergySound;
+    [SerializeField] private AudioClip energyUseSound;
 
     public Transform Floor { private set; get; }
     private bool UsedEnergyAction { get; set; } = false;
@@ -73,16 +76,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Kill()
+    {
+        collider.enabled = false;
+    }
+
+
     private bool TryUseEnergyAction()
     {
         if (UsedEnergyAction)
+        {
+            AudioSource.PlayClipAtPoint(noEnergySound, transform.position);
             return false;
-
+        }
+            
         if (GameManager.Instance.actionEnergyCost > GameManager.Instance.Energy)
+        {
+            AudioSource.PlayClipAtPoint(noEnergySound, transform.position);
             return false;
-        
+        }
+
         GameManager.Instance.Energy -= GameManager.Instance.actionEnergyCost;
         UsedEnergyAction = true;
+        AudioSource.PlayClipAtPoint(energyUseSound, transform.position);
         return true;
     }
 
