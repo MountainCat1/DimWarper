@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; set; }
 
+    public bool Dead { get; set; } = false;
+
     public float speed = 1f;
     public float jumpForce = 200f;
     public float diveSpeed = 0.25f;
@@ -48,6 +50,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Dead)
+            return;
+
         // If the player should jump...
         if (Input.GetKeyDown(KeyCode.W) && (grounded || TryUseEnergyAction()))
         {
@@ -78,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
     public void Kill()
     {
+        Dead = true;
         collider.enabled = false;
     }
 

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public float deathDistance = 30f;
     public float dangerDistance = 25f;
 
+    public Transform cameraTransform;
     public float cameraRotationSpeed = 1f;
     public float cameraSpeed = 1f;
     public float cameraCatchUpSpeed = 6f;
@@ -91,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         float step = Time.deltaTime * cameraCatchUpSpeed;
 
-        Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(0, ExpectedHeight, -10), step);
+        cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
 
         if (playerHeight + deathDistance < ExpectedHeight)
         {
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
         Quaternion targetRotation;
         if (playerHeight + dangerDistance < ExpectedHeight)
         {
-            Vector3 relativePos = PlayerController.Instance.transform.position - Camera.main.transform.position;
+            Vector3 relativePos = PlayerController.Instance.transform.position - cameraTransform.position;
 
             targetRotation = Quaternion.LookRotation(relativePos, Vector3.up);
             targetRotation = Quaternion.Euler(targetRotation.eulerAngles.x, 0, 0);
@@ -112,8 +113,8 @@ public class GameManager : MonoBehaviour
             targetRotation = Quaternion.identity;
         }
 
-        float smoothFactor = Quaternion.Angle(Camera.main.transform.rotation, targetRotation);
-        Camera.main.transform.rotation = Quaternion.RotateTowards(Camera.main.transform.rotation, targetRotation, rotateStep * smoothFactor);
+        float smoothFactor = Quaternion.Angle(cameraTransform.rotation, targetRotation);
+        cameraTransform.rotation = Quaternion.RotateTowards(cameraTransform.rotation, targetRotation, rotateStep * smoothFactor);
     }
 
     public void Lose()
