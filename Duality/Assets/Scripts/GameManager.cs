@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
-        Debug.Log("Defeat!!!");
         blackScreeAnimator.SetBool("fade", true);
         soundtrackAnimator.SetBool("slowDown", true);
 
