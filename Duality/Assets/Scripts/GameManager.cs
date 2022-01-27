@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
+    // Game properties
+    public int Coins { get; set; }
+
     // Editor 
     public float towerWidth = 8;
     public float floorHeight = 3f;
@@ -114,7 +117,6 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
-        Debug.Log("Defeat!!!");
         blackScreeAnimator.SetBool("fade", true);
         soundtrackAnimator.SetBool("slowDown", true);
 
