@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 95f6e0dd18c9149439224f8fe82c5b36
+guid: de54845b332e13a45a3c2f411d6b35a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8793639957104055765
-    second: idle_0
+      213: 5353841184698615464
+    second: fireball_0
   - first:
-      213: 6084859605308855041
-    second: idle_1
-  - first:
-      213: 8603369663158992956
-    second: idle_2
+      213: 750297706712597742
+    second: fireball_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: fireball_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d55ed543f8490a70800000000000000
-      internalID: 8793639957104055765
+      spriteID: 8a641dd013aac4a40800000000000000
+      internalID: 5353841184698615464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: fireball_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,29 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 103de827293c17450800000000000000
-      internalID: 6084859605308855041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c30c6f3402f456770800000000000000
-      internalID: 8603369663158992956
+      spriteID: ee4056cf9c7996a00800000000000000
+      internalID: 750297706712597742
       vertices: []
       indices: 
       edges: []

@@ -14,7 +14,7 @@ public abstract class PickUp : MonoBehaviour
         if (collision.gameObject == PlayerController.Instance.gameObject)
         {
             if(audioClip != null)
-                AudioSource.PlayClipAtPoint(audioClip, transform.position);
+                AudioSource.PlayClipAtPoint(audioClip, Camera.main.transform.position);
 
             OnPickUp();
             Destroy(gameObject);

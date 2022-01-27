@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1688498448310286483
+--- !u!1 &3531293642122148183
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,86 +8,68 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1688498448310286701}
-  - component: {fileID: 1688498448310286697}
-  - component: {fileID: 1688498448310286703}
-  - component: {fileID: 1688498448310286700}
-  - component: {fileID: 1688498448310286702}
-  - component: {fileID: 1688498448310286696}
+  - component: {fileID: 3531293642122148182}
+  - component: {fileID: 3531293642122148178}
+  - component: {fileID: 3531293642122148179}
+  - component: {fileID: 3531293642122148180}
+  - component: {fileID: 3531293642122148181}
   m_Layer: 0
-  m_Name: 'Fire Enemy '
+  m_Name: Fire Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1688498448310286701
+--- !u!4 &3531293642122148182
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
+  m_GameObject: {fileID: 3531293642122148183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 10, z: 0}
+  m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1688498448310286697
+--- !u!58 &3531293642122148178
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531293642122148183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
+--- !u!114 &3531293642122148179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
+  m_GameObject: {fileID: 3531293642122148183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018f21bf4e09c8048a80fb312ea84d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 680a5eee2c41b5a408f4e256dbe6d37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomWeight: 1
-  hitAudioClip: {fileID: 0}
-  movementSpeed: 1.2
-  chasing: 1
---- !u!114 &1688498448310286703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb50ba157347ba24cac96fbc9d97ca68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dimension: 0
---- !u!114 &1688498448310286700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40748cc28fd637b4596e64e951ff42f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedMultiplier: 4
-  playAnimationOnStart: 
-  animations: []
-  playing: 0
-  framesLocation: FireEnemy
---- !u!212 &1688498448310286702
+  speed: 1.7
+--- !u!212 &3531293642122148180
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
+  m_GameObject: {fileID: 3531293642122148183}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -120,31 +102,32 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8793639957104055765, guid: 1c08f695b83b3674785692e0b46ab653,
+  m_Sprite: {fileID: 5353841184698615464, guid: de54845b332e13a45a3c2f411d6b35a7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1688498448310286696
-CircleCollider2D:
+--- !u!114 &3531293642122148181
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688498448310286483}
+  m_GameObject: {fileID: 3531293642122148183}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40748cc28fd637b4596e64e951ff42f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 4
+  playAnimationOnStart: 
+  animations: []
+  playing: 0
+  framesLocation: FireBall

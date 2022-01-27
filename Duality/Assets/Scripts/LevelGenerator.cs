@@ -9,21 +9,19 @@ public class LevelGenerator : MonoBehaviour
     public Transform container;
     public List<Floor> floorList = new List<Floor>();
     public List<Enemy> enemyList = new List<Enemy>();
+    public List<Trap> trapList = new List<Trap>();
 
+    public float trapSpawnChance = 0.05f;
     public float enemySpawnChance = 0.05f;
 
     public EnergyPickup energyPickupPrefab;
     public float energyPickUpChance = 0.05f;
 
-    public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
-    public int TopFloor { get; set; } = 0;
-    public int BottomFloor { get; set; } = 1;
-
 
     public void Generate()
     {
-        float topFloorHeight = TopFloor * floorHeight;
-        float bottomFloorHeight = BottomFloor * floorHeight;
+        float topFloorHeight = GameManager.Instance.TopFloor * floorHeight;
+        float bottomFloorHeight = GameManager.Instance.BottomFloor * floorHeight;
         float expectedHeight = GameManager.Instance.ExpectedHeight;
         float renderRangeUp = GameManager.Instance.renderRangeUp;
         float renderRangeDown = GameManager.Instance.renderRangeDown;
@@ -40,20 +38,37 @@ public class LevelGenerator : MonoBehaviour
 
     public void RemoveBottomFloor()
     {
-        Debug.Log($"Removed floor on level: {BottomFloor}");
-        Destroy(instantinatedFloors[BottomFloor].gameObject);
-        instantinatedFloors.Remove(BottomFloor);
-        BottomFloor++;
+        Debug.Log($"Removed floor on level: { GameManager.Instance.BottomFloor}");
+        Destroy(GameManager.Instance.instantinatedFloors[GameManager.Instance.BottomFloor].gameObject);
+        GameManager.Instance.instantinatedFloors.Remove(GameManager.Instance.BottomFloor);
+        GameManager.Instance.BottomFloor++;
     }
     public void GenerateNextFloor()
     {
-        Debug.Log($"Placed floor on level: {TopFloor + 1}");
-        Floor floor = GenerateFloor(GetRandomFloor(), TopFloor + 1);
+        Debug.Log($"Placed floor on level: { GameManager.Instance.TopFloor + 1}");
+        Floor floor = GenerateFloor(GetRandomFloor(), GameManager.Instance.TopFloor + 1);
 
         if (Random.Range(0f, 1f) <= enemySpawnChance)
         {
             SpawnEnemy(GetRandomEnemy(), floor);
         }
+
+        if (Random.Range(0f, 1f) <= trapSpawnChance)
+        {
+            UseRandomTrap(floor);
+        }
+
+    }
+
+    private void UseRandomTrap(Floor floor)
+    {
+        WeightedRandomBag<Trap> randomBag = new WeightedRandomBag<Trap>();
+        foreach (var trap in trapList)
+        {
+            randomBag.AddEntry(trap, trap.randomWeight);
+        }
+
+        randomBag.GetRandom(new System.Random()).OnFloorGenerated(floor);
     }
 
     private Enemy GetRandomEnemy()
@@ -90,26 +105,26 @@ public class LevelGenerator : MonoBehaviour
         var newFloor = go.GetComponent<Floor>();
 
 
-        instantinatedFloors.Add(level, newFloor);
+        GameManager.Instance.instantinatedFloors.Add(level, newFloor);
 
         if (Random.Range(0f, 1f) <= energyPickUpChance)
         {
             SpawnEnergyPrefab(newFloor);
         }
 
-        if (level > TopFloor)
-            TopFloor = level;
+        if (level > GameManager.Instance.TopFloor)
+            GameManager.Instance.TopFloor = level;
 
         return newFloor;
     }
 
-    private void SpawnEnergyPrefab(Floor floor)
+    public void SpawnEnergyPrefab(Floor floor)
     {
         Instantiate(energyPickupPrefab, GetRandomPos(floor), Quaternion.identity, floor.transform);
     }
 
 
-    Vector2 GetRandomPos(Floor floor, float yOffset = 0.5f, float minDistanceToWall = 0.5f)
+    public static Vector2 GetRandomPos(Floor floor, float yOffset = 0.5f, float minDistanceToWall = 0.5f)
     {
         float towerWidth = GameManager.Instance.towerWidth;
 
