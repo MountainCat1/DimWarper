@@ -6,6 +6,6 @@ public class Coin : PickUp
 {
     protected override void OnPickUp()
     {
-        
+        GameManager.Instance.Coins++;
     }
 }

@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
+    // Game properties
+    public int Coins { get; set; }
+
     // Editor 
     public float towerWidth = 8;
     public float floorHeight = 3f;
