@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
     private int topFloor = 0;
     private int bottomFloor = 1;
 
+    public Animator blackScreeAnimator;
     public GameObject deathScreen;
+    public float timeToShowGameOverScreen = 1f;
 
     private void Awake()
     {
@@ -112,8 +114,18 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         Debug.Log("Defeat!!!");
+        blackScreeAnimator.SetBool("fade", true);
+
+        StartCoroutine(ShowGameOverScreenCoroutine());
         //deathScreen.SetActive(true);
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
+    }
+
+    IEnumerator ShowGameOverScreenCoroutine()
+    {
+        yield return new WaitForSeconds(timeToShowGameOverScreen);
+
+        deathScreen.SetActive(true);
     }
 
     public void RemoveBottomFloor()
