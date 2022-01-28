@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallTrap : Trap
+public class MissileTrap : Trap
 {
     public Missile missilePrefab;
 

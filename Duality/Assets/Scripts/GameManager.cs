@@ -64,12 +64,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).GenerateNextFloor();
-
     }
 
     private void Update()
     {
-        Debug.Log(LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).name);
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
 
         //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;

@@ -24,6 +24,8 @@ public class SimpleSpriteAnimation : SpriteAnimator
 
         string basePath = $"Sprites/{framesLocation}";
 
+
+
         loadedAnimations.Add(new SpriteAnimation()
         {
             Frames = Resources.LoadAll<Sprite>($"{basePath}/idle").ToArray(),
