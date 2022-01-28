@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-
+    public float minHeight = 0f;
     public float floorHeight = 3f;
     public Transform container;
     public List<Floor> floorList = new List<Floor>();

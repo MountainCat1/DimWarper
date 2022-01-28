@@ -43,9 +43,6 @@ public class GameManager : MonoBehaviour
     public float actionEnergyCost = 25f;
 
 
-    public LevelGenerator activeLevelGenerator;
-
-
 
     private void Awake()
     {
@@ -66,16 +63,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        activeLevelGenerator.GenerateNextFloor();
+        LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).GenerateNextFloor();
 
     }
 
     private void Update()
     {
-        activeLevelGenerator.Generate();
+        Debug.Log(LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).name);
+        LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
 
         //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;
-        float bottomFloorHeight = BottomFloor * activeLevelGenerator.floorHeight;
+        float bottomFloorHeight = BottomFloor * LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).floorHeight;
 
         if (ExpectedHeight + deathDistance < bottomFloorHeight)
         {

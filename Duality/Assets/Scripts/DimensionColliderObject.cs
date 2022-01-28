@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent (typeof(SpriteRenderer))]
-public class DimensionPlatform : DimensionObject
+public class DimensionColliderObject : DimensionObject
 {
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
