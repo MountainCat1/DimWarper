@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public float Energy { get => energy; set => energy = value > maxEnergy ? maxEnergy : value; }
     private float energy;
 
+    public bool Won { get; private set; } = false;
+
     // Editor 
     public float towerWidth = 8;
     public float renderRangeUp = 10f;
@@ -121,8 +123,18 @@ public class GameManager : MonoBehaviour
         cameraTransform.rotation = Quaternion.RotateTowards(cameraTransform.rotation, targetRotation, rotateStep * smoothFactor);
     }
 
+    public void Win()
+    {
+        cameraRotationSpeed = 0f;
+        cameraSpeedMultiplier = 0f;
+        Won = true;
+    }
+
     public void Lose()
     {
+        if (Won)
+            return;
+
         blackScreeAnimator.SetBool("fade", true);
         soundtrackAnimator.SetBool("slowDown", true);
 
