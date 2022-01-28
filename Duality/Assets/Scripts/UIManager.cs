@@ -10,11 +10,6 @@ public class UIManager : MonoBehaviour
 
     private float maxHeight = -1f;
 
-    private void Awake()
-    {
-        ;
-    }
-
     void Update()
     {
         UpdateHeightDisplay();
@@ -32,6 +27,6 @@ public class UIManager : MonoBehaviour
     void UpdateEnergyBar()
     {
         energyBar.maxValue = Mathf.RoundToInt( GameManager.Instance.maxEnergy / GameManager.Instance.actionEnergyCost);
-        energyBar.value = Mathf.RoundToInt( GameManager.Instance.Energy / GameManager.Instance.actionEnergyCost);
+        energyBar.value = Mathf.FloorToInt( GameManager.Instance.Energy / GameManager.Instance.actionEnergyCost);
     }
 }

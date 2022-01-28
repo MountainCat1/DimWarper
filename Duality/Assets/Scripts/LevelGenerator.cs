@@ -17,6 +17,8 @@ public class LevelGenerator : MonoBehaviour
     public EnergyPickup energyPickupPrefab;
     public float energyPickUpChance = 0.05f;
 
+    public float cameraSpeed = 0.5f;
+
 
     public void Generate()
     {
@@ -135,5 +137,17 @@ public class LevelGenerator : MonoBehaviour
 
         Vector2 position = new Vector2(positionX, floor.transform.position.y + yOffset);
         return position;
+    }
+
+    public static float GetRandomPosX(float minDistanceToWall = 0.5f)
+    {
+        float towerWidth = GameManager.Instance.towerWidth;
+
+        float maxRadius = (towerWidth - minDistanceToWall) / 2;
+        float minRadius = (-towerWidth + minDistanceToWall) / 2;
+
+        float positionX = Mathf.Lerp(minRadius, maxRadius, Random.Range(0f, 1f));
+
+        return positionX;
     }
 }

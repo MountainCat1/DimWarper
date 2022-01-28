@@ -8,7 +8,7 @@ public abstract class BossTrap : Trap
 
     public override void OnFloorGenerated(Floor floor)
     {
-        randomWeight = 99999;
+        randomWeight = 0;
         SpawnBoss(floor);
     }
 

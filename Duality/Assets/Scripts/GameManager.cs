@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public Transform cameraTransform;
     public float cameraRotationSpeed = 1f;
-    public float cameraSpeed = 1f;
+    public float cameraSpeedMultiplier = 1f;
     public float cameraCatchUpSpeed = 6f;
     public float breakHeight = 2f;
     public float ExpectedHeight { get; set; } = 0f;
@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public float maxEnergy = 100f;
     public float energyRegen = 0.2f;
     public float actionEnergyCost = 25f;
+
+    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
 
 
 
@@ -90,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (playerHeight - breakHeight > ExpectedHeight)
             ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
 
-        ExpectedHeight += Time.deltaTime * cameraSpeed;
+        ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
 
         float step = Time.deltaTime * cameraCatchUpSpeed;
 
