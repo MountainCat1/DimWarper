@@ -27,7 +27,7 @@ public class MultipleAnimationAnimator : SpriteAnimator
             loadedAnimations.Add(new SpriteAnimation()
             {
                 Frames = Resources.LoadAll<Sprite>($"{basePath}/{animationPath}").ToArray(),
-                Name = "animationPath"
+                Name = animationPath
             });
         }
 
