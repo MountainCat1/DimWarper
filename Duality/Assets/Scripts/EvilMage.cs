@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class EvilMage : DimensionObject
 {
+    public float deathHeight = 800f;
+
     public float verticalMovementSpeed = 5f;
     public float horizontalMovementSpeed = 1f;
     public float warpInterval = 8;
@@ -25,6 +27,10 @@ public class EvilMage : DimensionObject
     public Missile fireMissilePrefab;
     public Missile iceMissilePrefab;
 
+    public string changeDimensionParticle = "warp";
+
+    private bool dead = false;
+
     private void Awake()
     {
         collider = gameObject.GetComponent<Collider2D>();
@@ -34,15 +40,63 @@ public class EvilMage : DimensionObject
     private void Start()
     {
         StartCoroutine(DimensionSwapCoroutine());
+        StartCoroutine(ShotMissileSwapCoroutine());
+    }
+
+    private void FixedUpdate()
+    {
+        float targetHeight = yOffset + GameManager.Instance.ExpectedHeight;
+
+        Vector3 targetPos = new Vector3(targetPosX, targetHeight, transform.position.z);
+
+        float stepX = Time.fixedDeltaTime * horizontalMovementSpeed;
+        float stepY = Time.fixedDeltaTime * verticalMovementSpeed;
+
+        Vector3 newPos = transform.position;
+
+        newPos.x = Vector3.MoveTowards(transform.position, targetPos, stepX).x;
+        newPos.y = Vector3.MoveTowards(transform.position, targetPos, stepY).y;
+
+        transform.position = newPos;
+
+        if (Vector3.Distance(transform.position, targetPos) < 0.1f)
+            targetPosX = LevelGenerator.GetRandomPosX();
+    }
+
+    private void Update()
+    {
+        if(GameManager.Instance.ExpectedHeight >= deathHeight)
+        {
+            Kill();
+            targetPosX = 0f;
+        }
+    }
+
+    private void Kill()
+    {
+        dead = true;
+        StopAllCoroutines();
     }
 
     private IEnumerator DimensionSwapCoroutine()
     {
         while (true)
         {
-            ShotMissile();
+            SwapDimension();
             yield return new WaitForSeconds(warpInterval + UnityEngine.Random.Range(-warpIntervalRandomness, +warpIntervalRandomness));
         }
+    }
+
+    private void SwapDimension()
+    {
+        dimensionSwapAudioSource.Play();
+        if (dimension == DimensionManager.Dimension.Ice)
+            dimension = DimensionManager.Dimension.Fire;
+        else
+            dimension = DimensionManager.Dimension.Ice;
+
+        SetActive(dimension == DimensionManager.Instance.dimension);
+        AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, 5);
     }
 
     private IEnumerator ShotMissileSwapCoroutine()
@@ -70,25 +124,7 @@ public class EvilMage : DimensionObject
         newMissile.Direction = direction;
     }
 
-    private void FixedUpdate()
-    {
-        float targetHeight = yOffset + GameManager.Instance.ExpectedHeight;
-
-        Vector3 targetPos = new Vector3(targetPosX, targetHeight, transform.position.z);
-
-        float stepX = Time.fixedDeltaTime * horizontalMovementSpeed;
-        float stepY = Time.fixedDeltaTime * verticalMovementSpeed;
-
-        Vector3 newPos = transform.position;
-
-        newPos.x = Vector3.MoveTowards(transform.position, targetPos, stepX).x;
-        newPos.y = Vector3.MoveTowards(transform.position, targetPos, stepY).y;
-
-        transform.position = newPos;
-
-        if (Vector3.Distance(transform.position, targetPos) < 0.1f)
-            targetPosX = LevelGenerator.GetRandomPosX();
-    }
+    
 
     public override void SetActive(bool active)
     {
