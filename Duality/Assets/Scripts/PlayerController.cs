@@ -97,19 +97,19 @@ public class PlayerController : MonoBehaviour
     {
         if (UsedEnergyAction)
         {
-            AudioSource.PlayClipAtPoint(noEnergySound, transform.position);
+            AudioSource.PlayClipAtPoint(noEnergySound, Camera.main.transform.position);
             return false;
         }
             
         if (GameManager.Instance.actionEnergyCost > GameManager.Instance.Energy)
         {
-            AudioSource.PlayClipAtPoint(noEnergySound, transform.position);
+            AudioSource.PlayClipAtPoint(noEnergySound, Camera.main.transform.position);
             return false;
         }
 
         GameManager.Instance.Energy -= GameManager.Instance.actionEnergyCost;
         UsedEnergyAction = true;
-        AudioSource.PlayClipAtPoint(energyUseSound, transform.position);
+        AudioSource.PlayClipAtPoint(energyUseSound, Camera.main.transform.position);
         return true;
     }
 

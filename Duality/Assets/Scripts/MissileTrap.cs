@@ -10,7 +10,7 @@ public class MissileTrap : Trap
 
     public override void OnFloorGenerated(Floor floor)
     {
-        Vector2 position = LevelGenerator.GetRandomPos(floor, yOffset);
+        Vector2 position = LevelGenerator.GetRandomPosX(floor, yOffset);
         var go = Instantiate(missilePrefab, position, Quaternion.identity);
 
         Missile missile = go.GetComponent<Missile>();

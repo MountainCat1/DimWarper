@@ -84,7 +84,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void SpawnEnemy(Enemy enemy, Floor floor)
     {
-        Instantiate(enemy, GetRandomPos(floor), Quaternion.identity, floor.transform);
+        Instantiate(enemy, GetRandomPosX(floor), Quaternion.identity, floor.transform);
     }
 
     public Floor GetRandomFloor()
@@ -120,11 +120,11 @@ public class LevelGenerator : MonoBehaviour
 
     public void SpawnEnergyPrefab(Floor floor)
     {
-        Instantiate(energyPickupPrefab, GetRandomPos(floor), Quaternion.identity, floor.transform);
+        Instantiate(energyPickupPrefab, GetRandomPosX(floor), Quaternion.identity, floor.transform);
     }
 
 
-    public static Vector2 GetRandomPos(Floor floor, float yOffset = 0.5f, float minDistanceToWall = 0.5f)
+    public static Vector2 GetRandomPosX(Floor floor, float yOffset = 0.5f, float minDistanceToWall = 0.5f)
     {
         float towerWidth = GameManager.Instance.towerWidth;
 

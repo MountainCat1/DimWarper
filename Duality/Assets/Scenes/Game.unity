@@ -560,6 +560,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1338307712}
+  - {fileID: 1975251904}
   trapSpawnChance: 0.05
   enemySpawnChance: 0
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
@@ -994,6 +995,7 @@ MonoBehaviour:
   - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
   trapList:
   - {fileID: 1338307712}
+  - {fileID: 1975251904}
   trapSpawnChance: 0.05
   enemySpawnChance: 0.05
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
@@ -6041,7 +6043,7 @@ Transform:
   - {fileID: 1105027204}
   - {fileID: 389682429}
   m_Father: {fileID: 1103777992}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &581371681
 MonoBehaviour:
@@ -6741,11 +6743,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837933702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1103777992}
+  m_Father: {fileID: 1583798604}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891372135
@@ -7238,9 +7240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerWidth: 8
   renderRangeUp: 9
-  renderRangeDown: 10
-  deathDistance: 11
-  dangerDistance: 5
+  renderRangeDown: 9
+  deathDistance: 10
+  dangerDistance: 4
   cameraTransform: {fileID: 350499276}
   cameraRotationSpeed: 0.8
   cameraSpeed: 0.5
@@ -7264,11 +7266,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 837933704}
-  - {fileID: 1167189372}
-  - {fileID: 1888616861}
-  - {fileID: 1338307713}
   - {fileID: 581371680}
+  - {fileID: 1568785124}
+  - {fileID: 1583798604}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7377,6 +7377,7 @@ MonoBehaviour:
   - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
   trapList:
   - {fileID: 1338307712}
+  - {fileID: 1975251904}
   trapSpawnChance: 0.05
   enemySpawnChance: 0.05
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
@@ -7485,7 +7486,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1103777992}
+  m_Father: {fileID: 1583798604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1167189373
@@ -7675,7 +7676,7 @@ MonoBehaviour:
   randomWeight: 1
   missilePrefab: {fileID: 3531293642122148179, guid: 9a726a4791bd2174bb5fc6cdcc5d89cf,
     type: 3}
-  yOffset: 2
+  yOffset: 5
 --- !u!4 &1338307713
 Transform:
   m_ObjectHideFlags: 0
@@ -7683,12 +7684,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338307711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1103777992}
-  m_RootOrder: 3
+  m_Father: {fileID: 1568785124}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364328310
 GameObject:
@@ -7716,7 +7717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364328310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 49.5, z: 0}
+  m_LocalPosition: {x: 4.5, y: 349.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337159778}
@@ -7845,6 +7846,118 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!1 &1568785123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568785124}
+  m_Layer: 0
+  m_Name: Traps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568785124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568785123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1338307713}
+  - {fileID: 1975251905}
+  - {fileID: 1631016177}
+  m_Father: {fileID: 1103777992}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1583798603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1583798604}
+  m_Layer: 0
+  m_Name: Audio Sources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1583798604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583798603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 837933704}
+  - {fileID: 1167189372}
+  - {fileID: 1888616861}
+  m_Father: {fileID: 1103777992}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1631016176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631016177}
+  - component: {fileID: 1631016178}
+  m_Layer: 0
+  m_Name: Evil Mage Boss Trap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631016177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631016176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1568785124}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631016178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631016176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090acce990453d54b8e57287f0693385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomWeight: 1
+  bossPrefab: {fileID: 0}
+  spawnOffset: {x: 0, y: 10, z: 0}
 --- !u!1 &1711406066
 GameObject:
   m_ObjectHideFlags: 0
@@ -8225,11 +8338,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888616860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1103777992}
+  m_Father: {fileID: 1583798604}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1888616862
@@ -8354,7 +8467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891420395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 49.5, z: 0}
+  m_LocalPosition: {x: -4.5, y: 349.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337159778}
@@ -8514,6 +8627,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925407096}
   m_CullTransparentMesh: 0
+--- !u!1 &1975251903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975251905}
+  - component: {fileID: 1975251904}
+  m_Layer: 0
+  m_Name: Ice Laser Trap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1975251904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975251903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ec978bb1c060b42bd9bdf665f76cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomWeight: 1
+  laserPrefab: {fileID: 6099602768219460789, guid: 8b0e54d2a00d7ab48bc2d69929ab1a58,
+    type: 3}
+  laserRange: 6
+  yOffset: 6
+--- !u!4 &1975251905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975251903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1568785124}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008205481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,7 +8873,7 @@ MonoBehaviour:
   diveSound: {fileID: 8300000, guid: ea268f181c42e394cafcb30c3e3dc3b5, type: 3}
   changeDimensionParticle: warp
   changeDimensionAnimationSpeed: 12
-  noEnergySound: {fileID: 8300000, guid: 0659812776849db42aea8bc02618fe31, type: 3}
+  noEnergySound: {fileID: 8300000, guid: 580613ac297f4294db35b51beeb81011, type: 3}
   energyUseSound: {fileID: 8300000, guid: 68e1caecaad9fea49a47f22b3b4dd64f, type: 3}
 --- !u!4 &2058008024
 Transform:

@@ -8,6 +8,13 @@ public class Missile : MonoBehaviour
     public Vector2 Direction { get;  set; }
     public float speed = 2f;
 
+    public AudioClip missileShotSound;
+
+    private void Start()
+    {
+        AudioSource.PlayClipAtPoint(missileShotSound, transform.position);
+    }
+
     void FixedUpdate()
     {
         float step = Time.fixedDeltaTime * speed;

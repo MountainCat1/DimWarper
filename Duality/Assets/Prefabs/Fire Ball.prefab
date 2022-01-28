@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.7
+  missileShotSound: {fileID: 8300000, guid: 925ed412b7f8c524291bb6dfa1b4b3dd, type: 3}
 --- !u!212 &3531293642122148180
 SpriteRenderer:
   m_ObjectHideFlags: 0
