@@ -32,13 +32,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("Game"));
     }
 
-    public void Credits()
-    {
-        Debug.Log("=== Loading credits... ===");
-
-        StartCoroutine(LoadYourAsyncScene("Credits"));
-    }
-
     public void Quit()
     {
         Debug.Log("Quit!");
