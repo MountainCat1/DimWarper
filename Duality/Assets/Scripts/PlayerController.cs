@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(diveSound, transform.position);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !Pause.isPaused && !GameManager.Instance.Lost && !GameManager.Instance.Won)
         {
             AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, changeDimensionAnimationSpeed);
             DimensionManager.Instance.SwitchDimension();
