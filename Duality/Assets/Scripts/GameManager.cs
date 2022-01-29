@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 2;
         Application.targetFrameRate = 999;
+        Cursor.visible = false;
 
         Energy = 100f;
     }
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour
         cameraRotationSpeed = 0f;
         cameraSpeedMultiplier = 0f;
         Won = true;
+        Cursor.visible = true;
     }
 
     public void Lose()
@@ -150,6 +152,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreenCoroutine());
 
         Lost = true;
+        Cursor.visible = true;
 
         //deathScreen.SetActive(true);
         //SceneManager.LoadScene("GameOver");

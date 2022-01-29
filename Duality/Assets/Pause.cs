@@ -12,26 +12,28 @@ public class Pause : MonoBehaviour
         {
             if (isPaused)
             {
-                resumeGame();
+                ResumeGame();
             }
             else
             {
-                pauseGame();
+                PauseGame();
             }
         }
     }
 
-    public void resumeGame()
+    public void ResumeGame()
     {
         pauseScreen.SetActive(false);
         Time.timeScale = 2f;
         isPaused = false;
+        Cursor.visible = false;
     }
 
-    public void pauseGame()
+    public void PauseGame()
     {
         pauseScreen.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        Cursor.visible = true;
     }
 }
