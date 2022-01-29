@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private float energy;
 
     public bool Won { get; private set; } = false;
-
+    public bool Lost { get; private set; } = false;
     // Editor 
     public float towerWidth = 8;
     public float renderRangeUp = 10f;
@@ -91,18 +91,21 @@ public class GameManager : MonoBehaviour
     {
         float playerHeight = PlayerController.Instance.transform.position.y;
 
-        if (playerHeight - breakHeight > ExpectedHeight)
-            ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
-
-        ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
-
-        float step = Time.deltaTime * cameraCatchUpSpeed;
-
-        cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
-
-        if (playerHeight + deathDistance < ExpectedHeight)
+        if (!Lost)
         {
-            Lose();
+            if (playerHeight - breakHeight > ExpectedHeight)
+                ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
+
+            ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
+
+            float step = Time.deltaTime * cameraCatchUpSpeed;
+
+            cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
+
+            if (playerHeight + deathDistance < ExpectedHeight)
+            {
+                Lose();
+            }
         }
 
         float rotateStep = Time.deltaTime * cameraRotationSpeed;
@@ -132,6 +135,8 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
+
+
         if (Won)
             return;
 
@@ -141,6 +146,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreenCoroutine());
         //deathScreen.SetActive(true);
         //SceneManager.LoadScene("GameOver");
+
+        Lost = true;
     }
 
     IEnumerator ShowGameOverScreenCoroutine()
