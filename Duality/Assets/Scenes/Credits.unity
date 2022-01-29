@@ -221,7 +221,7 @@ MonoBehaviour:
 
     License: https://incompetech.filmmusic.io/standard-license
 
-    
+
 
     Burn
     The World Waltz by Kevin MacLeod
@@ -231,37 +231,37 @@ MonoBehaviour:
     License:
     https://incompetech.filmmusic.io/standard-license
 
-    
 
-    District Four
-    by Kevin MacLeod
+
+    District Four by Kevin
+    MacLeod
 
     Link: https://filmmusic.io/song/3662-district-four
 
     License:
     https://filmmusic.io/standard-license
 
-    
 
-    The Whip (Extended Version)
-    by Kevin MacLeod
+
+    The Whip (Extended Version) by Kevin
+    MacLeod
 
     Link: https://incompetech.filmmusic.io/song/4514-the-whip-extended-version-
 
     License:
     https://incompetech.filmmusic.io/standard-license
 
-    
 
-    Highlight Reel
-    by Kevin MacLeod
+
+    Highlight Reel by Kevin
+    MacLeod
 
     Link: https://filmmusic.io/song/3876-highlight-reel
 
     License:
     https://filmmusic.io/standard-license
 
-    
+
 
     Hotrock by Kevin MacLeod
 
@@ -391,12 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8d56af55269be4092ead22ad545de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
   end: {fileID: 567391903}
   panel: {fileID: 617453013}
-  text: {fileID: 0}
   speed: 1
-  pause: 3
   yOffset: 150
 --- !u!1 &426822565
 GameObject:
@@ -614,8 +611,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.24
-  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOkey this thing is too short\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe
-    music credits take so much space...\n\n\n\n\n\n  \n\n\n\n\n\n...\n\n\n\n\n\n\n\n\n\n\n\nHere....\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial
+  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOkey this thing is too short\n\n\n\n\n\n\n\n\n\n\n\n\n\nMusic
+    credits take so much space...\n\n\n\n\n\n  \n\n\n\n\n\n...\n\n\n\n\n\n\n\n\n\n\n\nHere....\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial
     thanks again!\n\n\n\n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &527475967
 CanvasRenderer:
