@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Lore : MonoBehaviour
 {
@@ -24,13 +25,20 @@ public class Lore : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(write());
+        StartCoroutine(WriteCoroutine());
     }
 
-    IEnumerator write()
+
+
+    IEnumerator WriteCoroutine()
     {
         for (int i = 0; i < lore.Length; i++)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                StartCoroutine(AsyncLoadScene("MainMenu"));
+            }
+
             if(lore[i] != ' ')
                 PlayBeep();
 
@@ -43,7 +51,7 @@ public class Lore : MonoBehaviour
         yield return new WaitForSeconds(waitingTime);
         fade.SetBool("fade", true);
 
-        StartCoroutine(AsyncLoadScene("Game"));
+        StartCoroutine(AsyncLoadScene("MainMenu"));
     }
 
     IEnumerator AsyncLoadScene(string sceneName)
