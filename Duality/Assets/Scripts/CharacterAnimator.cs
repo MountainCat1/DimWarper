@@ -8,7 +8,8 @@ using UnityEngine;
 
 public class CharacterAnimator : SpriteAnimator
 {
-    [SerializeField] private string framesLocation = "";
+    public string framesLocation = "";
+
     private bool animationsLoaded = false;
 
     public enum Animation
@@ -28,6 +29,11 @@ public class CharacterAnimator : SpriteAnimator
         {
             PlayAnimation(animation);
         }
+    }
+
+    public void ReloadAnimations()
+    {
+        LoadAnimations();
     }
 
     protected override void Awake()

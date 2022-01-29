@@ -28,17 +28,20 @@ public class Lore : MonoBehaviour
         StartCoroutine(WriteCoroutine());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+        {
+            StartCoroutine(AsyncLoadScene("MainMenu"));
+        }
+    }
+
 
 
     IEnumerator WriteCoroutine()
     {
         for (int i = 0; i < lore.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                StartCoroutine(AsyncLoadScene("MainMenu"));
-            }
-
             if(lore[i] != ' ')
                 PlayBeep();
 
