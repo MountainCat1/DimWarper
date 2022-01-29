@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
 
 
         Time.timeScale = 2;
-        Application.targetFrameRate = 120;
 
         Energy = 100f;
     }
@@ -72,10 +71,15 @@ public class GameManager : MonoBehaviour
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).GenerateNextFloor();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
 
+        
+    }
+
+    private void Update()
+    {
         //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;
         float bottomFloorHeight = BottomFloor * LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).floorHeight;
 
