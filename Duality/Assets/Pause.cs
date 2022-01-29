@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     public GameObject pauseScreen;
-    public bool isPaused = false;
+    public static bool isPaused = false;
 
     void Update()
     {
