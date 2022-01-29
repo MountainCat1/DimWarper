@@ -17,6 +17,7 @@ public class CreditsManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
     }
 
     private void Update()
