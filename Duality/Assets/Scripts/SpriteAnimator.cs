@@ -55,6 +55,7 @@ public abstract class SpriteAnimator : MonoBehaviour
             Debug.LogWarning("could not find animation, or frames are empty: " + name);
         }
     }
+
     public void ForcePlay(string name, bool loop = true, int startFrame = 0)
     {
         SpriteAnimation animation = GetAnimation(name);

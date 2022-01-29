@@ -125,7 +125,6 @@ public class LevelGenerator : MonoBehaviour
         Instantiate(energyPickupPrefab, GetRandomPosX(floor), Quaternion.identity, floor.transform);
     }
 
-
     public static Vector2 GetRandomPosX(Floor floor, float yOffset = 0.5f, float minDistanceToWall = 0.5f)
     {
         float towerWidth = GameManager.Instance.towerWidth;

@@ -51,7 +51,6 @@ public class CreditsManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-
     IEnumerator AsyncLoadScene(string sceneName)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);

@@ -32,7 +32,7 @@ public class Script : MonoBehaviour
             esterEgg = true;
         }
 
-        if (!esterEgg && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightShift))
+        if (!esterEgg && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Delete))
         {
             Debug.Log("Ester Egg activated!");
             esterEgg = true;

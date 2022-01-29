@@ -36,8 +36,6 @@ public class Lore : MonoBehaviour
         }
     }
 
-
-
     IEnumerator WriteCoroutine()
     {
         for (int i = 0; i < lore.Length; i++)
