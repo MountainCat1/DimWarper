@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
 
+    [SerializeField] private string sceneName = "Game";
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -20,7 +22,7 @@ public class GameOverManager : MonoBehaviour
 
     public void Restart()
     {
-        StartCoroutine(AsyncLoadScene("Game"));
+        StartCoroutine(AsyncLoadScene(sceneName));
     }
 
     public void LoadMenu()

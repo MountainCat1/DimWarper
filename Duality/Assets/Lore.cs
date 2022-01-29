@@ -13,6 +13,15 @@ public class Lore : MonoBehaviour
     public AudioSource beep;
     public Animator fade;
 
+    private Text display;
+
+    private string displayedText = "";
+
+    private void Awake()
+    {
+        display = gameObject.GetComponent<Text>();
+    }
+
     void Start()
     {
         StartCoroutine(write());
@@ -22,14 +31,65 @@ public class Lore : MonoBehaviour
     {
         for (int i = 0; i < lore.Length; i++)
         {
-            beep.PlayDelayed(.5f);
-            GetComponent<Text>().text += lore[i];
-            yield return new WaitForSeconds(writeSpeed);
+            if(lore[i] != ' ')
+                PlayBeep();
+
+            displayedText += lore[i];
+
+            display.text = AddSpacesForNextWord(displayedText, lore);
+
+            yield return new WaitForSeconds(1f / writeSpeed);
         }
         yield return new WaitForSeconds(waitingTime);
         fade.SetBool("fade", true);
-        SceneManager.LoadScene("Game");
+
+        StartCoroutine(AsyncLoadScene("Game"));
     }
 
+    IEnumerator AsyncLoadScene(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        Debug.Log("=== Game loaded... ===");
+    }
+
+    string AddSpacesForNextWord(string displayed, string toDisplay)
+    {
+        int spaces = 0;
+
+        for (int i = displayed.Length; i < toDisplay.Length; i++)
+        {
+            if(toDisplay[i] != ' ')
+            {
+                spaces++;
+            }
+            else
+            {
+                break;
+            }
+            
+        }
+        displayed += "<color=black>";
+
+        for (int i = 0; i < spaces; i++)
+        {
+            displayed += "_";
+        }
+        //<color=yellow>RICH</color> 
+        displayed += "</color>";
+
+        return displayed;
+    }
+
+    private void PlayBeep()
+    {
+        //beep.Stop();
+        beep.Play();
+    }
 
 }

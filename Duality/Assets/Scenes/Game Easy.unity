@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 17645262}
   - component: {fileID: 17645263}
   m_Layer: 0
-  m_Name: Start + moving platforms
+  m_Name: small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,15 +282,13 @@ MonoBehaviour:
   - {fileID: 7436793259070684348, guid: a5a81c9e3ef8b1442907c2739378393e, type: 3}
   - {fileID: 7436793259070684348, guid: a0ac5aeb773876e4194fdded7cabe2e0, type: 3}
   - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
-  - {fileID: 2091498032168669606, guid: 339fe5ae3287325449bd8a26251dbdec, type: 3}
-  - {fileID: 2091498032168669606, guid: a3fb3eaecb9468b458211c720dc93bcc, type: 3}
   enemyList: []
   trapList: []
   trapSpawnChance: 0
   enemySpawnChance: 0
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
-  energyPickUpChance: 0.05
+  energyPickUpChance: 0.08
   cameraSpeed: 0.8
 --- !u!1 &58866267
 GameObject:
@@ -633,7 +631,7 @@ GameObject:
   - component: {fileID: 198998797}
   - component: {fileID: 198998798}
   m_Layer: 0
-  m_Name: Traps
+  m_Name: small + moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,14 +676,12 @@ MonoBehaviour:
   - {fileID: 2091498032168669606, guid: 339fe5ae3287325449bd8a26251dbdec, type: 3}
   - {fileID: 2091498032168669606, guid: a3fb3eaecb9468b458211c720dc93bcc, type: 3}
   enemyList: []
-  trapList:
-  - {fileID: 1338307712}
-  - {fileID: 1975251904}
-  trapSpawnChance: 0.05
+  trapList: []
+  trapSpawnChance: 0
   enemySpawnChance: 0
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
-  energyPickUpChance: 0.05
+  energyPickUpChance: 0.08
   cameraSpeed: 1
 --- !u!1 &219893037
 GameObject:
@@ -1196,10 +1192,8 @@ MonoBehaviour:
   container: {fileID: 1857789826}
   floorList:
   - {fileID: 7436793259070684348, guid: 2f51f69a61f423f4f94a4c54ed9e5bd6, type: 3}
-  - {fileID: 7436793259070684348, guid: 88ac16bf43cfa9b45b2983212b768c05, type: 3}
   - {fileID: 7436793259070684348, guid: 4d6f309f7c8337849a699de89d39e433, type: 3}
   - {fileID: 7436793259070684348, guid: a5a81c9e3ef8b1442907c2739378393e, type: 3}
-  - {fileID: 7436793259070684348, guid: a0ac5aeb773876e4194fdded7cabe2e0, type: 3}
   - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
   enemyList: []
   trapList: []
@@ -1207,7 +1201,7 @@ MonoBehaviour:
   enemySpawnChance: 0
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
-  energyPickUpChance: 0.05
+  energyPickUpChance: 0.08
   cameraSpeed: 0.6
 --- !u!1 &389682428
 GameObject:
@@ -1238,7 +1232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &389682430
 MonoBehaviour:
@@ -1267,12 +1261,15 @@ MonoBehaviour:
   enemyList:
   - {fileID: 1688498448310286697, guid: 9ad545df456c5ec40b7489f8d6b5061b, type: 3}
   - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
-  trapList: []
+  trapList:
+  - {fileID: 1338307712}
+  - {fileID: 1975251904}
+  - {fileID: 1631016178}
   trapSpawnChance: 0.1
   enemySpawnChance: 0.05
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
-  energyPickUpChance: 0.05
+  energyPickUpChance: 0.08
   cameraSpeed: 1.6
 --- !u!1 &398223815
 GameObject:
@@ -6572,6 +6569,7 @@ Transform:
   - {fileID: 17645262}
   - {fileID: 198998797}
   - {fileID: 1105027204}
+  - {fileID: 1515225290}
   - {fileID: 389682429}
   m_Father: {fileID: 1103777992}
   m_RootOrder: 0
@@ -8607,7 +8605,7 @@ MonoBehaviour:
   dangerDistance: 3.5
   cameraTransform: {fileID: 350499276}
   cameraRotationSpeed: 0.8
-  cameraSpeedMultiplier: 1
+  cameraSpeedMultiplier: 0.7
   cameraCatchUpSpeed: 4
   breakHeight: 2
   blackScreeAnimator: {fileID: 833609326}
@@ -8690,7 +8688,7 @@ GameObject:
   - component: {fileID: 1105027204}
   - component: {fileID: 1105027205}
   m_Layer: 0
-  m_Name: Traps + Enemies
+  m_Name: Traps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8734,9 +8732,7 @@ MonoBehaviour:
   - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
   - {fileID: 2091498032168669606, guid: 339fe5ae3287325449bd8a26251dbdec, type: 3}
   - {fileID: 2091498032168669606, guid: a3fb3eaecb9468b458211c720dc93bcc, type: 3}
-  enemyList:
-  - {fileID: 1688498448310286697, guid: 9ad545df456c5ec40b7489f8d6b5061b, type: 3}
-  - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
+  enemyList: []
   trapList:
   - {fileID: 1338307712}
   - {fileID: 1975251904}
@@ -8744,7 +8740,7 @@ MonoBehaviour:
   enemySpawnChance: 0.05
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
-  energyPickUpChance: 0.05
+  energyPickUpChance: 0.08
   cameraSpeed: 1.2
 --- !u!1 &1126575774
 GameObject:
@@ -9724,6 +9720,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1515225289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515225290}
+  - component: {fileID: 1515225291}
+  m_Layer: 0
+  m_Name: Traps + Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1515225290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515225289}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 581371680}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1515225291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515225289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bada904650c0048b2fe73cb69c9d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHeight: 350
+  floorHeight: 1.5
+  container: {fileID: 1857789826}
+  floorList:
+  - {fileID: 7436793259070684348, guid: 2f51f69a61f423f4f94a4c54ed9e5bd6, type: 3}
+  - {fileID: 7436793259070684348, guid: 88ac16bf43cfa9b45b2983212b768c05, type: 3}
+  - {fileID: 7436793259070684348, guid: 4d6f309f7c8337849a699de89d39e433, type: 3}
+  - {fileID: 7436793259070684348, guid: a5a81c9e3ef8b1442907c2739378393e, type: 3}
+  - {fileID: 7436793259070684348, guid: a0ac5aeb773876e4194fdded7cabe2e0, type: 3}
+  - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
+  - {fileID: 2091498032168669606, guid: 339fe5ae3287325449bd8a26251dbdec, type: 3}
+  - {fileID: 2091498032168669606, guid: a3fb3eaecb9468b458211c720dc93bcc, type: 3}
+  enemyList:
+  - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
+  - {fileID: 1688498448310286697, guid: 9ad545df456c5ec40b7489f8d6b5061b, type: 3}
+  trapList:
+  - {fileID: 1338307712}
+  - {fileID: 1975251904}
+  trapSpawnChance: 0.05
+  enemySpawnChance: 0.035
+  energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
+    type: 3}
+  energyPickUpChance: 0.08
+  cameraSpeed: 1.2
 --- !u!1 &1532847781
 GameObject:
   m_ObjectHideFlags: 0
@@ -11767,7 +11830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460647579bea8544fbd401e8c0f1562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Game
+  sceneName: Game Easy
 --- !u!114 &2079570541
 MonoBehaviour:
   m_ObjectHideFlags: 0
