@@ -18,11 +18,18 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void PlayGame()
+    public void EasyMode()
     {
-        Debug.Log("=== Loading game... ===");
+        Debug.Log("=== Loading easy mode... ===");
 
-        StartCoroutine(LoadYourAsyncScene());
+        StartCoroutine(LoadYourAsyncScene("Game Easy"));
+    }
+    
+    public void HardMode()
+    {
+        Debug.Log("=== Loading hard mode... ===");
+
+        StartCoroutine(LoadYourAsyncScene("Game"));
     }
 
     public void Quit()
@@ -31,14 +38,14 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator LoadYourAsyncScene()
+    IEnumerator LoadYourAsyncScene(string level)
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Game");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(level);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
