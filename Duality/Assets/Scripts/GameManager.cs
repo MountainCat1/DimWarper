@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour
     public float actionEnergyCost = 25f;
 
     public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
-
-
+    public bool Lost { get; private set; } = false;
 
     private void Awake()
     {
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour
 
 
         Time.timeScale = 2;
+        Application.targetFrameRate = 999;
 
         Energy = 100f;
     }
@@ -74,8 +74,6 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
-
-        
     }
 
     private void Update()
@@ -97,19 +95,24 @@ public class GameManager : MonoBehaviour
     {
         float playerHeight = PlayerController.Instance.transform.position.y;
 
-        if (playerHeight - breakHeight > ExpectedHeight)
-            ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
-
-        ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
-
-        float step = Time.deltaTime * cameraCatchUpSpeed;
-
-        cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
-
-        if (playerHeight + deathDistance < ExpectedHeight)
+        if (!Lost)
         {
-            Lose();
+            if (playerHeight - breakHeight > ExpectedHeight)
+                ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
+
+            ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
+
+            float step = Time.deltaTime * cameraCatchUpSpeed;
+
+            cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
+
+            if (playerHeight + deathDistance < ExpectedHeight)
+            {
+                Lose();
+            }
         }
+
+        
 
         float rotateStep = Time.deltaTime * cameraRotationSpeed;
         Quaternion targetRotation;
@@ -145,6 +148,9 @@ public class GameManager : MonoBehaviour
         soundtrackAnimator.SetBool("slowDown", true);
 
         StartCoroutine(ShowGameOverScreenCoroutine());
+
+        Lost = true;
+
         //deathScreen.SetActive(true);
         //SceneManager.LoadScene("GameOver");
     }
