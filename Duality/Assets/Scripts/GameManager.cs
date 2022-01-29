@@ -149,6 +149,4 @@ public class GameManager : MonoBehaviour
 
         deathScreen.SetActive(true);
     }
-
-    
 }
