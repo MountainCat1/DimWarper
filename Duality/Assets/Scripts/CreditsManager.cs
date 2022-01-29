@@ -17,17 +17,10 @@ public class CreditsManager : MonoBehaviour
 
     private void Start()
     {
-        
-
-        
-
-
     }
 
     private void Update()
     {
-        
-
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return)) {
             StopAllCoroutines();
             StartCoroutine(AsyncLoadScene("MainMenu"));
