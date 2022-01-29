@@ -6,6 +6,11 @@ public class Pause : MonoBehaviour
     public GameObject pauseScreen;
     public static bool isPaused = false;
 
+    private void OnDisable()
+    {
+        isPaused = false;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
