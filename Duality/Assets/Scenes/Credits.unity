@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1626,7 +1626,8 @@ MonoBehaviour:
   m_Text: "<b>Credits:</b>\n\n<b>Game Developers:</b>\n\nTomasz Bana\u015B\n<size=15>Most
     of coding</size>\n<size=15>Some assets</size>\n\nJakub Wilczak\n<size=15>Graphics
     and assets</size>\n\nMariusz Gajewski\n<size=15>UI design</size>\n<size=15>Some
-    coding</size>\n\n\n\n\n\n\n\n<b>Game made for:</b>\n\nKrakJam 2022\n\n\n\n\n\n"
+    coding</size>\n<size=15>Graphics and assets</size>\n\n\n\n\n\n\n\n<b>Game made
+    for:</b>\n\nKrakJam 2022\n\n\n\n\n\n"
 --- !u!222 &1945861723
 CanvasRenderer:
   m_ObjectHideFlags: 0
