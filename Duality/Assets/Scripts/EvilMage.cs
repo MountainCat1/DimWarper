@@ -28,9 +28,7 @@ public class EvilMage : DimensionObject
     public Missile iceMissilePrefab;
 
     public string changeDimensionParticle = "warp";
-
-    private bool dead = false;
-
+    
     private void Awake()
     {
         collider = gameObject.GetComponent<Collider2D>();
@@ -74,7 +72,6 @@ public class EvilMage : DimensionObject
 
     private void Kill()
     {
-        dead = true;
         StopAllCoroutines();
     }
 
