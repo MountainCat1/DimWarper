@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,12 @@ public class MainMenuManager : MonoBehaviour
         ShowMenuWindow(mainWindow);
     }
 
+    private void Start()
+    {
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
+
     private void Update()
     {
         if (disableDeselecting)
@@ -32,6 +39,21 @@ public class MainMenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ShowMenuWindow(mainWindow);
+        }
+
+        if (Input.GetKey(KeyCode.H) && Input.GetKeyDown(KeyCode.J))
+        {
+            Cutscene cutscene = new Cutscene()
+            {
+                messages = new List<string>()
+                {
+                    "Ale ja",
+                    "Bardzo ale to bardzo lubię koty",
+                    "UwU UwU"
+                }
+            };
+            
+            CutsceneManager.LoadCutscene(cutscene, "MainMenu");
         }
     }
 

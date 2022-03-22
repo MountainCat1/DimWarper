@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Dead)
+        if (Dead || GameManager.Instance.Paused)
             return;
 
         // If the player should jump...

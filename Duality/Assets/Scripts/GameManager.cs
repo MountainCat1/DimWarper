@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     private float energy;
 
     public bool Won { get; private set; } = false;
+    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
+    public bool Lost { get; private set; } = false;
+    public bool Paused { get; set; } = false;
+    
+    public bool GameOver => Lost || Won;
 
     // Editor 
     public float towerWidth = 8;
@@ -21,6 +26,8 @@ public class GameManager : MonoBehaviour
     public float renderRangeDown = 20f;
     public float deathDistance = 30f;
     public float dangerDistance = 25f;
+
+    public float timeScale = 2f;
 
 
     public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
@@ -37,15 +44,12 @@ public class GameManager : MonoBehaviour
 
     public Animator blackScreeAnimator;
     public Animator soundtrackAnimator;
-    public GameObject deathScreen;
+    public MenuWindow deathScreen;
     public float timeToShowGameOverScreen = 1f;
 
     public float maxEnergy = 100f;
     public float energyRegen = 0.2f;
     public float actionEnergyCost = 25f;
-
-    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
-    public bool Lost { get; private set; } = false;
 
     private void Awake()
     {
@@ -60,13 +64,25 @@ public class GameManager : MonoBehaviour
         }
 
 
-        Time.timeScale = 2;
+        Time.timeScale = timeScale;
         Application.targetFrameRate = 999;
         Cursor.visible = false;
 
         Energy = 100f;
     }
 
+    public void PauseGame()
+    {
+        Paused = true;
+        Time.timeScale = 0f;
+    }
+
+    public void UnpauseGame()
+    {
+        Paused = false; ;
+        Time.timeScale = timeScale;
+    }
+    
     private void Start()
     {
         LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).GenerateNextFloor();
@@ -109,7 +125,7 @@ public class GameManager : MonoBehaviour
 
             if (playerHeight + deathDistance < ExpectedHeight)
             {
-                Lose();
+                PlayerController.Instance.Kill();
             }
         }
 
@@ -129,8 +145,10 @@ public class GameManager : MonoBehaviour
             targetRotation = Quaternion.identity;
         }
 
-        float smoothFactor = Quaternion.Angle(cameraTransform.rotation, targetRotation);
-        cameraTransform.rotation = Quaternion.RotateTowards(cameraTransform.rotation, targetRotation, rotateStep * smoothFactor);
+        var rotation = cameraTransform.rotation;
+        float smoothFactor = Quaternion.Angle(rotation, targetRotation);
+        rotation = Quaternion.RotateTowards(rotation, targetRotation, rotateStep * smoothFactor);
+        cameraTransform.rotation = rotation;
     }
 
     public void Win()
@@ -152,7 +170,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreenCoroutine());
 
         Lost = true;
-        Cursor.visible = true;
+        //Cursor.visible = true;
 
         //deathScreen.SetActive(true);
         //SceneManager.LoadScene("GameOver");
@@ -162,6 +180,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToShowGameOverScreen);
 
-        deathScreen.SetActive(true);
+        deathScreen.Show();
     }
 }
