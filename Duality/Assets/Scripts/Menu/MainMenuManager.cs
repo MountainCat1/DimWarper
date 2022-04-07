@@ -57,6 +57,13 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    public void Campaign()
+    {
+        Debug.Log("=== Loading campain mode... ===");
+
+        StartCoroutine(LoadYourAsyncScene("Campaign Map"));
+    }
+    
     public void EasyMode()
     {
         Debug.Log("=== Loading easy mode... ===");
