@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Campaign Map.unity
     guid: 46fbbb495af9ba54ebae3fbf2f6eaa93
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Intro.unity
+    guid: 496df180977da3941b789bf358b4b778
+  - enabled: 1
+    path: 
+    guid: 1b1c067f5efc10c448cf826d6ff3e3a6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Test Level.unity
+    guid: 1b5d86ae78fff214bb11d9553b03d205
   m_configObjects: {}

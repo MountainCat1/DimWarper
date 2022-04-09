@@ -68,7 +68,7 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("=== Loading easy mode... ===");
 
-        StartCoroutine(LoadYourAsyncScene("Game Easy"));
+        CutsceneTransition.StartTransition("Level Intro","Test Level");
     }
     
     public void HardMode()

@@ -4,7 +4,4 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MenuWindow
 {
-
-
-
 }
