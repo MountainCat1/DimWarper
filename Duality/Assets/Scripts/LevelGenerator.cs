@@ -48,6 +48,10 @@ public class LevelGenerator : MonoBehaviour
     public void GenerateNextFloor()
     {
         Debug.Log($"Placed floor on level: { GameManager.Instance.TopFloor + 1}");
+        
+        if(floorList.Count == 0)
+            return;
+        
         Floor floor = GenerateFloor(GetRandomFloor(), GameManager.Instance.TopFloor + 1);
 
         if (Random.Range(0f, 1f) <= enemySpawnChance)
