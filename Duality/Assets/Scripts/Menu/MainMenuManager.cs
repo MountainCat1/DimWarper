@@ -27,6 +27,9 @@ public class MainMenuManager : MonoBehaviour
     {
         Cursor.visible = false;
         Time.timeScale = 1f;
+        
+        GameDataManager.LoadData();
+        GameDataManager.SaveData();
     }
 
     private void Update()
