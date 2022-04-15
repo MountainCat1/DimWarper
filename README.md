@@ -1,4 +1,4 @@
-# Duality
+# Dimwarper
 
 
 Game made for KrakJam 2022
