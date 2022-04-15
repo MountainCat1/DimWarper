@@ -151,8 +151,8 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        cameraRotationSpeed = 0f;
-        cameraSpeedMultiplier = 0f;
+        //cameraRotationSpeed = 0f;
+        //cameraSpeedMultiplier = 0f;
         Won = true;
         Cursor.visible = true;
     }

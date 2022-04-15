@@ -10,9 +10,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private bool disableDeselecting;
-    private GameObject lastSelected;
-    
     [SerializeField] private GameObject windowContainer;
     [SerializeField] private MenuWindow mainWindow;
 
@@ -27,18 +24,17 @@ public class MainMenuManager : MonoBehaviour
     {
         Cursor.visible = false;
         Time.timeScale = 1f;
+
+        if (GameDataManager.Data == null)
+        {
+            GameDataManager.LoadData();
+        }
         
-        GameDataManager.LoadData();
         GameDataManager.SaveData();
     }
 
     private void Update()
     {
-        if (disableDeselecting)
-            CancelBackgroundDeselectionClick();
-        
-        lastSelected = EventSystem.current.currentSelectedGameObject;
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ShowMenuWindow(mainWindow);
@@ -64,7 +60,15 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("=== Loading campain mode... ===");
 
-        StartCoroutine(LoadYourAsyncScene("Campaign Map"));
+        if (GameDataManager.Data.gameProgress == 0)
+        {
+            CutsceneTransition.StartTransition("Level 0 Intro", "Level 0");
+            //StartCoroutine(LoadYourAsyncScene("Level 0"));
+        }
+        else
+        {
+            StartCoroutine(LoadYourAsyncScene("Campaign Map"));
+        }
     }
     
     public void EasyMode()
@@ -79,14 +83,6 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("=== Loading hard mode... ===");
 
         StartCoroutine(LoadYourAsyncScene("Game"));
-    }
-    
-    public void CancelBackgroundDeselectionClick()
-    {
-        if (lastSelected != null && EventSystem.current.currentSelectedGameObject == null)
-        {
-            EventSystem.current.SetSelectedGameObject(lastSelected);
-        }
     }
 
     public void ShowMenuWindow(MenuWindow menuWindow)

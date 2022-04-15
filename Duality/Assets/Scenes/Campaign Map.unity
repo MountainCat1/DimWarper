@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (2)
+      value: Tower 3
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -256,6 +256,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 15131484}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &15131486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 15131484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15131487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15131486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 3
 --- !u!1 &18489871
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +366,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -392,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0000014901
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -442,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (4)
+      value: Tower 4
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -457,6 +476,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 93437480}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &93437482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 93437480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &93437483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93437482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 4
 --- !u!224 &432026911 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -583,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (1)
+      value: Tower 2
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -598,6 +636,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 510868855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &510868857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 510868855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &510868858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510868857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 2
 --- !u!1 &645307940
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +781,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -819,7 +876,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (7)
+      value: Tower 7
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -834,6 +891,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 885328160}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885328162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 885328160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885328163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885328162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 7
 --- !u!1 &1085639758
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +1050,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1069,7 +1145,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (5)
+      value: Tower 8
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1084,6 +1160,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1549931664}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1549931666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 1549931664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1549931667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549931666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 8
 --- !u!1001 &1571633899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1109,7 +1204,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1204,7 +1299,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (3)
+      value: Tower 5
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1219,6 +1314,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1571633899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571633901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571633899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571633902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571633901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 5
 --- !u!1 &1596669291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1370,7 +1484,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button (6)
+      value: Tower 6
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1385,6 +1499,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1633190965}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1633190967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 1633190965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1633190968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633190967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 6
 --- !u!1 &1649682641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,11 +1864,11 @@ RectTransform:
   - {fileID: 432026911}
   - {fileID: 510868856}
   - {fileID: 15131485}
-  - {fileID: 1571633900}
   - {fileID: 93437481}
-  - {fileID: 1549931665}
+  - {fileID: 1571633900}
   - {fileID: 1633190966}
   - {fileID: 885328161}
+  - {fileID: 1549931665}
   m_Father: {fileID: 645307944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1886,7 +2019,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8342983153343018805, guid: 1fc9612a640805c40b105cf9b2afd9ec,
+  m_Sprite: {fileID: 6432892475109203773, guid: 1fc9612a640805c40b105cf9b2afd9ec,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2023,7 +2156,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Name
-      value: Map Button
+      value: Tower 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -2032,3 +2165,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
+--- !u!1 &2928407884400664932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 2928407884400664931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2928407884400664933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928407884400664932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 1

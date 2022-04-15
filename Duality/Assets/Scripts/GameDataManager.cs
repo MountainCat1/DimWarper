@@ -16,7 +16,16 @@ public class GameDataManager : MonoBehaviour
         directory = Application.persistentDataPath;
         fileName = "GameData.json";
     }
-    
+
+
+    /// <summary>
+    /// Sets GameData to default and saves it afterwards
+    /// </summary>
+    public static void ResetData()
+    {
+        Data = new GameData();
+        SaveData();
+    }
     public static void LoadData()
     {
         string json = string.Empty;
