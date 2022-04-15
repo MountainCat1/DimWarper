@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 class WeightedRandomBag<T>
 {
-
     private struct Entry
     {
         public double accumulatedWeight;
@@ -19,7 +18,7 @@ class WeightedRandomBag<T>
         entries.Add(new Entry { item = item, accumulatedWeight = accumulatedWeight });
     }
 
-    public T GetRandom(System.Random prng) {
+    public T GetRandom(Random prng) {
         double r = prng.NextDouble() * accumulatedWeight;
 
         foreach (Entry entry in entries) {
@@ -27,6 +26,6 @@ class WeightedRandomBag<T>
                 return entry.item;
             }
         }
-        return default(T); //should only happen when there are no entries
+        return default; //should only happen when there are no entries
     }
 }

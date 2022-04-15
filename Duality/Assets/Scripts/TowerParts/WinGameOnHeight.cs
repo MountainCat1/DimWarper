@@ -12,10 +12,7 @@ public class WinGameOnHeight : OnHeightBehaviour
         StartCoroutine(WinDelayCoroutine());
         GameManager.Instance.Win();
     }
-
-
-
-
+    
     IEnumerator WinDelayCoroutine()
     {
         yield return new WaitForSeconds(delay);

@@ -25,6 +25,7 @@ public class GameDataManager : MonoBehaviour
         // If file doesnt exist, just create new GameData
         if (!File.Exists(fullPath))
         {
+            Debug.Log("Game data not found! Creating new one...");
             Data = new GameData();
             return;
         }
@@ -35,6 +36,7 @@ public class GameDataManager : MonoBehaviour
         }
 
         Data = JsonUtility.FromJson<GameData>(json);
+        Debug.Log($"Game data loaded (progress: {Data.gameProgress})...");
     }
 
     public static void SaveData()
@@ -43,19 +45,22 @@ public class GameDataManager : MonoBehaviour
         {
             throw new NullReferenceException("Tried to save Game Data, but it was null");
         }
-        string json = JsonUtility.ToJson(Data);
+        var json = JsonUtility.ToJson(Data);
 
         Directory.CreateDirectory(directory);
         
-        using (var writer = new StreamWriter(Path.Combine(directory, fileName)))
+        var fullPath = Path.Combine(directory, fileName);
+        using (var writer = new StreamWriter(fullPath))
         {
             writer.Write(json);
         }
+        
+        Debug.Log($"Game data saved {directory}");
     }
 }
 
 [System.Serializable]
 public class GameData
 {
-    public int levelProgress = 0;
+    public int gameProgress = 0;
 }

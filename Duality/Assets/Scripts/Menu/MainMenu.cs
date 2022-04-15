@@ -21,21 +21,18 @@ public class MainMenu : MonoBehaviour
     public void EasyMode()
     {
         Debug.Log("=== Loading easy mode... ===");
-
         CutsceneTransition.StartTransition("Level Intro", "Test Level");
     }
     
     public void HardMode()
     {
         Debug.Log("=== Loading hard mode... ===");
-
         StartCoroutine(LoadYourAsyncScene("Game"));
     }
 
     public void Credits()
     {
         Debug.Log("=== Loading credits... ===");
-
         StartCoroutine(LoadYourAsyncScene("Credits"));
     }
 

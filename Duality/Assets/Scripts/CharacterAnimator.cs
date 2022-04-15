@@ -48,9 +48,9 @@ public class CharacterAnimator : SpriteAnimator
 
     private void LoadAnimations()
     {
-        List<SpriteAnimation> loadedAnimations = new List<SpriteAnimation>();
+        var loadedAnimations = new List<SpriteAnimation>();
 
-        string basePath = $"Sprites/{framesLocation}";
+        var basePath = $"Sprites/{framesLocation}";
 
         loadedAnimations.Add(new SpriteAnimation()
         {

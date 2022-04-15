@@ -43,7 +43,6 @@ public class CreditsManager : MonoBehaviour
 
     IEnumerator CreditsRollCoroutine()
     {
-
         while (Vector2.Distance(panel.transform.position, end.position) > 0.1f)
         {
             float step = Time.deltaTime * speed;

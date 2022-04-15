@@ -55,15 +55,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.LogError("Singeleton duplicated!");
+            Debug.LogError("Singleton duplicated!");
             Destroy(gameObject);
         }
         else
         {
             Instance = this;
         }
-
-
+        
         Time.timeScale = timeScale;
         Application.targetFrameRate = 999;
         Cursor.visible = false;
@@ -95,7 +94,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //float topFloorHeight = activeLevelGenerator.TopFloor * activeLevelGenerator.floorHeight;
         float bottomFloorHeight = BottomFloor * LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).floorHeight;
 
         if (ExpectedHeight + deathDistance < bottomFloorHeight)
@@ -170,10 +168,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreenCoroutine());
 
         Lost = true;
-        //Cursor.visible = true;
-
-        //deathScreen.SetActive(true);
-        //SceneManager.LoadScene("GameOver");
     }
 
     IEnumerator ShowGameOverScreenCoroutine()
