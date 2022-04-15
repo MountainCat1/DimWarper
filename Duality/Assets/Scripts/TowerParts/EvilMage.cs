@@ -84,6 +84,7 @@ public class EvilMage : DimensionObject
         }
     }
 
+    
     private void SwapDimension()
     {
         dimensionSwapAudioSource.Play();
@@ -96,6 +97,11 @@ public class EvilMage : DimensionObject
         AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, 5);
     }
 
+    /// <summary>
+    /// Calls ShotMissile method once every random about of time
+    /// depending on missileShotInterval and missileShotIntervalRandomness
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ShotMissileSwapCoroutine()
     {
         while (true)
@@ -111,9 +117,9 @@ public class EvilMage : DimensionObject
 
     private void ShotMissile()
     {
-        Missile missile = dimension == DimensionManager.Dimension.Fire ? fireMissilePrefab : iceMissilePrefab;
+        var missile = dimension == DimensionManager.Dimension.Fire ? fireMissilePrefab : iceMissilePrefab;
 
-        Vector3 direction = (PlayerController.Instance.transform.position - transform.position).normalized;
+        var direction = (PlayerController.Instance.transform.position - transform.position).normalized;
 
         var go = Instantiate(missile.gameObject, transform.position, Quaternion.identity);
         var newMissile = go.GetComponent<Missile>();
