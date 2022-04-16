@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinGameOnHeight : OnHeightBehaviour
 {
-    public GameObject winScreen;
+    public MenuWindow winScreen;
 
     public float delay = 3f;
     protected override void Action()
@@ -17,6 +17,6 @@ public class WinGameOnHeight : OnHeightBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        winScreen.SetActive(true);
+        winScreen.Show();
     }
 }

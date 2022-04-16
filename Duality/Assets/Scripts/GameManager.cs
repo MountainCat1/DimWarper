@@ -89,7 +89,8 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
+        if(!GameManager.Instance.Won)
+            LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).Generate();
     }
 
     private void Update()

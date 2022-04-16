@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public float minHeight = 0f;
-    public float floorHeight = 3f;
-    public Transform container;
-    public List<Floor> floorList = new List<Floor>();
-    public List<Enemy> enemyList = new List<Enemy>();
-    public List<Trap> trapList = new List<Trap>();
+    [SerializeField] public float minHeight = 0f;
+    [SerializeField] public float floorHeight = 3f;
+    
+    [SerializeField] private Transform container;
+    [SerializeField] private List<Floor> floorList = new List<Floor>();
+    [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
+    [SerializeField] private List<Trap> trapList = new List<Trap>();
 
     public float trapSpawnChance = 0.05f;
     public float enemySpawnChance = 0.05f;
