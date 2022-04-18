@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2416,8 +2416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.1}
-  m_SizeDelta: {x: -10, y: -12.138031}
+  m_AnchoredPosition: {x: 0, y: 1.5999985}
+  m_SizeDelta: {x: -10, y: -3.1461792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625816281
 MonoBehaviour:
@@ -2451,7 +2451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter the tower
+  m_Text: Play
 --- !u!222 &625816282
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2770,7 +2770,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250.00342, y: -301.09344}
-  m_SizeDelta: {x: 300, y: 530.4125}
+  m_SizeDelta: {x: 430, y: 530.4125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699290554
 MonoBehaviour:
@@ -4184,8 +4184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.1}
-  m_SizeDelta: {x: -10, y: -12.138031}
+  m_AnchoredPosition: {x: 0, y: 1.5999985}
+  m_SizeDelta: {x: -10, y: -3.1461792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021648973
 MonoBehaviour:
@@ -4219,7 +4219,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How to play
+  m_Text: Help
 --- !u!222 &1021648974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7316,8 +7316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.1}
-  m_SizeDelta: {x: -10, y: -12.138031}
+  m_AnchoredPosition: {x: 0, y: 1.5999985}
+  m_SizeDelta: {x: -10, y: -3.1461792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093222826
 MonoBehaviour:
@@ -7522,7 +7522,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 750.01025, y: -301.09344}
-  m_SizeDelta: {x: 300, y: 530.4125}
+  m_SizeDelta: {x: 430, y: 530.4125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111284901
 MonoBehaviour:

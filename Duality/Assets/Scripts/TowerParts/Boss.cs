@@ -15,6 +15,9 @@ public class Boss : MonoBehaviour
 
     private float targetPosX;
     
+    [SerializeField] private AudioSource deathSoundAudioSource;
+    [SerializeField] private GameObject deathParticleSystem;
+    
 
     private void FixedUpdate()
     {
@@ -35,18 +38,12 @@ public class Boss : MonoBehaviour
         if (Vector3.Distance(transform.position, targetPos) < 0.1f)
             targetPosX = LevelGenerator.GetRandomPosX();
     }
-
-    private void Update()
+    
+    public void Kill()
     {
-        if(GameManager.Instance.ExpectedHeight >= deathHeight)
-        {
-            Kill();
-            targetPosX = 0f;
-        }
-    }
-
-    private void Kill()
-    {
+        deathSoundAudioSource.gameObject.SetActive(true);
+        deathParticleSystem.SetActive(true);
+        
         StopAllCoroutines();
     }
 }

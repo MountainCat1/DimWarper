@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissileRandomTrap : RandomTrap
+public class MissileTrap : RandomTrap
 {
     public Missile missilePrefab;
 

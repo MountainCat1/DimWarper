@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WinGameOnHeight : OnHeightBehaviour
 {
-    public MenuWindow winScreen;
-
-    public float delay = 3f;
+    [SerializeField] private MenuWindow winScreen;
+    [SerializeField] private float delay = 3f;
+    
     protected override void Action()
     {
         StartCoroutine(WinDelayCoroutine());

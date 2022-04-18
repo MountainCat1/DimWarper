@@ -22,17 +22,17 @@ public class LevelGenerator : MonoBehaviour
     public float cameraSpeed = 0.5f;
 
 
-    public void Generate()
+    public void Generate(GameManager gameManager)
     {
-        float topFloorHeight = GameManager.Instance.TopFloor * floorHeight;
-        float bottomFloorHeight = GameManager.Instance.BottomFloor * floorHeight;
-        float expectedHeight = GameManager.Instance.ExpectedHeight;
-        float renderRangeUp = GameManager.Instance.renderRangeUp;
-        float renderRangeDown = GameManager.Instance.renderRangeDown;
+        float topFloorHeight = gameManager.TopFloor * floorHeight;
+        float bottomFloorHeight = gameManager.BottomFloor * floorHeight;
+        float expectedHeight = gameManager.ExpectedHeight;
+        float renderRangeUp = gameManager.renderRangeUp;
+        float renderRangeDown = gameManager.renderRangeDown;
 
-        if (GameManager.Instance.ExpectedHeight + renderRangeUp > topFloorHeight)
+        if (gameManager.ExpectedHeight + renderRangeUp > topFloorHeight)
         {
-            GenerateNextFloor();
+            GenerateNextFloor(gameManager);
         }
         if (expectedHeight - renderRangeDown > bottomFloorHeight)
         {
@@ -47,7 +47,7 @@ public class LevelGenerator : MonoBehaviour
         GameManager.Instance.instantinatedFloors.Remove(GameManager.Instance.BottomFloor);
         GameManager.Instance.BottomFloor++;
     }
-    public void GenerateNextFloor()
+    public void GenerateNextFloor(GameManager gameManager)
     {
         Debug.Log($"Placed floor on level: { GameManager.Instance.TopFloor + 1}");
         
@@ -68,7 +68,7 @@ public class LevelGenerator : MonoBehaviour
 
         foreach (var oneTimeTrap in oneTimeTraps)
         {
-            if (!oneTimeTrap.used && oneTimeTrap.height <= floorHeight)
+            if (!oneTimeTrap.used && oneTimeTrap.height <= gameManager.ExpectedHeight + gameManager.renderRangeUp)
             {
                 oneTimeTrap.OnFloorGenerated(floor);
                 oneTimeTrap.used = true;
