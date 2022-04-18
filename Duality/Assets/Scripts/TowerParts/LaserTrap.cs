@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserTrap : Trap
+public class LaserRandomTrap : RandomTrap
 {
     public Laser laserPrefab;
 

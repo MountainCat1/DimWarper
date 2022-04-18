@@ -9,8 +9,6 @@ public abstract class DimensionObject : MonoBehaviour
     private void OnEnable()
     {
         DimensionManager.Instance.dimensionObjects.Add(this);
-
-
         SetActive(DimensionManager.Instance.dimension == dimension);
     }
     private void OnDisable()

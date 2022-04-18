@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BossTrap : Trap
+public abstract class BossRandomTrap : RandomTrap
 {
 
     public override void OnFloorGenerated(Floor floor)

@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
-public class EvilMage : DimensionObject
+
+// This class should NOT be used
+// It is basically code i will use later for last boss
+// Right now i just have no good idea how to do it so ye xD
+public class DimensionalEvilMage : DimensionObject
 {
-    public float deathHeight = 800f;
-
-    public float verticalMovementSpeed = 5f;
-    public float horizontalMovementSpeed = 1f;
-    public float warpInterval = 8;
-    public float warpIntervalRandomness = 4;
-    public float missileShotInterval = 5f;
-    public float missileShotIntervalRandomness = 3.5f;
-
-    public float yOffset = 10f;
-
-    private float targetPosX;
-
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
 
@@ -26,53 +15,24 @@ public class EvilMage : DimensionObject
 
     public Missile fireMissilePrefab;
     public Missile iceMissilePrefab;
-
+    
     public string changeDimensionParticle = "warp";
+    
+    public float warpInterval = 8;
+    public float warpIntervalRandomness = 4;
+    public float missileShotInterval = 5f;
+    public float missileShotIntervalRandomness = 3.5f;
     
     private void Awake()
     {
         collider = gameObject.GetComponent<Collider2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
-
-    private void Start()
+    
+    protected void Start()
     {
         StartCoroutine(DimensionSwapCoroutine());
         StartCoroutine(ShotMissileSwapCoroutine());
-    }
-
-    private void FixedUpdate()
-    {
-        float targetHeight = yOffset + GameManager.Instance.ExpectedHeight;
-
-        Vector3 targetPos = new Vector3(targetPosX, targetHeight, transform.position.z);
-
-        float stepX = Time.fixedDeltaTime * horizontalMovementSpeed;
-        float stepY = Time.fixedDeltaTime * verticalMovementSpeed;
-
-        Vector3 newPos = transform.position;
-
-        newPos.x = Vector3.MoveTowards(transform.position, targetPos, stepX).x;
-        newPos.y = Vector3.MoveTowards(transform.position, targetPos, stepY).y;
-
-        transform.position = newPos;
-
-        if (Vector3.Distance(transform.position, targetPos) < 0.1f)
-            targetPosX = LevelGenerator.GetRandomPosX();
-    }
-
-    private void Update()
-    {
-        if(GameManager.Instance.ExpectedHeight >= deathHeight)
-        {
-            Kill();
-            targetPosX = 0f;
-        }
-    }
-
-    private void Kill()
-    {
-        StopAllCoroutines();
     }
 
     private IEnumerator DimensionSwapCoroutine()
@@ -83,7 +43,6 @@ public class EvilMage : DimensionObject
             yield return new WaitForSeconds(warpInterval + UnityEngine.Random.Range(-warpIntervalRandomness, +warpIntervalRandomness));
         }
     }
-
     
     private void SwapDimension()
     {
@@ -98,7 +57,7 @@ public class EvilMage : DimensionObject
     }
 
     /// <summary>
-    /// Calls ShotMissile method once every random about of time
+    /// Calls ShotMissile method once every random amount of time
     /// depending on missileShotInterval and missileShotIntervalRandomness
     /// </summary>
     /// <returns></returns>
@@ -127,12 +86,10 @@ public class EvilMage : DimensionObject
         newMissile.Direction = direction;
     }
 
-    
-
     public override void SetActive(bool active)
     {
         collider.enabled = active;
-
+    
         var newColor = spriteRenderer.color;
         if (active)
         {

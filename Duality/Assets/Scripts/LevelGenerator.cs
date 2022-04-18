@@ -10,7 +10,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private Transform container;
     [SerializeField] private List<Floor> floorList = new List<Floor>();
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
-    [SerializeField] private List<Trap> trapList = new List<Trap>();
+    [SerializeField] private List<RandomTrap> trapList = new List<RandomTrap>();
+    [SerializeField] private List<OneTimeTrap> oneTimeTraps = new List<OneTimeTrap>();
 
     public float trapSpawnChance = 0.05f;
     public float enemySpawnChance = 0.05f;
@@ -65,11 +66,19 @@ public class LevelGenerator : MonoBehaviour
             UseRandomTrap(floor);
         }
 
+        foreach (var oneTimeTrap in oneTimeTraps)
+        {
+            if (!oneTimeTrap.used && oneTimeTrap.height <= floorHeight)
+            {
+                oneTimeTrap.OnFloorGenerated(floor);
+                oneTimeTrap.used = true;
+            }
+        }
     }
 
     private void UseRandomTrap(Floor floor)
     {
-        WeightedRandomBag<Trap> randomBag = new WeightedRandomBag<Trap>();
+        WeightedRandomBag<RandomTrap> randomBag = new WeightedRandomBag<RandomTrap>();
         foreach (var trap in trapList)
         {
             randomBag.AddEntry(trap, trap.randomWeight);
