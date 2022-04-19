@@ -20,6 +20,11 @@ public class MapManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(LoadYourAsyncScene(levelName));
     }
+
+    public void LoadLevelWithCutscene(string cutsceneSceneName, string levelSceneName)
+    {
+        CutsceneTransition.StartTransition(cutsceneSceneName, levelSceneName);
+    }
     
     IEnumerator LoadYourAsyncScene(string level)
     {
