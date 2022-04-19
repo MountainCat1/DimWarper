@@ -10,11 +10,6 @@ using UnityEngine.UI;
 public class CampaignMapMenu : MonoBehaviour
 {
     [SerializeField] private List<Button> locationButtons;
-    private void Start()
-    {
-        EventSystem.current.SetSelectedGameObject(locationButtons[0].gameObject);
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -46,7 +41,13 @@ public class CampaignMapMenu : MonoBehaviour
         var selectedButton = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
 
         var index = locationButtons.IndexOf(selectedButton);
+        var newIndex = index + move;
         
-        EventSystem.current.SetSelectedGameObject(locationButtons[index + move].gameObject);
+        // Validation
+        if(newIndex < 0) return;
+        if(GameDataManager.Data.gameProgress - 1 < newIndex ) return;
+        //
+        
+        EventSystem.current.SetSelectedGameObject(locationButtons[newIndex].gameObject);
     }
 }

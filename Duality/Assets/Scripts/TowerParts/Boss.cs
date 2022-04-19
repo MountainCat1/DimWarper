@@ -6,18 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Boss : MonoBehaviour
 {
-    public float deathHeight = 800f;
-
-    public float verticalMovementSpeed = 5f;
-    public float horizontalMovementSpeed = 1f;
-
-    public float yOffset = 10f;
+    [SerializeField] private float verticalMovementSpeed = 5f;
+    [SerializeField] private float horizontalMovementSpeed = 1f;
+    [SerializeField] private float yOffset = 10f;
 
     private float targetPosX;
+    private bool moving = true;
     
     [SerializeField] private AudioSource deathSoundAudioSource;
+    [SerializeField] private GameObject dyingParticleSystem;
     [SerializeField] private GameObject deathParticleSystem;
-    
+    [SerializeField] private float delayToDie = 1.5f;
 
     private void FixedUpdate()
     {
@@ -35,15 +34,42 @@ public class Boss : MonoBehaviour
 
         transform.position = newPos;
 
-        if (Vector3.Distance(transform.position, targetPos) < 0.1f)
-            targetPosX = LevelGenerator.GetRandomPosX();
+        if (moving)
+        {
+            if (Vector3.Distance(transform.position, targetPos) < 0.1f)
+                targetPosX = LevelGenerator.GetRandomPosX();
+        }
+        else
+        {
+            targetPosX = 0;
+        }
     }
     
-    public void Kill()
+    public virtual void Kill()
     {
         deathSoundAudioSource.gameObject.SetActive(true);
-        deathParticleSystem.SetActive(true);
+        dyingParticleSystem.SetActive(true);
         
         StopAllCoroutines();
+
+        StartCoroutine(DelyDieCoroutine());
+    }
+
+    IEnumerator DelyDieCoroutine()
+    {
+        yield return new WaitForSeconds(delayToDie);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        deathParticleSystem.SetActive(true);
+        dyingParticleSystem.SetActive(false);
+    }
+
+    /// <summary>
+    /// Forces boss to move to the center of the screen;
+    /// Used for making player attack look more epic uwu
+    /// </summary>
+    public void Center()
+    {
+        moving = false;
     }
 }

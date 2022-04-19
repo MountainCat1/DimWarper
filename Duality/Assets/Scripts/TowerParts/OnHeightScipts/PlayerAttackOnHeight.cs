@@ -17,6 +17,8 @@ namespace TowerParts.OnHeightScipts
             var script = go.GetComponent<PlayerAttack>();
             
             script.StartAttack(bossTrap.SpawnedBoss.Kill, bossTrap.SpawnedBoss.gameObject);
+
+            bossTrap.SpawnedBoss.Center();
         }
     }
 }
