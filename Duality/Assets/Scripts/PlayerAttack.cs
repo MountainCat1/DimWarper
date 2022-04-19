@@ -73,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
         action();
     }
     
-    private void DisableParticleSystem(ParticleSystem[] particleSystems)
+    private void DisableParticleSystem(IEnumerable<ParticleSystem> particleSystems)
     {
         foreach (var particleSystem in particleSystems)
         {
