@@ -9592,9 +9592,9 @@ MonoBehaviour:
   channelingParticleSystem: {fileID: 2844952950820818061}
   missile: {fileID: 2844952951829689543}
   hitParticleSystem: {fileID: 2844952949984658133}
-  channelingTime: 2
-  missileSpeed: 3.5
-  delayAfterHit: 1
+  channelingTime: 4
+  missileSpeed: 2.5
+  delayAfterHit: 0
 --- !u!1 &2844952950813645740
 GameObject:
   m_ObjectHideFlags: 0

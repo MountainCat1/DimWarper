@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(channelingTime);
         
         // Disable channeling animation and show missile
-        channelingParticleSystem.SetActive(false);
+        DisableParticleSystem(channelingParticleSystem.GetComponentsInChildren<ParticleSystem>());
         missile.SetActive(true);
         missile.transform.position = PlayerController.Instance.transform.position;
         
@@ -61,7 +61,8 @@ public class PlayerAttack : MonoBehaviour
         }
         
         // Disable missile, run hit animation
-        missile.SetActive(false);
+        DisableParticleSystem(missile.GetComponentsInChildren<ParticleSystem>());
+        
         hitParticleSystem.transform.position = Target.transform.position;
         hitParticleSystem.SetActive(true);
         
@@ -70,5 +71,14 @@ public class PlayerAttack : MonoBehaviour
         
         // Run action...
         action();
+    }
+    
+    private void DisableParticleSystem(ParticleSystem[] particleSystems)
+    {
+        foreach (var particleSystem in particleSystems)
+        {
+            var emissionModule = particleSystem.emission;
+            emissionModule.rateOverTime = 0;
+        }
     }
 }
