@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
     {
         //cameraRotationSpeed = 0f;
         //cameraSpeedMultiplier = 0f;
+        soundtrackAnimator.SetBool("fade", true);
         Won = true;
         Cursor.visible = true;
     }

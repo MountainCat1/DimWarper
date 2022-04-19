@@ -47,7 +47,6 @@ public class Boss : MonoBehaviour
     
     public virtual void Kill()
     {
-        deathSoundAudioSource.gameObject.SetActive(true);
         dyingParticleSystem.SetActive(true);
         
         StopAllCoroutines();
@@ -59,9 +58,11 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(delayToDie);
 
+        
         GetComponent<SpriteRenderer>().enabled = false;
         deathParticleSystem.SetActive(true);
         dyingParticleSystem.SetActive(false);
+        deathSoundAudioSource.gameObject.SetActive(true);
     }
 
     /// <summary>

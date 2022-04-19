@@ -10,6 +10,13 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject missile;
     [SerializeField] private GameObject hitParticleSystem;
 
+    [Space]
+    [SerializeField] private AudioSource channelingAudio;
+    [SerializeField] private AudioSource shotAudioSource;
+    [SerializeField] private AudioSource hitAudioSource;
+    
+    [Space]
+    [SerializeField] private float startDelay = 2f;
     [SerializeField] private float channelingTime = 1.5f;
     [SerializeField] private float missileSpeed = 1f;
     [SerializeField] private float delayAfterHit = 1f;
@@ -36,15 +43,21 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator AttackCoroutine()
     {
-        // Show channeling animation
+        yield return new WaitForSeconds(startDelay);
+        
+        // CHANNELING
         channelingParticleSystem.SetActive(true);
+        channelingAudio.Play();
 
         yield return new WaitForSeconds(channelingTime);
         
-        // Disable channeling animation and show missile
+        // SHOT
         DisableParticleSystem(channelingParticleSystem.GetComponentsInChildren<ParticleSystem>());
         missile.SetActive(true);
         missile.transform.position = PlayerController.Instance.transform.position;
+        
+        channelingAudio.Stop();
+        shotAudioSource.Play();
         
         // Move missile towards target until it will reach it
         while (Vector3.Distance(missile.transform.position, Target.transform.position) > 0.001f)
@@ -60,11 +73,14 @@ public class PlayerAttack : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         
-        // Disable missile, run hit animation
+        // HIT
         DisableParticleSystem(missile.GetComponentsInChildren<ParticleSystem>());
         
         hitParticleSystem.transform.position = Target.transform.position;
         hitParticleSystem.SetActive(true);
+        
+        shotAudioSource.Stop();
+        hitAudioSource.Play();
         
         // Wait...
         yield return new WaitForSeconds(delayAfterHit);
