@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -372,6 +372,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1869832425}
+    - target: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Pivot.x
@@ -513,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 3
+  gameProgressRequired: 2
 --- !u!114 &15131488 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -1002,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 4
+  gameProgressRequired: 3
 --- !u!114 &93437484 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -1241,6 +1246,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1869832425}
+    - target: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1382,7 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 2
+  gameProgressRequired: 1
 --- !u!114 &510868859 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -2012,7 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 7
+  gameProgressRequired: 5
 --- !u!114 &885328164 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -2689,7 +2699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 8
+  gameProgressRequired: 6
 --- !u!114 &1549931668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -2960,7 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 5
+  gameProgressRequired: -1
 --- !u!114 &1571633903 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -3262,7 +3272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 6
+  gameProgressRequired: 4
 --- !u!114 &1633190969 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -3938,7 +3948,7 @@ PrefabInstance:
     - target: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level 1
+      value: Level 0
       objectReference: {fileID: 0}
     - target: {fileID: 2928407883993814140, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -4075,7 +4085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 1
+  gameProgressRequired: 0
 --- !u!114 &2928407884400664934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,

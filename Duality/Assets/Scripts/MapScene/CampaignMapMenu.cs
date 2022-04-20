@@ -45,7 +45,7 @@ public class CampaignMapMenu : MonoBehaviour
         
         // Validation
         if(newIndex < 0) return;
-        if(GameDataManager.Data.gameProgress - 1 < newIndex ) return;
+        if(GameDataManager.Data.gameProgress < newIndex ) return;
         //
         
         EventSystem.current.SetSelectedGameObject(locationButtons[newIndex].gameObject);
