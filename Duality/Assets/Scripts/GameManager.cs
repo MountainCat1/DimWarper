@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = timeScale;
         Application.targetFrameRate = 999;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         Energy = 100f;
     }

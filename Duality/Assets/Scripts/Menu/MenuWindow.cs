@@ -6,9 +6,6 @@ using UnityEngine.EventSystems;
 
 public class MenuWindow : MonoBehaviour
 {
-
-    
-
     [SerializeField] private GameObject defaultSelected;
     
     public bool Shown { get; private set; } = false;
