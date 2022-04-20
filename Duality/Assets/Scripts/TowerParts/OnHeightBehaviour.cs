@@ -13,7 +13,7 @@ public abstract class OnHeightBehaviour : MonoBehaviour
         if(!fired && GameManager.Instance.ExpectedHeight >= height)
         {
             fired = true;
-            Debug.Log($"Fired OnHeightBehaviour {gameObject.name}");
+            Debug.Log($"Fired OnHeightBehaviour {gameObject.name} {this.GetType()}");
             Action();
         }
     }

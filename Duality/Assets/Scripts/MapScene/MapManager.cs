@@ -12,6 +12,9 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Setting time scale to 1");
+        Time.timeScale = 1f;
+        
         StartCoroutine(DelayToSetDefaultSelectedCoroutine());
     }
 

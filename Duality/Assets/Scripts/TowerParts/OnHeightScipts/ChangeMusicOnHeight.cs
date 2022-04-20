@@ -19,21 +19,16 @@ public class ChangeMusicOnHeight : OnHeightBehaviour
 
     IEnumerator ChangeMusicCoroutine()
     {
-        maxVolume = audioSource.volume;
+        var animator = audioSource.GetComponent<Animator>();
+        animator.SetBool("fade", true);
 
-        while (audioSource.volume > 0)
+        while (audioSource.volume > 0.05f)
         {
-            audioSource.volume -= (1f / fadeTime) * 0.1f;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(0f);
         }
-
+        
         audioSource.clip = newMusicClip;
         audioSource.Play();
-
-        while (audioSource.volume < maxVolume)
-        {
-            audioSource.volume += (1f / fadeTime) * 0.1f;
-            yield return new WaitForSeconds(0.1f);
-        }
+        animator.SetBool("fade", false);
     }
 }
