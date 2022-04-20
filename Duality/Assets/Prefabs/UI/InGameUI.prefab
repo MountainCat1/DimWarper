@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartSceneName: Level 0
-  menuSceneName: MainMenu
+  menuSceneName: Campaign Map
   heightDisplay: {fileID: 3308943951540058883}
   energyBar: {fileID: 3308943951513705842}
   timer: {fileID: 3308943951345345194}

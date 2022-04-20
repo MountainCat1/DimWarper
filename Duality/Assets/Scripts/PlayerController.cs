@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         Vector2 move = new Vector2();
 
         // Horizontal Movement
-        if (Input.GetAxisRaw("Horizontal") < 0)//(Input.GetKey(KeyCode.A))
+        if (Input.GetAxisRaw("Horizontal") < 0)
             move += new Vector2(-1, 0);
         if (Input.GetAxisRaw("Horizontal") > 0)
             move += new Vector2(1, 0);
