@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         // If the player should jump...
-        if (Input.GetKeyDown(KeyCode.W) && (grounded || TryUseEnergyAction()))
+        if (Input.GetButtonDown("Jump") && (grounded || TryUseEnergyAction()))
         {
             // Add a vertical force to the player.
             if (grounded)
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(diveSound, transform.position);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && !Pause.isPaused && !GameManager.Instance.Lost && !GameManager.Instance.Won)
+        if (Input.GetButtonDown("Dimension Swap") && !Pause.isPaused && !GameManager.Instance.Lost && !GameManager.Instance.Won)
         {
             AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, changeDimensionAnimationSpeed);
             DimensionManager.Instance.SwitchDimension();
@@ -143,16 +143,16 @@ public class PlayerController : MonoBehaviour
         Vector2 move = new Vector2();
 
         // Horizontal Movement
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxisRaw("Horizontal") < 0)//(Input.GetKey(KeyCode.A))
             move += new Vector2(-1, 0);
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxisRaw("Horizontal") > 0)
             move += new Vector2(1, 0);
         move.x *= speed * Time.fixedDeltaTime;
 
         // Diving
         if (!grounded)
         {
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetButton("Dive"))
                 move += new Vector2(0, -1);
 
             move.y *= diveSpeed * Time.fixedDeltaTime;
