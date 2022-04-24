@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;                             // A position marking where to check if the player is grounded.
     [SerializeField] private Transform ceilingCheck;                            // A position marking where to check for ceilings
     [SerializeField] private Collider2D collider;                               // A position marking where to check for ceilings
+    [SerializeField] private float ungroundedDelay = 0.1f;                       // How much time after falling player still is considered grounded
     private bool grounded;                                                      // Whether or not the player is grounded.
+    private bool consideredGrounded;
+    private Coroutine ungroudDelayCoroutine;
     const float groundedRadius = .2f;                                           // Radius of the overlap circle to determine if grounded
 
     [SerializeField] private string jumpParticleAnimation = "jump";
@@ -56,12 +59,11 @@ public class PlayerController : MonoBehaviour
             return;
 
         // If the player should jump...
-        if (Input.GetButtonDown("Jump") && (grounded || TryUseEnergyAction()))
+        if (Input.GetButtonDown("Jump") && (consideredGrounded || TryUseEnergyAction()))
         {
             // Add a vertical force to the player.
-            if (grounded)
-                grounded = false;
-
+            grounded = false;
+            consideredGrounded = false;
 
             rb.velocity = new Vector2(rb.velocity.x, 0f);
 
@@ -94,8 +96,7 @@ public class PlayerController : MonoBehaviour
         deathSoundAudioSource.Play();
         GameManager.Instance.Lose();
     }
-
-
+    
     private bool TryUseEnergyAction()
     {
         if (UsedEnergyAction)
@@ -129,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
+        var colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
@@ -137,8 +138,26 @@ public class PlayerController : MonoBehaviour
                 UsedEnergyAction = false;
                 grounded = true;
                 Floor = colliders[i].transform;
+                break;
             }
         }
+
+        if (grounded)
+        {
+            consideredGrounded = true;
+            if(ungroudDelayCoroutine != null) StopCoroutine(ungroudDelayCoroutine);
+            return;
+        }
+        if (ungroudDelayCoroutine == null)
+        {
+            ungroudDelayCoroutine = StartCoroutine(UngroundDelay());
+        }
+    }
+    
+    private IEnumerator UngroundDelay()
+    {
+        yield return new WaitForSeconds(ungroundedDelay);
+        consideredGrounded = false;
     }
 
     private void Move()
