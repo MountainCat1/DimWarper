@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
     [SerializeField] private float delayToSetDefaultSelected = 1.2f;
     [SerializeField] private GameObject defaultSelected;
+
 
     private void Start()
     {

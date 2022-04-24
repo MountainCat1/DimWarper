@@ -7,10 +7,12 @@ using UnityEngine.UI;
 /// Enables the button assigned to the object depending if game progress reach specified level
 /// 
 /// </summary>
-public class EnableButtonOnGameProgress : MonoBehaviour
+public class CampaignMapLocationButton : MonoBehaviour
 {
     [SerializeField] private int gameProgressRequired;
 
+    [SerializeField] public string locationName;
+    [TextArea(10, 20)][SerializeField] public string locationDescription;
     void Start()
     {
         var button = GetComponent<Button>();

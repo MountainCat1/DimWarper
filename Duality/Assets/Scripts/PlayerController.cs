@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
-        if(!grounded && Input.GetButton("Dive"))
+        if(!grounded && Input.GetButtonDown("Dive"))
         {
             AudioSource.PlayClipAtPoint(diveSound, transform.position);
         }

@@ -11,21 +11,60 @@ using UnityEngine.UI;
 /// </summary>
 public class CutsceneTransition : MonoBehaviour
 {
-    static string SceneToLoad { set; get; }
+    private static string SceneToLoad { set; get; }
     
     // Editor
-    [SerializeField] private Text text;
+    [SerializeField] private GameObject slideContainer;
     [SerializeField] private float timeToWaitBeforeLoadLevel;
     [SerializeField] private Animator fadeBlackScreenAnimator;
     [SerializeField] private Animator fadeMusicAnimator;
+
+    private List<GameObject> slides;
+    private int presentSlide = 0;
+
+    private void Start()
+    {
+        slides = new List<GameObject>();
+        foreach (Transform slide in slideContainer.transform)
+        {
+            slides.Add(slide.gameObject);
+        }
+        ShowSlide(slides[0]);
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump") || Input.GetButtonDown("Dimension Swap"))
         {
-            GoToLevel();
+            if (presentSlide + 1 < slides.Count)
+            {
+                NextSlide();
+            }
+            else
+            {
+                GoToLevel();
+            }
         }
     }
 
+    public void NextSlide()
+    {
+        fadeBlackScreenAnimator.SetTrigger("fadeOnce");
+        HideSlide(slides[presentSlide]);
+        presentSlide++;
+        ShowSlide(slides[presentSlide]);
+    }
+
+    private void ShowSlide(GameObject slide)
+    {
+        slide.SetActive(true);
+    }
+
+    private void HideSlide(GameObject slide)
+    {
+        slide.SetActive(false);
+    }
+    
     public void GoToLevel()
     {
         StartCoroutine(WaitToLoadLevelCoroutine());

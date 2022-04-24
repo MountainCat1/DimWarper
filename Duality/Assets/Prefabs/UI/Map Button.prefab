@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2928407883993814081}
   - component: {fileID: 2928407883993814082}
   - component: {fileID: 2928407883993814083}
+  - component: {fileID: 7846898689167159125}
   m_Layer: 5
   m_Name: Map Button
   m_TagString: Untagged
@@ -131,6 +132,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7846898689167159125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928407883993814141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgressRequired: 0
 --- !u!1 &2928407885043525909
 GameObject:
   m_ObjectHideFlags: 0

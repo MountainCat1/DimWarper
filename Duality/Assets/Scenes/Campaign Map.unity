@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameProgressRequired: 1
+  locationName: 
+  locationDescription: 
 --- !u!114 &1585907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +494,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Rock Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &15131485 stripped
@@ -500,32 +507,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 15131484}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &15131486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 15131484}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &15131487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15131486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 2
 --- !u!114 &15131488 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 15131484}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15131486}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -986,6 +974,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Fire Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &93437481 stripped
@@ -994,32 +987,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 93437480}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &93437482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 93437480}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &93437483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93437482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 3
 --- !u!114 &93437484 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 93437480}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93437482}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1371,6 +1345,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Haunted Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &510868856 stripped
@@ -1379,32 +1358,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 510868855}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &510868857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 510868855}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &510868858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510868857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 1
 --- !u!114 &510868859 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 510868855}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510868857}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1603,6 +1563,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuSceneName: MainMenu
+  defaultLocation: {fileID: 2928407884400664933}
+  locationNameDisplay: {fileID: 1274119208}
+  locationDescriptionDisplay: {fileID: 756598676}
   locationButtons:
   - {fileID: 2928407884400664934}
   - {fileID: 510868859}
@@ -2007,6 +1970,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Fire Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &885328161 stripped
@@ -2015,32 +1983,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 885328160}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &885328162 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 885328160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &885328163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885328162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 6
 --- !u!114 &885328164 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 885328160}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885328162}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -2100,6 +2049,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameProgressRequired: 1
+  locationName: 
+  locationDescription: 
 --- !u!114 &1002157087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,6 +2640,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: ???
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &1549931665 stripped
@@ -2697,32 +2653,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1549931664}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1549931666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 1549931664}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1549931667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549931666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 7
 --- !u!114 &1549931668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 1549931664}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549931666}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -2965,6 +2902,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Tall Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &1571633900 stripped
@@ -2973,32 +2915,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1571633899}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1571633901 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 1571633899}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1571633902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571633901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 4
 --- !u!114 &1571633903 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 1571633899}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571633901}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -3272,6 +3195,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Fire Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: gameProgressRequired
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
 --- !u!224 &1633190966 stripped
@@ -3280,32 +3208,13 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1633190965}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1633190967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2928407883993814141, guid: 09e2ea10ea5948c4d9b38d13813d5941,
-    type: 3}
-  m_PrefabInstance: {fileID: 1633190965}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1633190968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633190967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameProgressRequired: 5
 --- !u!114 &1633190969 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
     type: 3}
   m_PrefabInstance: {fileID: 1633190965}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633190967}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -4099,11 +4008,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2928407884400664931}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2928407884400664933
+--- !u!114 &2928407884400664933 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+    type: 3}
+  m_PrefabInstance: {fileID: 2928407884400664931}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2928407884400664932}
   m_Enabled: 1
@@ -4111,7 +4020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1122d39d9fe4e004bb9a18f61943e5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameProgressRequired: 0
 --- !u!114 &2928407884400664934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2928407883993814083, guid: 09e2ea10ea5948c4d9b38d13813d5941,
@@ -4410,3 +4318,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameProgressRequired: 1
+  locationName: 
+  locationDescription: 
