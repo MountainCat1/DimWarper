@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float ungroundedDelay = 0.1f;                       // How much time after falling player still is considered grounded
     private bool grounded;                                                      // Whether or not the player is grounded.
     private bool consideredGrounded;
-    private Coroutine ungroudDelayCoroutine;
+    private Coroutine ungroundDelayCoroutine;
     const float groundedRadius = .2f;                                           // Radius of the overlap circle to determine if grounded
 
     [SerializeField] private string jumpParticleAnimation = "jump";
@@ -144,13 +144,16 @@ public class PlayerController : MonoBehaviour
 
         if (grounded)
         {
-            consideredGrounded = true;
-            if(ungroudDelayCoroutine != null) StopCoroutine(ungroudDelayCoroutine);
+            // if the player is moving up, it means he jumped
+            // the ungroundDelay should not apply
+            consideredGrounded = rb.velocity.y < 0.001f;
+            
+            if(ungroundDelayCoroutine != null) StopCoroutine(ungroundDelayCoroutine);
             return;
         }
-        if (ungroudDelayCoroutine == null)
+        if (ungroundDelayCoroutine == null)
         {
-            ungroudDelayCoroutine = StartCoroutine(UngroundDelay());
+            ungroundDelayCoroutine = StartCoroutine(UngroundDelay());
         }
     }
     
