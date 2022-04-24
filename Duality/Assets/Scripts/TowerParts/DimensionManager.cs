@@ -7,11 +7,13 @@ public class DimensionManager : MonoBehaviour
 {
     public static DimensionManager Instance { get; set; }
 
-    public AudioSource changeDimensionAudio;
+    [SerializeField] private AudioSource changeDimensionAudio;
 
-    public GameObject icePostProcessingVolume;
-    public GameObject firePostProcessingVolume;
-
+    [SerializeField] private GameObject icePostProcessingVolume;
+    [SerializeField] private GameObject firePostProcessingVolume;
+    
+    [SerializeField] public float deactivatedObjectAlpha = 0.07f; 
+    
     public enum Dimension
     {
         Fire,

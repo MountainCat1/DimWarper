@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
     public CharacterAnimator spriteAnimator;
 
     [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
-    [SerializeField] private Transform ceilingCheck;                          // A position marking where to check for ceilings
-    [SerializeField] private Collider2D collider;                          // A position marking where to check for ceilings
-    private bool grounded;            // Whether or not the player is grounded.
-    const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    [SerializeField] private Transform groundCheck;                             // A position marking where to check if the player is grounded.
+    [SerializeField] private Transform ceilingCheck;                            // A position marking where to check for ceilings
+    [SerializeField] private Collider2D collider;                               // A position marking where to check for ceilings
+    private bool grounded;                                                      // Whether or not the player is grounded.
+    const float groundedRadius = .2f;                                           // Radius of the overlap circle to determine if grounded
 
     [SerializeField] private string jumpParticleAnimation = "jump";
     [SerializeField] private float jumpForceAnimationSpeed = 4f;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance!= null)
+        if(Instance != null)
         {
             Debug.LogError("Singeleton duplicated!");
             Destroy(gameObject);
@@ -71,12 +71,15 @@ public class PlayerController : MonoBehaviour
             AudioSource.PlayClipAtPoint(jumpSound, transform.position);
         }
 
-        if(!grounded && Input.GetKeyDown(KeyCode.S))
+        if(!grounded && Input.GetButton("Dive"))
         {
             AudioSource.PlayClipAtPoint(diveSound, transform.position);
         }
 
-        if (Input.GetButtonDown("Dimension Swap") && !Pause.isPaused && !GameManager.Instance.Lost && !GameManager.Instance.Won)
+        if (Input.GetButtonDown("Dimension Swap") 
+            && !Pause.isPaused 
+            && !GameManager.Instance.Lost 
+            && !GameManager.Instance.Won)
         {
             AnimationManager.PlayAnimationAtPoint(transform.position, changeDimensionParticle, changeDimensionAnimationSpeed);
             DimensionManager.Instance.SwitchDimension();

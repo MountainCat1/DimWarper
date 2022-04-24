@@ -17,4 +17,20 @@ public abstract class DimensionObject : MonoBehaviour
     }
 
     public abstract void SetActive(bool active);
+
+    protected void SetDimensionForSpriteRenderer(bool active, SpriteRenderer spriteRenderer)
+    {
+        if (active)
+        {
+            Color newColor = spriteRenderer.color;
+            newColor.a = 1f;
+            spriteRenderer.color = newColor;
+        }
+        else
+        {
+            Color newColor = spriteRenderer.color;
+            newColor.a = DimensionManager.Instance.deactivatedObjectAlpha;
+            spriteRenderer.color = newColor;
+        }
+    }
 }

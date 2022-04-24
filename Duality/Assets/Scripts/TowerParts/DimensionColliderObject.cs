@@ -19,17 +19,6 @@ public class DimensionColliderObject : DimensionObject
     {
         collider.enabled = active;
 
-        if (active)
-        {
-            Color newColor = spriteRenderer.color;
-            newColor.a = 1f;
-            spriteRenderer.color = newColor;
-        }
-        else
-        {
-            Color newColor = spriteRenderer.color;
-            newColor.a = 0.07f;
-            spriteRenderer.color = newColor;
-        }
+        SetDimensionForSpriteRenderer(active, spriteRenderer);
     }
 }

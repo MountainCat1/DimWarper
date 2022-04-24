@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CampaignMapMenu : MonoBehaviour
 {
+    [SerializeField] private string mainMenuSceneName = "Main Menu";
     [SerializeField] private List<Button> locationButtons;
     private void Update()
     {
@@ -24,11 +26,18 @@ public class CampaignMapMenu : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-
             Enter();
             return;
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitToMenu();
+        }
+    }
 
+    private void ExitToMenu()
+    {
+        SceneManager.LoadScene(mainMenuSceneName, LoadSceneMode.Single);
     }
 
     private void Enter()

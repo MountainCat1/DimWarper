@@ -5162,7 +5162,7 @@ MonoBehaviour:
   playAnimationOnStart: 
   animations: []
   playing: 0
-  framesLocation: EvilMage
+  framesLocation: Boss/Boss1
 --- !u!58 &3865560144592937004
 CircleCollider2D:
   m_ObjectHideFlags: 0

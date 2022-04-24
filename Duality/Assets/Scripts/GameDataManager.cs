@@ -72,4 +72,6 @@ public class GameDataManager : MonoBehaviour
 public class GameData
 {
     public int gameProgress = 0;
+
+    public List<float> hightScores;
 }
