@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -492,7 +492,21 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Rock Tower
+      value: Tower of Fog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: Tower of Fog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'Tower of fog belongs to freshly baked high mage. He did impress all
+        the others, by quickly like no one else mastering the power of moving platforms.
+
+        You
+        can expect ground you stand on to not be as trustwothy as it used to be.'
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -976,6 +990,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
+      propertyPath: locationName
+      value: 404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'This tower is not yet to be found!
+
+
+        Someone seems to have
+        casted the 404 error spell on it!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
       propertyPath: gameProgressRequired
       value: 3
       objectReference: {fileID: 0}
@@ -1344,6 +1372,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Haunted Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: Haunted Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: This tower belongs to the youngest mage of all, as well as the stupidest
+        one for sure. He dont even know one spell! But aura of the tower still can
+        pose danger to you so watch your jump.
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1969,6 +2009,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Fire Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: 404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'This tower is not yet to be found!
+
+
+        Someone seems to have
+        casted the 404 error spell on it!'
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -2642,6 +2696,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
+      propertyPath: locationName
+      value: 404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'This tower is not yet to be found!
+
+
+        Someone seems to have
+        casted the 404 error spell on it!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
       propertyPath: gameProgressRequired
       value: 7
       objectReference: {fileID: 0}
@@ -2901,6 +2969,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Tall Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: 404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'This tower is not yet to be found!
+
+
+        Someone seems to have
+        casted the 404 error spell on it!'
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3194,6 +3276,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Fire Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: 404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: 'This tower is not yet to be found!
+
+
+        Someone seems to have
+        casted the 404 error spell on it!'
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3998,7 +4094,18 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Tower of Mud
+      value: Dirty Entrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationName
+      value: Dirty Entrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
+        type: 3}
+      propertyPath: locationDescription
+      value: Old tunnel leading to the mysterious realm. The same one that you used
+        to get here in the first place.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
