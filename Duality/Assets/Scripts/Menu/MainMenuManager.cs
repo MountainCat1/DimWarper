@@ -63,6 +63,13 @@ public class MainMenuManager : MonoBehaviour
             StartCoroutine(LoadYourAsyncScene("Campaign Map"));
         }
     }
+
+    public void EndlessMode()
+    {
+        Debug.Log("=== Loading Endless Mode... ===");
+
+        StartCoroutine(LoadYourAsyncScene("Level Endless"));
+    }
     
     public void EasyMode()
     {
