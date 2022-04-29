@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,9 +15,9 @@ public class GameManager : MonoBehaviour
     private float energy;
 
     public bool Won { get; private set; } = false;
-    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
     public bool Lost { get; private set; } = false;
     public bool Paused { get; set; } = false;
+    public Action GameLostEvent;
     
     public bool GameOver => Lost || Won;
 
@@ -29,19 +30,23 @@ public class GameManager : MonoBehaviour
 
     public float timeScale = 2f;
 
-
+    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
     public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
     public int TopFloor { get; set; } = 0;
     public int BottomFloor { get; set; } = 1;
 
 
+    // Camera, Height, Time
     public Transform cameraTransform;
     public float cameraRotationSpeed = 1f;
     public float cameraSpeedMultiplier = 1f;
     public float cameraCatchUpSpeed = 6f;
     public float breakHeight = 2f;
     public float ExpectedHeight { get; set; } = 0f;
-
+    public float Timer { get; set; }
+    //
+    
+    
     public Animator blackScreeAnimator;
     public Animator soundtrackAnimator;
     public MenuWindow deathScreen;
@@ -96,6 +101,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!Won && !Lost && !Paused)
+        {
+            Timer += Time.deltaTime;
+        }
+        
         float bottomFloorHeight = BottomFloor * LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).floorHeight;
 
         if (ExpectedHeight + deathDistance < bottomFloorHeight)
@@ -153,8 +163,6 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        //cameraRotationSpeed = 0f;
-        //cameraSpeedMultiplier = 0f;
         soundtrackAnimator.SetBool("fade", true);
         Won = true;
         Cursor.visible = true;
@@ -171,6 +179,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowGameOverScreenCoroutine());
 
         Lost = true;
+        GameLostEvent?.Invoke();
     }
 
     IEnumerator ShowGameOverScreenCoroutine()

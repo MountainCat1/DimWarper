@@ -19,8 +19,6 @@ public class UIManager : MonoBehaviour
     
     private float maxHeight = -1f;
 
-    private float time = 0f;
-
     void Update()
     {
         UpdateTimer();
@@ -62,8 +60,7 @@ public class UIManager : MonoBehaviour
     {
         if (!Pause.isPaused && !GameManager.Instance.Lost && !GameManager.Instance.Won)
         {
-            time += Time.deltaTime;
-            timer.text = (Mathf.Round(time * 10) / 10f).ToString();
+            timer.text = (Mathf.Round(GameManager.Instance.Timer * 10) / 10f).ToString();
         }
     }
     

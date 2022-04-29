@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class GameDataManager : MonoBehaviour
 {
-    public static GameData Data { get; private set; }
+    private const int MaxSavedScores = 10;
     
+    public static GameData Data { get; private set; }
+
     private static readonly string directory;
     private static readonly string fileName;
-    
+
     static GameDataManager()
     {
         directory = Application.persistentDataPath;
@@ -26,11 +30,12 @@ public class GameDataManager : MonoBehaviour
         Data = new GameData();
         SaveData();
     }
+
     public static void LoadData()
     {
         string json = string.Empty;
         string fullPath = Path.Combine(directory, fileName);
-        
+
         // If file doesnt exist, just create new GameData
         if (!File.Exists(fullPath))
         {
@@ -38,7 +43,7 @@ public class GameDataManager : MonoBehaviour
             Data = new GameData();
             return;
         }
-        
+
         using (var reader = new StreamReader(fullPath))
         {
             json = reader.ReadToEnd();
@@ -54,24 +59,61 @@ public class GameDataManager : MonoBehaviour
         {
             throw new NullReferenceException("Tried to save Game Data, but it was null");
         }
+
         var json = JsonUtility.ToJson(Data);
 
         Directory.CreateDirectory(directory);
-        
+
         var fullPath = Path.Combine(directory, fileName);
         using (var writer = new StreamWriter(fullPath))
         {
             writer.Write(json);
         }
-        
+
         Debug.Log($"Game data saved {directory}");
+    }
+
+    public static void AddHighScore(string levelName, float height, float time)
+    {
+        if (Data.highScores.Count >= MaxSavedScores)
+        {
+            var lowestHighScore = Data.highScores
+                .OrderBy(x => x.height)
+                .First();
+
+            if (lowestHighScore.height < height)
+                Data.highScores.Remove(lowestHighScore);
+            else
+                return;
+        }
+
+        Data.highScores.Add(new HighScore()
+        {
+            dateTimeText = DateTime.Now.ToString(CultureInfo.InvariantCulture),
+            height = height,
+            time = time,
+            levelName = levelName
+        });
+        
+        SaveData();
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class GameData
 {
     public int gameProgress = 0;
 
-    public List<float> hightScores;
+    public List<HighScore> highScores;
+}
+
+[Serializable]
+public class HighScore
+{
+    public float height;
+    public float time;
+    public string levelName;
+
+    public string dateTimeText;
+    public DateTime DateTime => DateTime.ParseExact(dateTimeText, "MM/dd/yyyy HH:mm:ss", null);
 }
