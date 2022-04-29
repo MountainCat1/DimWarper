@@ -32,6 +32,6 @@ public class ProgressScreen : MonoBehaviour
             textScripts[3].text = highScore.levelName;
         }
 
-        progressTextDisplay.text = $"Campaign progress: {GameDataManager.Data.gameProgress}";
+        progressTextDisplay.text = $"Campaign progress: {(float)GameDataManager.Data.gameProgress / GameData.MaxGameDataProgress * 100f}%";
     }
 }

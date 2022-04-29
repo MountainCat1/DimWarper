@@ -102,6 +102,8 @@ public class GameDataManager : MonoBehaviour
 [Serializable]
 public class GameData
 {
+    public const int MaxGameDataProgress = 8;
+    
     public int gameProgress = 0;
 
     public List<HighScore> highScores = new List<HighScore>();
