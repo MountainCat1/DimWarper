@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.669702, g: 0.670315, b: 0.67055964, a: 1}
+  m_IndirectSpecularColor: {r: 0.6692593, g: 0.6697289, b: 0.66997385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -204,8 +204,6 @@ MonoBehaviour:
   floorList:
   - {fileID: 2091498032168669606, guid: b6da10adad8c3ba418990778ab94c91d, type: 3}
   - {fileID: 2091498032168669606, guid: fe326b3af2285c4469442cc805917aee, type: 3}
-  - {fileID: 7436793259070684348, guid: 4d6f309f7c8337849a699de89d39e433, type: 3}
-  - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
   enemyList: []
   trapList: []
   oneTimeTraps:
@@ -215,7 +213,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1
+  cameraSpeed: 1.4
 --- !u!1 &276441441
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,10 +373,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 8, y: 0.5}
     adaptiveTilingThreshold: 0.5
@@ -836,8 +834,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -25
-  m_Sprite: {fileID: 21300000, guid: 214efbdeed1a7f44f8ca240b33ccf60f, type: 3}
-  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d05957de2e260024aa046ab305484bb7, type: 3}
+  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -2103,7 +2101,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1
+  cameraSpeed: 1.2
 --- !u!1 &1364328310
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,11 +14,14 @@ public class Missile : MonoBehaviour
     public LayerMask targetsLayers;
 
 
+    public Vector3 audioClipPlayPositionOffset = new Vector3(0, 4, 0);
     public AudioClip missileShotSound;
 
     private void Start()
     {
-        AudioSource.PlayClipAtPoint(missileShotSound, transform.position);
+        AudioSource.PlayClipAtPoint(
+            missileShotSound, 
+            Camera.main.transform.position + audioClipPlayPositionOffset);
     }
 
     void FixedUpdate()

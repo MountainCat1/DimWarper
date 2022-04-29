@@ -93,6 +93,11 @@ public class MainMenuManager : MonoBehaviour
         menuWindow.Show();
         activeMenuWindow = menuWindow;
     }
+
+    public void ResetProgress()
+    {
+        GameDataManager.ResetData();
+    }
     
     public void GoToCredits()
     {

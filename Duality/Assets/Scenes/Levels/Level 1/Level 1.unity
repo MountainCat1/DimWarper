@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.669702, g: 0.670315, b: 0.67055964, a: 1}
+  m_IndirectSpecularColor: {r: 0.6692593, g: 0.6697289, b: 0.66997385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,7 +317,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 8, y: 0.5}
     adaptiveTilingThreshold: 0.5
@@ -1227,6 +1227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3308943952870764689, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567a4dc2e347e648936a26eed5af420, type: 3}
 --- !u!1 &1031455142
@@ -1373,6 +1378,7 @@ MonoBehaviour:
   changeDimensionAudio: {fileID: 837933703}
   icePostProcessingVolume: {fileID: 1031455142}
   firePostProcessingVolume: {fileID: 796828268}
+  deactivatedObjectAlpha: 0.07
   dimension: 0
 --- !u!114 &1103777995
 MonoBehaviour:

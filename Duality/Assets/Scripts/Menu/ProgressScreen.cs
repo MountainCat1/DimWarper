@@ -19,7 +19,7 @@ public class ProgressScreen : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
+        
         foreach (var highScore in GameDataManager.Data.highScores)
         {
             var go = Instantiate(scorePanelPrefab, scoresContainer);

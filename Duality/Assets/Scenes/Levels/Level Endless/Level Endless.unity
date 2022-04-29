@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -220,7 +220,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1.2
 --- !u!1 &238653754
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 0.9
 --- !u!1 &342309659
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1
 --- !u!1 &350499275
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.2
+  cameraSpeed: 1.35
 --- !u!1 &554759282
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1.2
 --- !u!1 &581371679
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +636,10 @@ GameObject:
   m_Component:
   - component: {fileID: 581371680}
   - component: {fileID: 581371681}
+  - component: {fileID: 581371682}
+  - component: {fileID: 581371684}
+  - component: {fileID: 581371683}
+  - component: {fileID: 581371685}
   m_Layer: 0
   m_Name: Level Generators
   m_TagString: Untagged
@@ -681,6 +685,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generators: []
+--- !u!114 &581371682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581371679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 250
+  newMusicClip: {fileID: 8300000, guid: 8d22733b43fefb942bf80e619b8f8d9f, type: 3}
+  audioSource: {fileID: 1167189373}
+  fadeTime: 1
+--- !u!114 &581371683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581371679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 750
+  newMusicClip: {fileID: 8300000, guid: 9a060238057d9904eb953323aaa53d17, type: 3}
+  audioSource: {fileID: 1167189373}
+  fadeTime: 1
+--- !u!114 &581371684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581371679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 500
+  newMusicClip: {fileID: 8300000, guid: 296b42fe6b031644480d46ea88e2adba, type: 3}
+  audioSource: {fileID: 1167189373}
+  fadeTime: 1
+--- !u!114 &581371685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581371679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 1000
+  newMusicClip: {fileID: 8300000, guid: d7542d90428526b41ab2a1ca81cc6c95, type: 3}
+  audioSource: {fileID: 1167189373}
+  fadeTime: 1
 --- !u!1 &637183858
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +929,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -25
   m_Sprite: {fileID: 21300000, guid: 214efbdeed1a7f44f8ca240b33ccf60f, type: 3}
-  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1442,7 +1510,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1.2
 --- !u!1 &1157375104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1653,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 0.7
 --- !u!1 &1167189371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1949,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1.1
 --- !u!1 &1304036125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,7 +2386,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1.2
 --- !u!1 &1583798603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2837,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 0.8
 --- !u!1 &1891420395
 GameObject:
   m_ObjectHideFlags: 0

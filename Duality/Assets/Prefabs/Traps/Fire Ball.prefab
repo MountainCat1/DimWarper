@@ -64,6 +64,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.7
+  targetSpeed: 3.5
+  acceleration: 0.4
+  targetsLayers:
+    serializedVersion: 2
+    m_Bits: 0
   missileShotSound: {fileID: 8300000, guid: 925ed412b7f8c524291bb6dfa1b4b3dd, type: 3}
 --- !u!212 &3531293642122148180
 SpriteRenderer:
@@ -103,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 5353841184698615464, guid: de54845b332e13a45a3c2f411d6b35a7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

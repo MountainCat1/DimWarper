@@ -104,7 +104,7 @@ public class GameData
 {
     public int gameProgress = 0;
 
-    public List<HighScore> highScores;
+    public List<HighScore> highScores = new List<HighScore>();
 }
 
 [Serializable]

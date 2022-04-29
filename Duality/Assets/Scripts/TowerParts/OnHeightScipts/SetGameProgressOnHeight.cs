@@ -10,5 +10,6 @@ public class SetGameProgressOnHeight : OnHeightBehaviour
     protected override void Action()
     {
         GameDataManager.Data.gameProgress = newGameProgressValue;
+        GameDataManager.SaveData();
     }
 }
