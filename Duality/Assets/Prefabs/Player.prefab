@@ -4963,6 +4963,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4450448305163818508}
   ceilingCheck: {fileID: 4450448304380782853}
   collider: {fileID: 4450448305102062557}
+  ungroundedDelay: 0.05
   jumpParticleAnimation: jump v2
   jumpForceAnimationSpeed: 12
   jumpSound: {fileID: 8300000, guid: 25541f28bcc61a44a8285ecb3b0eebea, type: 3}
