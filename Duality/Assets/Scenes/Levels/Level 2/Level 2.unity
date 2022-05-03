@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2538,7 +2538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 10
   used: 0
-  bossPrefab: {fileID: 3865560144592937006, guid: b7153e5d0f5c2d94dadc41ef614b5d36,
+  bossPrefab: {fileID: 3865560144592937006, guid: 5258763c36d49e14ca2ef61ba745ee60,
     type: 3}
   spawnOffset: {x: 0, y: 7, z: 0}
 --- !u!1 &1661600806
