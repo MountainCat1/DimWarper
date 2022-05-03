@@ -998,7 +998,7 @@ PrefabInstance:
       propertyPath: locationDescription
       value: The Fire Tower belongs to Fire Mage that is know for his fireballs.
         Be careful jumping on his territory because you will never know where the
-        Fire Mage of Fire Tower Will throw hif fireball at you
+        Fire Mage of Fire Tower will throw his fireball at you...
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1380,8 +1380,8 @@ PrefabInstance:
         type: 3}
       propertyPath: locationDescription
       value: This tower belongs to the youngest mage of all, as well as the stupidest
-        one for sure. He dont even know one spell! But aura of the tower still can
-        pose danger to you so watch your jump.
+        one for sure. He doesn't even know one spell! But aura of the tower still
+        can pose danger to you so watch your jump.
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}

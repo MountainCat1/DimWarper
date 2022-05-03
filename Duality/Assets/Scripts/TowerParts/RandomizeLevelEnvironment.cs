@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Random = System.Random;
@@ -21,8 +22,14 @@ public class RandomizeLevelEnvironment : MonoBehaviour
         foregroundRenderer.sprite = environment.foreground;
         backgroundRenderer.sprite = environment.background;
         soundtrackAudioSource.clip = environment.soundtrack;
+
+        foregroundRenderer.color = environment.tint;
+        backgroundRenderer.color = environment.tint;
+        DimensionManager.Instance.deactivatedObjectAlpha = environment.notActiveObjectAlpha;
         
         boundRenderers.ForEach((spriteRenderer => spriteRenderer.sprite = environment.wall));
+        
+        Debug.Log($"Environment randomizer have chosen: {levelEnvironments.IndexOf(environment)}");
     }
 }
 
@@ -33,4 +40,6 @@ public class LevelEnvironment
     public Sprite background;
     public Sprite wall;
     public AudioClip soundtrack;
+    public Color tint = Color.white;
+    public float notActiveObjectAlpha = 0.3f;
 }
