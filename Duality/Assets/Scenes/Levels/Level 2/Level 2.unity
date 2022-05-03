@@ -213,7 +213,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.4
+  cameraSpeed: 1.05
 --- !u!1 &276441441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,7 +2101,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.2
+  cameraSpeed: 0.95
 --- !u!1 &1364328310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.4
+  cameraSpeed: 0.6
 --- !u!95 &1795178407 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3308943951435501842, guid: f567a4dc2e347e648936a26eed5af420,
