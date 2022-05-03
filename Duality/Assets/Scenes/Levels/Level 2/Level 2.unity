@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bada904650c0048b2fe73cb69c9d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHeight: 230
+  minHeight: 250
   floorHeight: 1.5
   container: {fileID: 0}
   floorList:
