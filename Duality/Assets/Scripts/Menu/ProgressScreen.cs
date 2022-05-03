@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +20,11 @@ public class ProgressScreen : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        
-        foreach (var highScore in GameDataManager.Data.highScores)
+
+        var highScoresSorted = GameDataManager.Data.highScores
+            .OrderByDescending(x => x.height);
+       
+        foreach (var highScore in highScoresSorted)
         {
             var go = Instantiate(scorePanelPrefab, scoresContainer);
 
