@@ -30,7 +30,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowMenuWindow(mainWindow);
+            ShowMainWindow();
         }
 
         if (Input.GetKey(KeyCode.H) && Input.GetKeyDown(KeyCode.J))
@@ -49,6 +49,11 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    public void ShowMainWindow()
+    {
+        ShowMenuWindow(mainWindow);
+    }
+    
     public void Campaign()
     {
         Debug.Log("=== Loading campain mode... ===");

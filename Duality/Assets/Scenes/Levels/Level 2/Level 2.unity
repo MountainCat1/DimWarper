@@ -204,6 +204,8 @@ MonoBehaviour:
   floorList:
   - {fileID: 2091498032168669606, guid: b6da10adad8c3ba418990778ab94c91d, type: 3}
   - {fileID: 2091498032168669606, guid: fe326b3af2285c4469442cc805917aee, type: 3}
+  - {fileID: 7436793259070684348, guid: 4d6f309f7c8337849a699de89d39e433, type: 3}
+  - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
   enemyList: []
   trapList: []
   oneTimeTraps:
