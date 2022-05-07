@@ -7,15 +7,14 @@ public class Missile : MonoBehaviour
 {
     public Vector2 Direction { get;  set; }
 
-    public float speed = 2f;
-    public float targetSpeed = 3.5f;
-    public float acceleration = 0.4f;
+    [SerializeField] private ParticleSystem hitParticles; 
 
-    public LayerMask targetsLayers;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float targetSpeed = 3.5f;
+    [SerializeField] private float acceleration = 0.4f;
 
-
-    public Vector3 audioClipPlayPositionOffset = new Vector3(0, 4, 0);
-    public AudioClip missileShotSound;
+    [SerializeField] private Vector3 audioClipPlayPositionOffset = new Vector3(0, 4, 0);
+    [SerializeField] private AudioClip missileShotSound;
 
     private void Start()
     {
@@ -39,6 +38,7 @@ public class Missile : MonoBehaviour
     {
         if (collision.gameObject == PlayerController.Instance.gameObject)
         {
+            hitParticles.gameObject.SetActive(true);
             PlayerController.Instance.Kill();
         }
     }

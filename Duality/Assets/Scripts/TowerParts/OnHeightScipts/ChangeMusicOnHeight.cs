@@ -6,10 +6,14 @@ public class ChangeMusicOnHeight : OnHeightBehaviour
 {
     public AudioClip newMusicClip;
     public AudioSource audioSource;
-
-    public float fadeTime = 1f;
-
+    
     private float maxVolume;
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = audioSource.GetComponent<Animator>();
+    }
 
     protected override void Action()
     {
@@ -19,7 +23,6 @@ public class ChangeMusicOnHeight : OnHeightBehaviour
 
     IEnumerator ChangeMusicCoroutine()
     {
-        var animator = audioSource.GetComponent<Animator>();
         animator.SetBool("fade", true);
 
         while (audioSource.volume > 0.05f)
