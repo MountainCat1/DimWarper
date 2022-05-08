@@ -213,6 +213,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps: []
   trapSpawnChance: 0.5
   enemySpawnChance: 0
@@ -276,6 +277,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps: []
   trapSpawnChance: 0.05
   enemySpawnChance: 0
@@ -341,6 +343,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps: []
   trapSpawnChance: 0.1
   enemySpawnChance: 0
@@ -632,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 203
-  newMusicClip: {fileID: 8300000, guid: 4f8c96c115fbf6a45b92f9adf11ec3c2, type: 3}
+  newMusicClip: {fileID: 8300000, guid: d7542d90428526b41ab2a1ca81cc6c95, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
 MonoBehaviour:
@@ -736,7 +739,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: d30c0c3cd64174b47a361104a802e586, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78cc8ea6bc14ee849b81f6bf220e527a, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -858,7 +861,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -25
-  m_Sprite: {fileID: 21300000, guid: 09bf3b8b88260654494f5e91454c6eb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a733747015d8e5d4f8eb992424721d01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1333,6 +1336,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps: []
   trapSpawnChance: 0.05
   enemySpawnChance: 0
@@ -1624,7 +1628,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfbec23587b70d8408818f7094c13804, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ee3cea97b35eeb4478278f2a70c4faa5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1880,6 +1884,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps: []
   trapSpawnChance: 0.25
   enemySpawnChance: 0
@@ -2060,6 +2065,7 @@ MonoBehaviour:
   enemyList: []
   trapList:
   - {fileID: 1975251904}
+  - {fileID: 1338307712}
   oneTimeTraps:
   - {fileID: 1631016178}
   trapSpawnChance: 0.2
@@ -2139,7 +2145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: d30c0c3cd64174b47a361104a802e586, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78cc8ea6bc14ee849b81f6bf220e527a, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2504,7 +2510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 10
   used: 0
-  bossPrefab: {fileID: 3865560144592937006, guid: 1fd5580844ab6a0478e0f5190cfdd12c,
+  bossPrefab: {fileID: 3865560144592937006, guid: 9b3bd31519727de4dae14bd5f008ff9b,
     type: 3}
   spawnOffset: {x: 0, y: 7, z: 0}
 --- !u!1 &1661600806
@@ -2860,7 +2866,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: d30c0c3cd64174b47a361104a802e586, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78cc8ea6bc14ee849b81f6bf220e527a, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3016,7 +3022,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -30
-  m_Sprite: {fileID: 21300000, guid: 377bf7009bf9702438822e0db90fc565, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 752e74b3ba33c79478992bf6164c609e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

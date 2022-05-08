@@ -25,10 +25,12 @@ public class ChangeMusicOnHeight : OnHeightBehaviour
     {
         animator.SetBool("fade", true);
 
-        while (audioSource.volume > 0.05f)
+        while (audioSource.volume > 0.01f)
         {
             yield return new WaitForSecondsRealtime(0f);
         }
+        
+        yield return new WaitForSecondsRealtime(0.1f);
         
         audioSource.clip = newMusicClip;
         audioSource.Play();
