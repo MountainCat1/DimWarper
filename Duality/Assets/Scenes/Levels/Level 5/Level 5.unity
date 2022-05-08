@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 350
-  newGameProgressValue: 5
+  newGameProgressValue: 6
 --- !u!114 &581371687
 MonoBehaviour:
   m_ObjectHideFlags: 0
