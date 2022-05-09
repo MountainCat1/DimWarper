@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void UnpauseGame()
     {
-        Paused = false; ;
+        Paused = false;
         Time.timeScale = timeScale;
     }
     
@@ -138,8 +138,6 @@ public class GameManager : MonoBehaviour
                 cameraSpeed -= cameraSpeedChangeSpeed * Time.deltaTime;
             if (Mathf.Abs(cameraSpeed - ActiveLevelGenerator.cameraSpeed) < cameraSpeedChangeSpeed * Time.deltaTime)
                 cameraSpeed = ActiveLevelGenerator.cameraSpeed;
-            
-            Debug.Log(cameraSpeed);
 
             // Calculate expected height
             ExpectedHeight += Time.deltaTime * cameraSpeed * cameraSpeedMultiplier;
