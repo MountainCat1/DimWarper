@@ -42,14 +42,14 @@ public class LevelGenerator : MonoBehaviour
 
     public void RemoveBottomFloor()
     {
-        Debug.Log($"Removed floor on level: { GameManager.Instance.BottomFloor}");
+        //Debug.Log($"Removed floor on level: { GameManager.Instance.BottomFloor}");
         Destroy(GameManager.Instance.instantinatedFloors[GameManager.Instance.BottomFloor].gameObject);
         GameManager.Instance.instantinatedFloors.Remove(GameManager.Instance.BottomFloor);
         GameManager.Instance.BottomFloor++;
     }
     public void GenerateNextFloor(GameManager gameManager)
     {
-        Debug.Log($"Placed floor on level: { GameManager.Instance.TopFloor + 1}");
+        //Debug.Log($"Placed floor on level: { GameManager.Instance.TopFloor + 1}");
         
         if(floorList.Count == 0)
             return;
@@ -114,6 +114,7 @@ public class LevelGenerator : MonoBehaviour
         return randomBag.GetRandom(new System.Random());
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public Floor GenerateFloor(Floor floor, int level)
     {
         Vector2 position = new Vector2(0, level * floorHeight);
@@ -134,7 +135,7 @@ public class LevelGenerator : MonoBehaviour
         return newFloor;
     }
 
-    public void SpawnEnergyPrefab(Floor floor)
+    private void SpawnEnergyPrefab(Floor floor)
     {
         Instantiate(energyPickupPrefab, GetRandomPosX(floor), Quaternion.identity, floor.transform);
     }
