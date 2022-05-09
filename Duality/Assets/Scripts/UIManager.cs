@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private string restartSceneName = "Game";
     [SerializeField] private string menuSceneName = "MainMenu";
 
     [SerializeField] private Text heightTextDisplay;

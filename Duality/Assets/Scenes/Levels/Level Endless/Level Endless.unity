@@ -700,7 +700,6 @@ MonoBehaviour:
   height: 250
   newMusicClip: {fileID: 8300000, guid: 8d22733b43fefb942bf80e619b8f8d9f, type: 3}
   audioSource: {fileID: 1167189373}
-  fadeTime: 1
 --- !u!114 &581371683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,7 +715,6 @@ MonoBehaviour:
   height: 750
   newMusicClip: {fileID: 8300000, guid: 9a060238057d9904eb953323aaa53d17, type: 3}
   audioSource: {fileID: 1167189373}
-  fadeTime: 1
 --- !u!114 &581371684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +730,6 @@ MonoBehaviour:
   height: 500
   newMusicClip: {fileID: 8300000, guid: 296b42fe6b031644480d46ea88e2adba, type: 3}
   audioSource: {fileID: 1167189373}
-  fadeTime: 1
 --- !u!114 &581371685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +745,6 @@ MonoBehaviour:
   height: 1000
   newMusicClip: {fileID: 8300000, guid: d7542d90428526b41ab2a1ca81cc6c95, type: 3}
   audioSource: {fileID: 1167189373}
-  fadeTime: 1
 --- !u!1 &637183858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,6 +1129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2711690703723364775, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3308943952157456577, guid: f567a4dc2e347e648936a26eed5af420,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1267,6 +1268,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073445073577672532, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00018310547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073445073577672532, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0020065308
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166378970963539471, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686747012754990963, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567a4dc2e347e648936a26eed5af420, type: 3}
