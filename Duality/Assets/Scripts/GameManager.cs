@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
     public float cameraSpeedMultiplier = 1f;
     public float cameraCatchUpSpeed = 6f;
     public float breakHeight = 2f;
+    private float cameraSpeedChangeSpeed = 0.1f;
+    private float cameraSpeed = 0.6f;
     public float ExpectedHeight { get; set; } = 0f;
     public float Timer { get; set; }
     //
@@ -124,15 +127,28 @@ public class GameManager : MonoBehaviour
 
         if (!Lost)
         {
+            // If character is to high, speed up camera to catch up
             if (playerHeight - breakHeight > ExpectedHeight)
                 ExpectedHeight += Time.deltaTime * cameraCatchUpSpeed;
 
-            ExpectedHeight += Time.deltaTime * ActiveLevelGenerator.cameraSpeed * cameraSpeedMultiplier;
+            // Update speed of camera
+            if (ActiveLevelGenerator.cameraSpeed > cameraSpeed)
+                cameraSpeed += cameraSpeedChangeSpeed * Time.deltaTime;
+            else if (ActiveLevelGenerator.cameraSpeed < cameraSpeed)
+                cameraSpeed -= cameraSpeedChangeSpeed * Time.deltaTime;
+            if (Mathf.Abs(cameraSpeed - ActiveLevelGenerator.cameraSpeed) < cameraSpeedChangeSpeed * Time.deltaTime)
+                cameraSpeed = ActiveLevelGenerator.cameraSpeed;
+            
+            Debug.Log(cameraSpeed);
 
+            // Calculate expected height
+            ExpectedHeight += Time.deltaTime * cameraSpeed * cameraSpeedMultiplier;
+
+            // Move camera
             float step = Time.deltaTime * cameraCatchUpSpeed;
-
             cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, new Vector3(0, ExpectedHeight, -10), step);
 
+            // Kill player if needed
             if (playerHeight + deathDistance < ExpectedHeight)
             {
                 PlayerController.Instance.Kill();
