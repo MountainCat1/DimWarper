@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private MenuWindow mainWindow;
 
     private MenuWindow activeMenuWindow;
-    
+
     private void Awake()
     {
         ShowMenuWindow(mainWindow);
@@ -44,7 +44,7 @@ public class MainMenuManager : MonoBehaviour
                     "UwU UwU"
                 }
             };
-            
+
             CutsceneManager.LoadCutscene(cutscene, "MainMenu");
         }
     }
@@ -53,7 +53,7 @@ public class MainMenuManager : MonoBehaviour
     {
         ShowMenuWindow(mainWindow);
     }
-    
+
     public void Campaign()
     {
         Debug.Log("=== Loading campain mode... ===");
@@ -75,14 +75,14 @@ public class MainMenuManager : MonoBehaviour
 
         StartCoroutine(LoadYourAsyncScene("Level Endless"));
     }
-    
+
     public void EasyMode()
     {
         Debug.Log("=== Loading easy mode... ===");
 
-        CutsceneTransition.StartTransition("Level Intro","Test Level");
+        CutsceneTransition.StartTransition("Level Intro", "Test Level");
     }
-    
+
     public void HardMode()
     {
         Debug.Log("=== Loading hard mode... ===");
@@ -92,9 +92,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void ShowMenuWindow(MenuWindow menuWindow)
     {
-        if(activeMenuWindow != null)
+        if (activeMenuWindow != null)
             activeMenuWindow.Hide();
-        
+
         menuWindow.Show();
         activeMenuWindow = menuWindow;
     }
@@ -103,7 +103,7 @@ public class MainMenuManager : MonoBehaviour
     {
         GameDataManager.ResetData();
     }
-    
+
     public void GoToCredits()
     {
         Debug.Log("=== Loading credits... ===");
@@ -116,9 +116,10 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Quit!");
         Application.Quit();
     }
-    
-    IEnumerator LoadYourAsyncScene(string level)
+
+    /*IEnumerator LoadYourAsyncScene(string level)
     {
+        ShowLoadingScreen();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(level);
 
         // Wait until the asynchronous scene fully loads
@@ -128,5 +129,16 @@ public class MainMenuManager : MonoBehaviour
         }
 
         Debug.Log("=== Game loaded... ===");
+    }*/
+
+    IEnumerator LoadYourAsyncScene(string level)
+    {
+        ShowLoadingScreen();
+        return SceneLoader.InternalSceneLoad(level);
+    }
+
+    private void ShowLoadingScreen()
+    {
+        LoadingScreen.Show();
     }
 }

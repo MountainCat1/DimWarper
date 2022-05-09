@@ -23,7 +23,9 @@ public class MapManager : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         StopAllCoroutines();
-        StartCoroutine(LoadYourAsyncScene(levelName));
+        
+        LoadingScreen.Show();
+        StartCoroutine(SceneLoader.InternalSceneLoad(levelName));
     }
 
     public void LoadLevelWithCutscene(string cutsceneSceneName, string levelSceneName)
@@ -31,19 +33,6 @@ public class MapManager : MonoBehaviour
         CutsceneTransition.StartTransition(cutsceneSceneName, levelSceneName);
     }
     
-    IEnumerator LoadYourAsyncScene(string level)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(level);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        Debug.Log("=== Game loaded... ===");
-    }
-
     IEnumerator DelayToSetDefaultSelectedCoroutine()
     {
         yield return new WaitForSeconds(delayToSetDefaultSelected);
