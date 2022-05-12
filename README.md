@@ -30,19 +30,19 @@ With each tower, the player will face a new type of danger
 Each level follows the same scheme. Randomly generated platforms appear above the character, so the player has to jump up to keep up with a speed of the camera moving up.
 
 ##### Dimensions
-Player can **swap dimensions**.
-Player is always in one of two dimensions — _fire dimension_ or _ice dimension_.
-Player character can collide only with platforms in the same dimension.
-All dangers affect the player only if exist in the same dimension as player is in.
+- Player can **swap dimensions**.
+- Player is always in one of two dimensions — _fire dimension_ or _ice dimension_.
+- Player character can collide only with platforms in the same dimension.
+- All dangers affect the player only if exist in the same dimension as player is in.
 
 ##### Energy
-Player can encounter **energy crystals**, picking up one gives 1 point of energy. 
-Player can hold a maximum of 4 points of energy. 
-Player can use a point of energy to perform **double jump** to save themself, or pass through danger.
+- Player can encounter **energy crystals**, picking up one gives 1 point of energy. 
+- Player can hold a maximum of 4 points of energy. 
+- Player can use a point of energy to perform **double jump** to save themself, or pass through danger.
 
 ##### Dangers
-Player needs to keep up with a moving camera. Platforms which are too far behind disappear.
-Moving platforms.
-Fireballs approaching from above, kill on contact player.
-Ice lasers firing from sides, kill player on contact
-Fire and ice monsters chasing after the player kill player on contact.
+- Player needs to keep up with a moving camera. Platforms which are too far behind disappear.
+- Moving platforms.
+- Fireballs approaching from above, kill on contact player.
+- Ice lasers firing from sides, kill player on contact
+- Fire and ice monsters chasing after the player kill player on contact.
