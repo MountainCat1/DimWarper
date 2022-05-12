@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public float cameraSpeedMultiplier = 1f;
     public float cameraCatchUpSpeed = 6f;
     public float breakHeight = 2f;
-    private float cameraSpeedChangeSpeed = 0.1f;
+    public float cameraSpeedChangeSpeed = 0.1f;
     private float cameraSpeed = 0.6f;
     public float ExpectedHeight { get; set; } = 0f;
     public float Timer { get; set; }
@@ -179,7 +179,6 @@ public class GameManager : MonoBehaviour
     {
         soundtrackAnimator.SetBool("fade", true);
         Won = true;
-        Cursor.visible = true;
     }
 
     public void Lose()

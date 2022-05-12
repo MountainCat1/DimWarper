@@ -117,6 +117,11 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void OpenGithubPage()
+    {
+        Application.OpenURL("https://github.com/MountainCat1/DimWarper");
+    }
+
     /*IEnumerator LoadYourAsyncScene(string level)
     {
         ShowLoadingScreen();

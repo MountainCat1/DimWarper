@@ -214,7 +214,7 @@ MonoBehaviour:
   trapList: []
   oneTimeTraps: []
   trapSpawnChance: 0
-  enemySpawnChance: 0.1
+  enemySpawnChance: 0.05
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
@@ -421,7 +421,7 @@ MonoBehaviour:
   trapList: []
   oneTimeTraps: []
   trapSpawnChance: 0
-  enemySpawnChance: 0.35
+  enemySpawnChance: 0.28
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
@@ -1309,6 +1309,7 @@ MonoBehaviour:
   cameraSpeedMultiplier: 1
   cameraCatchUpSpeed: 4
   breakHeight: 2
+  cameraSpeedChangeSpeed: 0.1
   blackScreeAnimator: {fileID: 1795178407}
   soundtrackAnimator: {fileID: 1167189374}
   deathScreen: {fileID: 841046801}
@@ -2040,7 +2041,7 @@ MonoBehaviour:
   trapList: []
   oneTimeTraps: []
   trapSpawnChance: 0
-  enemySpawnChance: 0.2
+  enemySpawnChance: 0.1
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
@@ -2519,7 +2520,7 @@ MonoBehaviour:
   oneTimeTraps:
   - {fileID: 0}
   trapSpawnChance: 0
-  enemySpawnChance: 0.35
+  enemySpawnChance: 0.15
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
@@ -2967,7 +2968,7 @@ MonoBehaviour:
   trapList: []
   oneTimeTraps: []
   trapSpawnChance: 0
-  enemySpawnChance: 0.35
+  enemySpawnChance: 0.2
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05

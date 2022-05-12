@@ -39,6 +39,5 @@ public class Pause : MonoBehaviour
         pauseScreen.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        Cursor.visible = true;
     }
 }
