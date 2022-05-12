@@ -2,7 +2,7 @@
 ###### _Game made for KrakJam 2022_
 ------------------------
 
-#### Description
+### Description
 Diwmwarper is a platformer game in which you lay as a mysterious character who gained an ability to swap between two dimensions. You traveled to a distant land controlled by 7 different mages, each one more dangerous than the previous one. Your quest is to conquer all seven towers and defeat the arch mage.
 
 With each tower, the player will face a new type of danger
@@ -13,7 +13,7 @@ With each tower, the player will face a new type of danger
 - Fire and ice monsters
 - Changing speed of the game
  ------------------------
-#### Credits
+### Credits
 ##### Tomasz Banaś
 - Programming
 - UI
@@ -25,7 +25,7 @@ With each tower, the player will face a new type of danger
 - Graphics and game assets
 - Testing
  ------------------------
-#### Gameplay
+### Gameplay
 
 Each level follows the same scheme. Randomly generated platforms appear above the character, so the player has to jump up to keep up with a speed of the camera moving up.
 
