@@ -15,7 +15,14 @@ public class ChaseEnemy : Enemy
     private void FixedUpdate()
     {
         if (transform.position.y < PlayerController.Instance.transform.position.y)
+        {
             chasing = false;
+            if (lastDirection.magnitude < 0.001f)
+            {
+                lastDirection = Vector3.down;
+            }
+        }
+            
 
         if (chasing)
         {
@@ -32,7 +39,7 @@ public class ChaseEnemy : Enemy
     {
         float step = Time.fixedDeltaTime * movementSpeed;
 
-        Vector3 goal = transform.position + lastDirection;
+        Vector3 goal = transform.position + lastDirection.normalized;
         goal = new Vector3(goal.x, goal.y, transform.position.z);
 
         transform.position = Vector3.MoveTowards(transform.position, goal, step);
