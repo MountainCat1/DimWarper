@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         // If the player should jump...
         if (Input.GetButtonDown("Jump") && (consideredGrounded || TryUseEnergyAction()))
         {
+
             // Add a vertical force to the player.
             grounded = false;
             consideredGrounded = false;
@@ -146,9 +147,16 @@ public class PlayerController : MonoBehaviour
         {
             // if the player is moving up, it means he jumped
             // the ungroundDelay should not apply
-            consideredGrounded = rb.velocity.y < 0.001f;
-            
-            if(ungroundDelayCoroutine != null) StopCoroutine(ungroundDelayCoroutine);
+            // consideredGrounded = rb.velocity.y < 0.001f;
+
+            consideredGrounded = true;
+
+            if (ungroundDelayCoroutine != null)
+            {
+                StopCoroutine(ungroundDelayCoroutine);
+                ungroundDelayCoroutine = null;
+            }
+
             return;
         }
         if (ungroundDelayCoroutine == null)
@@ -159,8 +167,10 @@ public class PlayerController : MonoBehaviour
     
     private IEnumerator UngroundDelay()
     {
-        yield return new WaitForSeconds(ungroundedDelay);
+        yield return new WaitForSecondsRealtime(ungroundedDelay);
         consideredGrounded = false;
+        ungroundDelayCoroutine = null;
+
     }
 
     private void Move()
