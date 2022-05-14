@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -6,8 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class InGameUIManager : MonoBehaviour
 {
+    public static InGameUIManager Instance { get; private set; }
+    
     [SerializeField] private string menuSceneName = "MainMenu";
 
     [SerializeField] private Text heightTextDisplay;
@@ -17,9 +20,24 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private MenuWindow pauseMenu;
     [SerializeField] private MenuWindow gameOverMenu;
+    [SerializeField] private MenuWindow winScreen;
 
     [SerializeField] private float towerHeight;
     private float maxHeight = -1f;
+
+    private void OnEnable()
+    {
+        if(Instance != null)
+            Debug.LogError($"Instance of {GetType().Name} duplicated!");
+            
+        Instance = this;
+    }
+
+    private void OnDisable()
+    {
+        if(Instance == this)
+            Instance = null;
+    }
 
     void Update()
     {
@@ -76,6 +94,12 @@ public class UIManager : MonoBehaviour
     public void LoadMenu()
     {
         StartCoroutine(AsyncLoadScene(menuSceneName));
+    }
+
+    public void OnWin()
+    {
+        winScreen.Show();
+        energyBar.gameObject.SetActive(false);
     }
     
     IEnumerator AsyncLoadScene(string sceneName)

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WinGameOnHeight : OnHeightBehaviour
 {
-    [SerializeField] private MenuWindow winScreen;
     [SerializeField] private float delay = 3f;
 
     private void Awake()
@@ -24,6 +23,6 @@ public class WinGameOnHeight : OnHeightBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        winScreen.Show();
+        InGameUIManager.Instance.OnWin();
     }
 }

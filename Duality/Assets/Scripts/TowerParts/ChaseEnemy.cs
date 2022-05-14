@@ -14,16 +14,6 @@ public class ChaseEnemy : Enemy
 
     private void FixedUpdate()
     {
-        if (transform.position.y < PlayerController.Instance.transform.position.y)
-        {
-            chasing = false;
-            if (lastDirection.magnitude < 0.001f)
-            {
-                lastDirection = Vector3.down;
-            }
-        }
-            
-
         if (chasing)
         {
             Chase();
@@ -32,9 +22,12 @@ public class ChaseEnemy : Enemy
         {
             GoDown();
         }
-
     }
 
+    /// <summary>
+    /// Move enemy along lastDirection, this method is used then enemy _gave up_,
+    /// and now is seeking to leave the view and de-spawn
+    /// </summary>
     private void GoDown()
     {
         float step = Time.fixedDeltaTime * movementSpeed;
@@ -52,8 +45,24 @@ public class ChaseEnemy : Enemy
         Vector3 goal = PlayerController.Instance.transform.position;
         goal = new Vector3(goal.x, goal.y, transform.position.z);
 
-        lastDirection = goal - transform.position;
 
+        // Set last direction only when its not Vector.Zero
+        if ((goal - transform.position).magnitude > 0)
+        {
+            lastDirection = goal - transform.position;
+        }
+        
+        // If enemy is *inside* the player character, the enemy should give up
+        if (Vector2.Distance(transform.position, goal) < 0.001f)
+        {
+            goal.y = -Mathf.Abs(goal.y);
+            
+            chasing = false;
+            GoDown();
+            return;
+        }
+        
+        // Move enemy toward player character
         transform.position = Vector3.MoveTowards(transform.position, goal, step);
     }
 

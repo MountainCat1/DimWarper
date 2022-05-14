@@ -2145,7 +2145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710e6d197f08be8419c92542030b886d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartSceneName: Level 0
   menuSceneName: Campaign Map
   heightTextDisplay: {fileID: 3308943951540058883}
   heightSliderDisplay: {fileID: 1458811952308258967}
@@ -2153,6 +2152,7 @@ MonoBehaviour:
   timer: {fileID: 3308943951345345194}
   pauseMenu: {fileID: 3308943951870699189}
   gameOverMenu: {fileID: 3308943951981671786}
+  winScreen: {fileID: 3308943952538665797}
   towerHeight: 0
 --- !u!114 &6785245030234351387
 MonoBehaviour:
