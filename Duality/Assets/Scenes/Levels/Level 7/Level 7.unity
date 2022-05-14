@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   cameraSpeedMultiplier: 1
   cameraCatchUpSpeed: 4
   breakHeight: 2
+  cameraSpeedChangeSpeed: 0.1
   blackScreeAnimator: {fileID: 1795178407}
   soundtrackAnimator: {fileID: 1167189374}
   deathScreen: {fileID: 841046801}
@@ -2427,7 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 10
   used: 0
-  bossPrefab: {fileID: 3865560144592937006, guid: 9b3bd31519727de4dae14bd5f008ff9b,
+  bossPrefab: {fileID: 3865560144592937006, guid: fa57a314f237d9646bb8446d4d912d18,
     type: 3}
   spawnOffset: {x: 0, y: 7, z: 0}
 --- !u!1 &1638104131

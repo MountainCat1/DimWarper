@@ -57,7 +57,6 @@ public class Boss : MonoBehaviour
     IEnumerator DelyDieCoroutine()
     {
         yield return new WaitForSeconds(delayToDie);
-
         
         GetComponent<SpriteRenderer>().enabled = false;
         deathParticleSystem.SetActive(true);
