@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 203
+  height: 178
   newMusicClip: {fileID: 8300000, guid: d7542d90428526b41ab2a1ca81cc6c95, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb357f1b80dbe54283c0d5ddc5218f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 400
+  height: 350
   winScreen: {fileID: 1180153538}
   delay: 20
 --- !u!114 &581371686
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7422067460a56d4aa0daeebabf476df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 400
+  height: 350
   newGameProgressValue: 7
 --- !u!114 &581371687
 MonoBehaviour:
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad34171425944bd59a9bceb09bddb1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 400
+  height: 350
   bossTrap: {fileID: 1631016178}
   playerAttackPrefab: {fileID: 2844952950087806726, guid: 64c87da3ec6f83043807eca5e4193049,
     type: 3}
@@ -1215,6 +1215,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454387531591510988, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454387531591510988, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567a4dc2e347e648936a26eed5af420, type: 3}
@@ -2518,7 +2528,7 @@ MonoBehaviour:
   - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
   trapList: []
   oneTimeTraps:
-  - {fileID: 0}
+  - {fileID: 1631016178}
   trapSpawnChance: 0
   enemySpawnChance: 0.15
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
