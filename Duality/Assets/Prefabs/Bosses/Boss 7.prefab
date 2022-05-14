@@ -5052,7 +5052,7 @@ GameObject:
   - component: {fileID: 3865560144592936992}
   - component: {fileID: 3865560144592937004}
   m_Layer: 0
-  m_Name: Boss 2
+  m_Name: Boss 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5162,7 +5162,7 @@ MonoBehaviour:
   playAnimationOnStart: 
   animations: []
   playing: 0
-  framesLocation: Boss/Boss2
+  framesLocation: Boss/Boss7
 --- !u!58 &3865560144592937004
 CircleCollider2D:
   m_ObjectHideFlags: 0

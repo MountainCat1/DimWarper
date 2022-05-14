@@ -5090,7 +5090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalMovementSpeed: 5
   horizontalMovementSpeed: 1.4
-  yOffset: 4.15
+  yOffset: 4.3
   deathSoundAudioSource: {fileID: 6876116668096446523}
   dyingParticleSystem: {fileID: 1711476713317449316}
   deathParticleSystem: {fileID: 2564880562639852958}

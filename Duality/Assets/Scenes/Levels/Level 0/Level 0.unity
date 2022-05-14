@@ -6979,7 +6979,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1631016177}
-  - component: {fileID: 1631016178}
   m_Layer: 0
   m_Name: Evil Mage Boss Trap
   m_TagString: Untagged
@@ -7001,23 +7000,6 @@ Transform:
   m_Father: {fileID: 1568785124}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1631016178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631016176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090acce990453d54b8e57287f0693385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: -1
-  used: 0
-  bossPrefab: {fileID: 2298190257427626000, guid: 3f727387c90c2ef45a8a22c4d2d8241b,
-    type: 3}
-  spawnOffset: {x: 0, y: 10, z: 0}
 --- !u!1 &1661600806
 GameObject:
   m_ObjectHideFlags: 0
