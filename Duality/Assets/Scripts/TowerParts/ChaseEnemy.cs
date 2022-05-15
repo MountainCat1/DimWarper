@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class ChaseEnemy : Enemy
 {
-    public AudioClip hitAudioClip;
-    public float movementSpeed = 5f;
+    [SerializeField] private ParticleSystem hitParticles; 
+    [SerializeField] private AudioClip hitAudioClip;
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float offsetToGiveUp = 1.5f;
 
     public bool chasing = true;
 
@@ -51,6 +53,13 @@ public class ChaseEnemy : Enemy
         {
             lastDirection = goal - transform.position;
         }
+
+        // If enemy passed the player, it should not follow them anymore
+        if (transform.position.y - offsetToGiveUp < PlayerController.Instance.transform.position.y)
+        {
+            chasing = false;
+            FixedUpdate();
+        }
         
         // If enemy is *inside* the player character, the enemy should give up
         if (Vector2.Distance(transform.position, goal) < 0.001f)
@@ -72,7 +81,12 @@ public class ChaseEnemy : Enemy
         {
             if (hitAudioClip != null)
                 AudioSource.PlayClipAtPoint(hitAudioClip, transform.position);
-
+            if (hitParticles != null)
+            {
+                hitParticles.gameObject.SetActive(true);
+                hitParticles.Play();
+            }
+            
             PlayerController.Instance.Kill();
         }
     }
