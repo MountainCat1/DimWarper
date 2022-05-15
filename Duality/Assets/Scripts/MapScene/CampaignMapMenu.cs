@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class CampaignMapMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject characterLocationMarker;
+    
     [SerializeField] private string mainMenuSceneName = "Main Menu";
     [SerializeField] private CampaignMapLocationButton defaultLocation;
     [SerializeField] private Text locationNameDisplay;
@@ -67,12 +69,19 @@ public class CampaignMapMenu : MonoBehaviour
         if(GameDataManager.Data.gameProgress < newIndex ) return;
         //
         
-        EventSystem.current.SetSelectedGameObject(locationButtons[newIndex].gameObject);
-        var locationScript = locationButtons[newIndex]
+        SelectLocation(locationButtons[newIndex]);
+    }
+
+    private void SelectLocation(Button button)
+    {
+        EventSystem.current.SetSelectedGameObject(button.gameObject);
+        var locationScript = button
             .gameObject
             .GetComponent<CampaignMapLocationButton>();
 
         locationNameDisplay.text = locationScript.locationName;
         locationDescriptionDisplay.text = locationScript.locationDescription;
+
+        characterLocationMarker.transform.position = button.transform.position;
     }
 }
