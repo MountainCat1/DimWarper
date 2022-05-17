@@ -52,7 +52,8 @@ MonoBehaviour:
   randomWeight: 1
   hitParticles: {fileID: 436629280150880508}
   hitAudioClip: {fileID: 8300000, guid: 140aaf253f30cd744adc39bd2f6881a8, type: 3}
-  movementSpeed: 1.2
+  movementSpeed: 1.3
+  offsetToGiveUp: 0.5
   chasing: 1
 --- !u!114 &1688498448310286703
 MonoBehaviour:

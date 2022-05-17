@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -218,7 +218,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.7
+  cameraSpeed: 1.3
 --- !u!1 &165365837
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &165365839
 MonoBehaviour:
@@ -286,7 +286,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.2
+  cameraSpeed: 1.35
 --- !u!1 &186691851
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.6
+  cameraSpeed: 1
 --- !u!1 &342309659
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +537,7 @@ Transform:
   m_Children:
   - {fileID: 186691852}
   - {fileID: 62301929}
+  - {fileID: 1138903993}
   - {fileID: 1505628482}
   - {fileID: 1738380507}
   - {fileID: 2057551893}
@@ -1405,6 +1406,70 @@ MonoBehaviour:
   volume: {fileID: 342309661}
   iceColor: {r: 0, g: 0.55506897, b: 1, a: 1}
   fireColor: {r: 1, g: 0.29354292, b: 0, a: 1}
+--- !u!1 &1138903992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138903993}
+  - component: {fileID: 1138903994}
+  m_Layer: 0
+  m_Name: Small Platforms faster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138903993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138903992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 581371680}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138903994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138903992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bada904650c0048b2fe73cb69c9d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHeight: 100
+  floorHeight: 1.5
+  container: {fileID: 0}
+  floorList:
+  - {fileID: 7436793259070684348, guid: 2f51f69a61f423f4f94a4c54ed9e5bd6, type: 3}
+  - {fileID: 7436793259070684348, guid: 4d6f309f7c8337849a699de89d39e433, type: 3}
+  - {fileID: 7436793259070684348, guid: a5a81c9e3ef8b1442907c2739378393e, type: 3}
+  - {fileID: 7436793259070684348, guid: ec924bb858cdf3d428dc89543da12bd4, type: 3}
+  - {fileID: 7436793259070684348, guid: 88ac16bf43cfa9b45b2983212b768c05, type: 3}
+  - {fileID: 7436793259070684348, guid: a0ac5aeb773876e4194fdded7cabe2e0, type: 3}
+  enemyList:
+  - {fileID: 1688498448310286697, guid: 9ad545df456c5ec40b7489f8d6b5061b, type: 3}
+  - {fileID: 1416886567297509765, guid: fe214253bc4585b448713f0d2e0b90ef, type: 3}
+  trapList: []
+  oneTimeTraps: []
+  trapSpawnChance: 0
+  enemySpawnChance: 0
+  energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
+    type: 3}
+  energyPickUpChance: 0.05
+  cameraSpeed: 1.3
 --- !u!1 &1157375104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,7 +2049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394163193
 MonoBehaviour:
@@ -2040,7 +2105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501091302
 MonoBehaviour:
@@ -2078,7 +2143,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.9
+  cameraSpeed: 1.4
 --- !u!1 &1505628481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1505628483
 MonoBehaviour:
@@ -2144,7 +2209,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 0.8
+  cameraSpeed: 1.6
 --- !u!1 &1514181655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1638104133
 MonoBehaviour:
@@ -2487,7 +2552,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.1
+  cameraSpeed: 1.35
 --- !u!1 &1661600806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1710228129
 MonoBehaviour:
@@ -2654,7 +2719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1738380508
 MonoBehaviour:
@@ -2682,7 +2747,8 @@ MonoBehaviour:
   - {fileID: 2091498032168669606, guid: a3fb3eaecb9468b458211c720dc93bcc, type: 3}
   enemyList: []
   trapList: []
-  oneTimeTraps: []
+  oneTimeTraps:
+  - {fileID: 1631016178}
   trapSpawnChance: 0
   enemySpawnChance: 0
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
@@ -3118,7 +3184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581371680}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2057551894
 MonoBehaviour:
@@ -3156,7 +3222,7 @@ MonoBehaviour:
   energyPickupPrefab: {fileID: 6218333119350727394, guid: baab8b05c724d2e48a460ded7cdb4d72,
     type: 3}
   energyPickUpChance: 0.05
-  cameraSpeed: 1.2
+  cameraSpeed: 1.3
 --- !u!1001 &4450448303652582920
 PrefabInstance:
   m_ObjectHideFlags: 0
