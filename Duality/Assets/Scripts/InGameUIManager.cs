@@ -21,8 +21,6 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField] private MenuWindow pauseMenu;
     [SerializeField] private MenuWindow gameOverMenu;
     [SerializeField] private MenuWindow winScreen;
-
-    [SerializeField] private float towerHeight;
     private float maxHeight = -1f;
 
     private void OnEnable()
@@ -65,10 +63,17 @@ public class InGameUIManager : MonoBehaviour
     void UpdateHeightDisplay()
     {
         if (PlayerController.Instance.transform.position.y > maxHeight)
+        {
             maxHeight = PlayerController.Instance.transform.position.y;
 
+            // maxHeight should not exceed tower height
+            if (maxHeight > GameManager.Instance.gameEndHeight)
+                maxHeight = GameManager.Instance.gameEndHeight;
+        }
+            
+
         heightTextDisplay.text = (Mathf.Round(maxHeight * 10) / 10f).ToString();
-        heightSliderDisplay.value = maxHeight / towerHeight;
+        heightSliderDisplay.value = maxHeight / GameManager.Instance.gameEndHeight;
     }
 
     void UpdateEnergyBar()
