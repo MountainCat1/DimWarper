@@ -107,6 +107,17 @@ public class GameData
     public int gameProgress = 0;
 
     public List<HighScore> highScores = new List<HighScore>();
+
+    public PlayerSettings playerSettings = new PlayerSettings();
+}
+
+[Serializable]
+public class PlayerSettings
+{
+    public float musicVolume = 1f;
+    public float generalVolume = 1f;
+    public bool musicEnabled = true;
+    public bool postProcessingEnabled = true;
 }
 
 [Serializable]

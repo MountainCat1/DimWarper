@@ -6,10 +6,15 @@ using UnityEngine;
 public class WinGameOnHeight : OnHeightBehaviour
 {
     [SerializeField] private float delay = 3f;
-
+    [SerializeField] private bool useGameManagerWinHeight = true;
+    
+    
     private void Awake()
     {
         usePlayerHeight = true;
+
+        if (useGameManagerWinHeight)
+            height = GameManager.Instance.gameEndHeight;
     }
 
     protected override void Action()

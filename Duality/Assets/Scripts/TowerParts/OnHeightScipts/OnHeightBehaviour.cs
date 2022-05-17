@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class OnHeightBehaviour : MonoBehaviour
 {
-    [SerializeField] private float height;
+    [SerializeField] protected float height; // This SHOULD be private, but gosh it is so much easier this way
+    
     protected bool usePlayerHeight = false; // This shit should be serializable, but at this stage there is no point
                                             // in following any rules
     

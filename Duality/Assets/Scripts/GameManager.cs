@@ -19,8 +19,12 @@ public class GameManager : MonoBehaviour
     public bool Lost { get; private set; } = false;
     public bool Paused { get; set; } = false;
     public Action GameLostEvent;
-    
     public bool GameOver => Lost || Won;
+    
+    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
+    public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
+    public int TopFloor { get; set; } = 0;
+    public int BottomFloor { get; set; } = 1;
 
     // Editor 
     public float towerWidth = 8;
@@ -30,12 +34,6 @@ public class GameManager : MonoBehaviour
     public float dangerDistance = 25f;
 
     public float timeScale = 2f;
-
-    public LevelGenerator ActiveLevelGenerator { get => LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight); }
-    public Dictionary<int, Floor> instantinatedFloors = new Dictionary<int, Floor>();
-    public int TopFloor { get; set; } = 0;
-    public int BottomFloor { get; set; } = 1;
-
 
     // Camera, Height, Time
     public Transform cameraTransform;
@@ -47,17 +45,19 @@ public class GameManager : MonoBehaviour
     private float cameraSpeed = 0.6f;
     public float ExpectedHeight { get; set; } = 0f;
     public float Timer { get; set; }
-    //
     
-    
+    // Misc? Dont really know how to call those x3
     public Animator blackScreeAnimator;
     public Animator soundtrackAnimator;
     public MenuWindow deathScreen;
     public float timeToShowGameOverScreen = 1f;
 
+    
+    // Game settings
     public float maxEnergy = 100f;
     public float energyRegen = 0.2f;
     public float actionEnergyCost = 25f;
+    public float gameEndHeight = 0f;
 
     private void Awake()
     {
