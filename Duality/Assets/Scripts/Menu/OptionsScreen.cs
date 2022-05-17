@@ -8,10 +8,12 @@ using UnityEngine.UI;
 
 public class OptionsScreen : MenuWindow
 {
-    [SerializeField] private Slider musicVolumeSlider;
+    //[SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider generalVolumeSlider;
     [SerializeField] private Toggle musicToggle;
     [SerializeField] private Toggle postProcessingToggle;
+
+    private const float VolumeMultiplier = 10f;
 
     private PlayerSettings settings;
     
@@ -22,8 +24,8 @@ public class OptionsScreen : MenuWindow
         musicToggle.isOn = settings.musicEnabled;
         postProcessingToggle.isOn = settings.postProcessingEnabled;
 
-        generalVolumeSlider.value = settings.generalVolume;
-        musicVolumeSlider.value = settings.musicVolume;
+        generalVolumeSlider.value = settings.generalVolume * VolumeMultiplier;
+        //musicVolumeSlider.value = settings.musicVolume;
     }
 
     private void OnDisable()
@@ -42,7 +44,7 @@ public class OptionsScreen : MenuWindow
          settings.musicEnabled = musicToggle.isOn;
          settings.postProcessingEnabled = postProcessingToggle.isOn;
 
-         settings.generalVolume = generalVolumeSlider.value;
-         settings.musicVolume = musicVolumeSlider.value;
+         settings.generalVolume = generalVolumeSlider.value / VolumeMultiplier;
+         //settings.musicVolume = musicVolumeSlider.value / VolumeMultiplier;
     }
 }
