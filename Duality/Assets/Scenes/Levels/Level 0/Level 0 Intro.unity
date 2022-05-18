@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -190,13 +190,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: 'So... get prepared for the first level!
-
-    Try to get to height 100
-    and escape your first tower
-
-
-    Good luck!'
+  m_Text: "\rThe only thing you see is small dot of light up above. You begin to
+    climb. "
 --- !u!222 &36207584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -234,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da65bea6a25569d47892d4dc4ed8cf4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Level 0
   slideContainer: {fileID: 1099053273}
   timeToWaitBeforeLoadLevel: 2
   fadeBlackScreenAnimator: {fileID: 486859295}
@@ -617,11 +613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: 'This is an intro to first level of DimWarper!
-
-    ^^
-
-'
+  m_Text: 'You wake up alone in the dark, with no memory about what happened. '
 --- !u!222 &777531508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -814,9 +806,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: 'But for now it''s just this
-
-'
+  m_Text: "You remember only that you fell through some portal \u2026 \r"
 --- !u!222 &1095438807
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1280,7 +1270,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: Some day there will be some stuff about lore of this game
+  m_Text: "Only thing you know is that somehow you warped into another dimension
+    and now you only have a fraction of that power, so you can\u2019t go back. \r\n"
 --- !u!222 &1801463703
 CanvasRenderer:
   m_ObjectHideFlags: 0

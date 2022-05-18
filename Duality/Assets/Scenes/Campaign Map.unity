@@ -502,11 +502,8 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'Tower of fog belongs to freshly baked high mage. He did impress all
-        the others, by quickly like no one else mastering the power of moving platforms.
-
-        You
-        can expect ground you stand on to not be as trustwothy as it used to be.'
+      value: "Second tower is covered in fog and is in possession of mage known as
+        \u201CThe Misty One\u201D. His power allows him to move platforms.  "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -996,9 +993,8 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: The Fire Tower belongs to Fire Mage that is know for his fireballs.
-        Be careful jumping on his territory because you will never know where the
-        Fire Mage of Fire Tower will throw his fireball at you...
+      value: "Third tower is a hot one. It\u2019s made out of magma and \u201CThe
+        Flame Keeper\u201D keeps it lit. To make your journey harder, he shoots fireballs. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1504,9 +1500,10 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: This tower belongs to the youngest mage of all, as well as the stupidest
-        one for sure. He doesn't even know one spell! But aura of the tower still
-        can pose danger to you so watch your jump.
+      value: 'As wizard fell, his power and knowledge becomes yours. Now you understand,
+        In order to return to your world, you have to defeat all wizards and harvest
+        their power. Only then you will be powerful enough to tear a hole in the
+        Fabric of the Universe and change dimension for good. '
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -2189,11 +2186,9 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'This tower is not yet to be found!
-
-
-        Someone seems to have
-        casted the 404 error spell on it!'
+      value: "It\u2019s getting weird. Sixth tower is alive and its keeper \u201CThe
+        Beastmaster\u201D has ability to summon monsters from the Deep and control
+        them. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3293,11 +3288,9 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'This tower is not yet to be found!
-
-
-        Someone seems to have
-        casted the 404 error spell on it!'
+      value: "You approach the final tower. You\u2019re so close to getting back
+        home. But in your way stands the final boss \u2013 \u201CThe Dimwarper\u201D.
+        Absorbing his power will allow you to open a portal into your dimension. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3569,11 +3562,9 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'This tower is not yet to be found!
-
-
-        Someone seems to have
-        casted the 404 error spell on it!'
+      value: "Forth tower, the opposite of previous one is made out of ice and is
+        ruled by Flame Keeper\u2019s brother \u2013 \u201CThe Cold Hearted\u201D.
+        He, on the other hand shoots icicles. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3950,11 +3941,9 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'This tower is not yet to be found!
-
-
-        Someone seems to have
-        casted the 404 error spell on it!'
+      value: "Fifth tower is a dangerous one, because it\u2019s ruled by \u201CThe
+        Father\u201D, father of Fire and Ice. You defeated his sons, so he might
+        be angry. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -5118,8 +5107,8 @@ PrefabInstance:
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: Old tunnel leading to the mysterious realm. The same one that you used
-        to get here in the first place.
+      value: "First tower is made out of wood and is ruled by \u201CThe Carpenter\u201D.
+        You will encounter your first modifier: moving platforms. "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}

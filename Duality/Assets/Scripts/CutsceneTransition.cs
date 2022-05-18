@@ -12,7 +12,8 @@ using UnityEngine.UI;
 public class CutsceneTransition : MonoBehaviour
 {
     private static string SceneToLoad { set; get; }
-    
+
+    [SerializeField] private string sceneToLoad;
     // Editor
     [SerializeField] private GameObject slideContainer;
     [SerializeField] private float timeToWaitBeforeLoadLevel;
@@ -21,6 +22,14 @@ public class CutsceneTransition : MonoBehaviour
 
     private List<GameObject> slides;
     private int presentSlide = 0;
+
+    private void Awake()
+    {
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneToLoad = sceneToLoad;
+        }
+    }
 
     private void Start()
     {
