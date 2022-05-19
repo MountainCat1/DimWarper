@@ -114,7 +114,6 @@ public class GameData
 [Serializable]
 public class PlayerSettings
 {
-    public float musicVolume = 1f;
     public float generalVolume = 1f;
     public bool musicEnabled = true;
     public bool postProcessingEnabled = true;
