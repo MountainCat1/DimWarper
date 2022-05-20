@@ -12,7 +12,9 @@ public class InGameUIManager : MonoBehaviour
     public static InGameUIManager Instance { get; private set; }
     
     [SerializeField] private string menuSceneName = "MainMenu";
+    [SerializeField] private string endCutsceneName = "End Cutscene";
 
+    
     [SerializeField] private Text heightTextDisplay;
     [SerializeField] private Slider heightSliderDisplay;
     [SerializeField] private Slider energyBar;
@@ -99,6 +101,11 @@ public class InGameUIManager : MonoBehaviour
     public void LoadMenu()
     {
         StartCoroutine(AsyncLoadScene(menuSceneName));
+    }
+
+    public void LoadEndCutscene()
+    {
+        StartCoroutine(AsyncLoadScene(endCutsceneName));
     }
 
     public void OnWin()
