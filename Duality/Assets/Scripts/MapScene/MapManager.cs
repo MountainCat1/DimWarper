@@ -24,6 +24,11 @@ public class MapManager : MonoBehaviour
     {
         StopAllCoroutines();
         
+        if (Application.CanStreamedLevelBeLoaded($"{levelName} Intro"))
+        {
+            levelName = $"{levelName} Intro";
+        }
+        
         LoadingScreen.Show();
         StartCoroutine(SceneLoader.InternalSceneLoad(levelName));
     }

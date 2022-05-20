@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da65bea6a25569d47892d4dc4ed8cf4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 777531507}
+  sceneToLoad: Level 1
+  slideContainer: {fileID: 0}
   timeToWaitBeforeLoadLevel: 2
   fadeBlackScreenAnimator: {fileID: 486859295}
   fadeMusicAnimator: {fileID: 1468178038}
@@ -497,7 +498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: 'This is an intro to first level of DimWarper!
+  m_Text: 'This is an intro to level 1
 
     ^^'
 --- !u!222 &777531508

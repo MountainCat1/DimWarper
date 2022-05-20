@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1355,7 +1355,7 @@ MonoBehaviour:
     a gamer\n\njakub1838 - testing and feedback\n\nInvi - testing and feedback\n\nHiuston957
     - testing and feedback\n\nbrzydkionjest -  testing and feedback\n\nG\u0119sty
     Krystian -  testing and feedback\n\njeny nienawidze protossow  -  testing and
-    feedback\n\nScoops - just being amazing\n\n\n\n\n\n"
+    feedback\n\n\n\n\n\n\n\n"
 --- !u!222 &1627122221
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1457,7 +1457,7 @@ MonoBehaviour:
     a gamer\n\njakub1838 - testing and feedback\n\nInvi - testing and feedback\n\nHiuston957
     - testing and feedback\n\nbrzydkionjest -  testing and feedback\n\nG\u0119sty
     Krystian -  testing and feedback\n\njeny nienawidze protossow  -  testing and
-    feedback\n\nScoops - just being amazing\n\n\n\n"
+    feedback\n\n\n\n\n\n"
 --- !u!222 &1686495400
 CanvasRenderer:
   m_ObjectHideFlags: 0

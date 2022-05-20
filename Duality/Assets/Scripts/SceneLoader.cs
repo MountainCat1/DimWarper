@@ -12,15 +12,15 @@ public static class SceneLoader
     {
         var operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
       
-      while (!operation.isDone)
-      {
-          yield return null;
-      }
-      
-      ActiveScene = sceneName;
-      
-      LoadingScreenStartUnloading?.Invoke();
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+          
+        ActiveScene = sceneName;
+          
+        LoadingScreenStartUnloading?.Invoke();
 
-      yield return null;
+        yield return null;
     }
 }

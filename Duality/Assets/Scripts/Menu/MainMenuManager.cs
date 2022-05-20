@@ -60,7 +60,8 @@ public class MainMenuManager : MonoBehaviour
 
         if (GameDataManager.Data.gameProgress == 0)
         {
-            CutsceneTransition.StartTransition("Level 0 Intro", "Level 0");
+            //CutsceneTransition.StartTransition("Campaign Intro", "Level 0");
+            StartCoroutine(LoadYourAsyncScene("Level 0 Intro"));
             //StartCoroutine(LoadYourAsyncScene("Level 0"));
         }
         else
