@@ -13,9 +13,40 @@ using UnityEngine.Rendering;
 /// </summary>
 public class OptionApplier : MonoBehaviour
 {
-    private const string soundtrackAudiSourceGameObjectName = "Soundtrack";
+    private static OptionApplier Instance { get; set; }
     
+    private const string SoundtrackAudiSourceGameObjectName = "Soundtrack";
+
+    private void OnEnable()
+    {
+        if(Instance != null)
+            Debug.LogError($"Second instance of {GetType().Name} initialized");
+        
+        Instance = this;
+    }
+
+    private void OnDisable()
+    {
+        if(Instance == this)
+            Instance = null;
+    }
+
     private void Start()
+    {
+        Apply();
+    }
+
+    public static void ApplyOptions()
+    {
+        if (Instance == null)
+        {
+            Debug.LogError($"Singleton of OptionsApplier was not initialized!");
+            return;
+        }
+        
+        Instance.Apply();
+    }
+    private void Apply()
     {
         var settings = GameDataManager.Data?.playerSettings;
         if (settings == null)
@@ -28,8 +59,8 @@ public class OptionApplier : MonoBehaviour
         AudioListener.volume = settings.generalVolume;
 
         // Disable/Enable soundtrack
-        var soundtrackAudioSource = GameObject.Find(soundtrackAudiSourceGameObjectName)
-            .GetComponent<AudioSource>();
+        var soundtrackAudioSource = GameObject.Find(SoundtrackAudiSourceGameObjectName)
+            ?.GetComponent<AudioSource>();
         soundtrackAudioSource.enabled = settings.musicEnabled;
         
         // Disable/Enable postprocessing 

@@ -17,6 +17,7 @@ public class OptionsScreen : MenuWindow
 
     private PlayerSettings settings;
     
+
     private void OnEnable()
     {
         settings = GameDataManager.Data.playerSettings;
@@ -32,6 +33,7 @@ public class OptionsScreen : MenuWindow
     {
         settings = null;
         GameDataManager.SaveData();
+        OptionApplier.ApplyOptions();
     }
 
     private void Update()
