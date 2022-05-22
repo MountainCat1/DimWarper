@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -199,7 +199,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 50126bda23d501e47875a9e7a5b3da05, type: 3}
-    m_FontSize: 10
+    m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -210,65 +210,174 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.24
-  m_Text: '
+  m_Text: '<size=20><b>Music used:</b></size>
 
-    <size=20><b>Music used:</b></size>
+    
 
-    The Descent by Kevin MacLeod
-
-    Link:
-    https://incompetech.filmmusic.io/song/4490-the-descent
-
-    License: https://incompetech.filmmusic.io/standard-license
-
-
-
-    Burn
-    The World Waltz by Kevin MacLeod
+    Burn The World Waltz by
+    Kevin MacLeod
 
     Link: https://incompetech.filmmusic.io/song/7912-burn-the-world-waltz
 
     License:
     https://incompetech.filmmusic.io/standard-license
 
+    
 
-
-    District Four by Kevin
-    MacLeod
+    District Four
+    by Kevin MacLeod
 
     Link: https://filmmusic.io/song/3662-district-four
 
     License:
     https://filmmusic.io/standard-license
 
+    
 
+    Ether Vox by Kevin MacLeod
 
-    The Whip (Extended Version) by Kevin
-    MacLeod
+    Link:
+    https://incompetech.filmmusic.io/song/7014-ether-vox
 
-    Link: https://incompetech.filmmusic.io/song/4514-the-whip-extended-version-
+    License: https://filmmusic.io/standard-license
 
-    License:
-    https://incompetech.filmmusic.io/standard-license
+    
 
+    Hero
+    Down by Kevin MacLeod
 
-
-    Highlight Reel by Kevin
-    MacLeod
-
-    Link: https://filmmusic.io/song/3876-highlight-reel
+    Link: https://incompetech.filmmusic.io/song/3868-hero-down
 
     License:
     https://filmmusic.io/standard-license
 
+    
 
+    Hidden Past by Kevin MacLeod
+
+    Link:
+    https://incompetech.filmmusic.io/song/3873-hidden-past
+
+    License: https://filmmusic.io/standard-license
+
+    
+
+    Highlight
+    Reel by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/3876-highlight-reel
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
 
     Hotrock by Kevin MacLeod
 
     Link:
-    https://filmmusic.io/song/3886-hotrock
+    https://incompetech.filmmusic.io/song/3886-hotrock
 
     License: https://filmmusic.io/standard-license
+
+    
+
+    In
+    a Heartbeat by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/3907-in-a-heartbeat
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    Motherlode by Kevin MacLeod
+
+    Link:
+    https://incompetech.filmmusic.io/song/4083-motherlode
+
+    License: https://filmmusic.io/standard-license
+
+    
+
+    Noise
+    Attack by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/4142-noise-attack
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    Ready Aim Fire by Kevin MacLeod
+
+    Link:
+    https://incompetech.filmmusic.io/song/5001-ready-aim-fire
+
+    License: https://filmmusic.io/standard-license
+
+    
+
+    The
+    Descent by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/4490-the-descent
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    The Pyre by Kevin MacLeod
+
+    Link:
+    https://incompetech.filmmusic.io/song/4504-the-pyre
+
+    License: https://filmmusic.io/standard-license
+
+    
+
+    The
+    Rule by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/4506-the-rule
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    The Whip (Extended Version)
+    by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/4514-the-whip-extended-version-
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    Vanishing by Kevin MacLeod
+
+    Link:
+    https://incompetech.filmmusic.io/song/4578-vanishing
+
+    License: https://filmmusic.io/standard-license
+
+    
+
+    Welcome
+    to the Show by Kevin MacLeod
+
+    Link: https://incompetech.filmmusic.io/song/4614-welcome-to-the-show
+
+    License:
+    https://filmmusic.io/standard-license
+
+    
+
+    
 
 '
 --- !u!222 &128581835
@@ -1828,13 +1937,7 @@ MonoBehaviour:
 
 
 
-
-
-
-
-
     Okey that is enough X)
-
 
 
 
