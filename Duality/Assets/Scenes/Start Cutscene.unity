@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -500,13 +500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366f2abf21710ef42ab0745df30582e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lore: "\"What \u2026 what happened???\" \u2013 you ask. You wake up alone in mysterious
-    tower, in front of you there is a note and a strange amulet. \nThe note:\r\nYou
-    have been chosen for my challenge. Complete it and you will become more powerful
-    than you could ever imagine, fail and loose you sanity. Your goal is to get on
-    top of my tower, but many challenges lay in front of you. The amulet I gave you
-    allows you to change physical properties of the tower, which will help you complete
-    the quest. Also, you can\u2019t die. \n\nXOXO \n\nEvil Magician"
+  lore: "\"What \u2026 what happened???\" \u2013 you ask. You wake up alone in a
+    mysterious tower, in front of you there is a note and a strange amulet. \r\nThe
+    note:\r\nYou have been chosen for my challenge. Complete it, and you will become
+    more powerful than you could ever imagine, fail and lose your sanity. Your goal
+    is to get on top of my tower, but many challenges lay in front of you. The amulet
+    I gave you allows you to change the physical properties of the tower, which will
+    help you complete the quest. Also, you can\u2019t die. \r\n\r\nXOXO \r\n\r\nEvil
+    Magician\r"
   writeSpeed: 12
   waitingTime: 5
   beep: {fileID: 403798157}
