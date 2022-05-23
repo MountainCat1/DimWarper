@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -924,7 +924,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -25
-  m_Sprite: {fileID: 21300000, guid: 214efbdeed1a7f44f8ca240b33ccf60f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbe18599f5d9d8b46a0379f7e322f009, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2087,16 +2087,9 @@ MonoBehaviour:
     foregroundTint: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     backgroundTint: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
     notActiveObjectAlpha: 0.33
-  - foreground: {fileID: 21300000, guid: 0a1b5ce33f69dec41a600fa0a40f83ca, type: 3}
-    background: {fileID: 21300000, guid: bbe18599f5d9d8b46a0379f7e322f009, type: 3}
-    wall: {fileID: 21300000, guid: bbe18599f5d9d8b46a0379f7e322f009, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
-    foregroundTint: {r: 1, g: 1, b: 1, a: 1}
-    backgroundTint: {r: 1, g: 1, b: 1, a: 1}
-    notActiveObjectAlpha: 0.15
-  - foreground: {fileID: 21300000, guid: 09bf3b8b88260654494f5e91454c6eb6, type: 3}
-    background: {fileID: 21300000, guid: 377bf7009bf9702438822e0db90fc565, type: 3}
-    wall: {fileID: 21300000, guid: d30c0c3cd64174b47a361104a802e586, type: 3}
+  - foreground: {fileID: 21300000, guid: 686c243f3b7fc37458360451be1014dc, type: 3}
+    background: {fileID: 21300000, guid: 3437e8a46b0e15d4b847bec302b4f4fd, type: 3}
+    wall: {fileID: 21300000, guid: e24c1e9752a17b148a2214b2ed8e9e18, type: 3}
     soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
@@ -2108,13 +2101,6 @@ MonoBehaviour:
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
     notActiveObjectAlpha: 0.12
-  - foreground: {fileID: 21300000, guid: 686c243f3b7fc37458360451be1014dc, type: 3}
-    background: {fileID: 21300000, guid: 3437e8a46b0e15d4b847bec302b4f4fd, type: 3}
-    wall: {fileID: 21300000, guid: e24c1e9752a17b148a2214b2ed8e9e18, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
-    foregroundTint: {r: 1, g: 1, b: 1, a: 1}
-    backgroundTint: {r: 1, g: 1, b: 1, a: 1}
-    notActiveObjectAlpha: 0.15
 --- !u!1 &1338307711
 GameObject:
   m_ObjectHideFlags: 0
