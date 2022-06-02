@@ -6,7 +6,7 @@
 </p>
 
 ### Description
-Diwmwarper is a platformer game in which you lay as a mysterious character who gained an ability to swap between two dimensions. You traveled to a distant land controlled by 7 different mages, each one more dangerous than the previous. Your quest is to conquer all seven towers and defeat the arch mage.
+Dimwarper is a platformer game in which you play as a mysterious character who gained an ability to swap between two dimensions. You traveled to a distant land controlled by 7 different mages, each one more dangerous than the previous. Your quest is to conquer all seven towers and defeat the arch mage.
 
 With each tower, player will face a new type of danger
 - Smaller platforms
