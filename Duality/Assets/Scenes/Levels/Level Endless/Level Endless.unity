@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   renderRangeDown: 9
   deathDistance: 10
   dangerDistance: 3.5
-  timeScale: 2
+  timeScale: 1
   cameraTransform: {fileID: 350499276}
   cameraRotationSpeed: 0.8
   cameraSpeedMultiplier: 1
