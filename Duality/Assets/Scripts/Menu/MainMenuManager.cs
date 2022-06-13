@@ -58,16 +58,14 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("=== Loading campain mode... ===");
 
-        if (GameDataManager.Data.gameProgress == 0)
+        /*if (GameDataManager.Data.gameProgress == 0)
         {
-            //CutsceneTransition.StartTransition("Campaign Intro", "Level 0");
             StartCoroutine(LoadYourAsyncScene("Level 0 Intro"));
-            //StartCoroutine(LoadYourAsyncScene("Level 0"));
         }
         else
-        {
-            StartCoroutine(LoadYourAsyncScene("Campaign Map"));
-        }
+        {*/
+        StartCoroutine(LoadYourAsyncScene("Campaign Map"));
+        /*}*/
     }
 
     public void EndlessMode()
