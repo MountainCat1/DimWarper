@@ -492,18 +492,18 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Tower of Fog
+      value: The Haze
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: Tower of Fog
+      value: The Haze
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
       value: "Second tower is covered in fog and is in possession of mage known as
-        \u201CThe Misty One\u201D. His power allows him to move platforms.  "
+        \u201CThe Misty One\u201D. His power allows him to move platforms."
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -983,12 +983,12 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Fire Tower
+      value: The Torch
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: Fire Tower
+      value: The Torch
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -1490,20 +1490,20 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Haunted Tower
+      value: The Gate
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: Haunted Tower
+      value: The Gate
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: 'As wizard fell, his power and knowledge becomes yours. Now you understand,
-        In order to return to your world, you have to defeat all wizards and harvest
-        their power. Only then you will be powerful enough to tear a hole in the
-        Fabric of the Universe and change dimension for good. '
+      value: "First tower, gate to the Locus of Dimensions, Birthplace of Fire and
+        Ice, , will teach you how to survive in this hard times. You will encounter
+        first wizard, \u201CThe Gatekeeper\u201D and he will try to stop you from
+        reaching other towers. "
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -2176,12 +2176,12 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Grand Tentacle
+      value: The Zoo
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: 404
+      value: The Zoo
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3278,19 +3278,19 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: ???
+      value: The End
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: 404
+      value: The End
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
       value: "You approach the final tower. You\u2019re so close to getting back
         home. But in your way stands the final boss \u2013 \u201CThe Dimwarper\u201D.
-        Absorbing his power will allow you to open a portal into your dimension. "
+        Absorbing his power will allow you to open a portal into your dimension."
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3552,19 +3552,19 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Rock
+      value: The Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: 404
+      value: The Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
       value: "Forth tower, the opposite of previous one is made out of ice and is
         ruled by Flame Keeper\u2019s brother \u2013 \u201CThe Cold Hearted\u201D.
-        He, on the other hand shoots icicles. "
+        He, on the other hand, he places traps made out of ice."
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -3931,19 +3931,18 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Monster Tower
+      value: "Old man\u2019s keep"
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: 404
+      value: "Old man\u2019s keep"
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
       value: "Fifth tower is a dangerous one, because it\u2019s ruled by \u201CThe
-        Father\u201D, father of Fire and Ice. You defeated his sons, so he might
-        be angry. "
+        Father\u201D of Fire and Ice. You defeated his sons, so he might be angry."
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
@@ -5110,18 +5109,17 @@ PrefabInstance:
     - target: {fileID: 2928407885810743505, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: m_Text
-      value: Dirty Entrance
+      value: The Dark Passage
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationName
-      value: Dirty Entrance
+      value: The Dark Passage
       objectReference: {fileID: 0}
     - target: {fileID: 7846898689167159125, guid: 09e2ea10ea5948c4d9b38d13813d5941,
         type: 3}
       propertyPath: locationDescription
-      value: "First tower is made out of wood and is ruled by \u201CThe Carpenter\u201D.
-        You will encounter your first modifier: moving platforms. "
+      value: Your journey begins.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e2ea10ea5948c4d9b38d13813d5941, type: 3}
