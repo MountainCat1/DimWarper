@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb357f1b80dbe54283c0d5ddc5218f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 350
+  height: 300
   delay: 20
   useGameManagerWinHeight: 1
 --- !u!114 &581371686
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7422067460a56d4aa0daeebabf476df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 350
+  height: 300
   newGameProgressValue: 7
 --- !u!114 &581371687
 MonoBehaviour:
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad34171425944bd59a9bceb09bddb1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 350
+  height: 300
   bossTrap: {fileID: 1631016178}
   playerAttackPrefab: {fileID: 2844952950087806726, guid: 64c87da3ec6f83043807eca5e4193049,
     type: 3}
