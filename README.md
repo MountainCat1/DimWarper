@@ -23,10 +23,11 @@ With each tower, player will face a new type of danger
 ##### Jakub Wilczak
 - Game design
 - Graphics and game assets
-- Testing
+- Music
 ##### Mariusz Gajewski
 - Graphics and game assets
-- Testing
+- UI design
+- Some coding
  ------------------------
 ### Gameplay
 
