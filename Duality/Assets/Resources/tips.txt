@@ -1,0 +1,6 @@
+﻿If it is your first time, start slow. Rushing will only make it harder.
+When you find yourself under a larger platform, you can jump and immediately swap dimension to fly through it.
+Stripes at the bottom of the screen show you how much double jumps you can do. Look for energy pickups to refill them.
+Fire and ice traps/enemies are present only in their respective dimensions, so you can avoid them by swapping it.
+If you need to go faster you can dash down to be able to land immediately.
+We recommend playing with volume on. Enemies and traps produce sound before they appear on the screen.
