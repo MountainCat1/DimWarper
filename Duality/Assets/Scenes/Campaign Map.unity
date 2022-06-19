@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -177,6 +177,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1585907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,6 +2172,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &693132353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,6 +3026,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1002157087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,6 +3624,7 @@ MonoBehaviour:
   locationName: Dirty Entrance
   locationDescription: Old tunnel leading to the mysterious realm. The same one that
     you used to get here in the first place.
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1504918030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4098,6 +4102,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1566025259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5494,6 +5499,7 @@ MonoBehaviour:
   locationName: Dirty Entrance
   locationDescription: Old tunnel leading to the mysterious realm. The same one that
     you used to get here in the first place.
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1857261322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5768,6 +5774,7 @@ GameObject:
   - component: {fileID: 1869832428}
   - component: {fileID: 1869832429}
   - component: {fileID: 1869832430}
+  - component: {fileID: 1869832431}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -5867,6 +5874,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf6606df058c5f4da5f1e9fb9997d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1869832431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869832424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe74d815a9e1c14789ca92930c4abd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Achievements:
+  - steamAchievementId: Progress_1_Achievement
+    requiredGameProgress: 1
+  - steamAchievementId: Progress_2_Achievement
+    requiredGameProgress: 2
+  - steamAchievementId: Progress_3_Achievement
+    requiredGameProgress: 3
+  - steamAchievementId: Progress_4_Achievement
+    requiredGameProgress: 4
+  - steamAchievementId: Progress_5_Achievement
+    requiredGameProgress: 5
+  - steamAchievementId: Progress_6_Achievement
+    requiredGameProgress: 6
+  - steamAchievementId: Progress_7_Achievement
+    requiredGameProgress: 7
 --- !u!1 &1898146364
 GameObject:
   m_ObjectHideFlags: 0
@@ -6018,6 +6052,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!114 &1925795575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6447,6 +6482,7 @@ MonoBehaviour:
   locationName: Dirty Entrance
   locationDescription: Old tunnel leading to the mysterious realm. The same one that
     you used to get here in the first place.
+  disabledLocationTextTransparency: 0.7
 --- !u!1001 &2928407884400664931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7065,6 +7101,7 @@ MonoBehaviour:
   gameProgressRequired: 1
   locationName: 
   locationDescription: 
+  disabledLocationTextTransparency: 0.7
 --- !u!222 &5536012040861142733
 CanvasRenderer:
   m_ObjectHideFlags: 0
