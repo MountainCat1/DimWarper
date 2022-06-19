@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class SteamIntegration : MonoBehaviour
+public class SteamIntegrationInitializer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,5 @@ public class SteamIntegration : MonoBehaviour
         {
             Debug.LogError($"Error accrued while trying to connect to to steam!");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
