@@ -27,11 +27,18 @@ public class SteamIntegrationInitializer : MonoBehaviour
         try
         {
             SteamClient.Init(2056190);
+            DontDestroyOnLoad(gameObject);
             Debug.Log($"<Steam Initialized> Logged to steam as {SteamClient.Name}");
         }
         catch(Exception ex)
         {
             Debug.LogError($"<Steam Initialized> Error accrued while trying to connect to to steam!");
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Debug.Log("Shutting down steam connection...");
+        SteamClient.Shutdown();
     }
 }
