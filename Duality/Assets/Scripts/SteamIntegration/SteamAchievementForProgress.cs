@@ -16,7 +16,7 @@ public class SteamAchievementForProgress : MonoBehaviour
         
         foreach (var achievement in Achievements)
         {
-            if (achievement.requiredGameProgress >= data.gameProgress)
+            if (achievement.requiredGameProgress <= data.gameProgress)
             {
                 Debug.Log($"Achievement unlocked! {achievement.steamAchievementId}");
 

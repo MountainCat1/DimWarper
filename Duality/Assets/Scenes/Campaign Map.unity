@@ -5901,6 +5901,8 @@ MonoBehaviour:
     requiredGameProgress: 6
   - steamAchievementId: Progress_7_Achievement
     requiredGameProgress: 7
+  - steamAchievementId: Progress_8_Achievement
+    requiredGameProgress: 8
 --- !u!1 &1898146364
 GameObject:
   m_ObjectHideFlags: 0
