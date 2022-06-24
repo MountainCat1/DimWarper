@@ -5,27 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/OLD/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/Start Cutscene.unity
     guid: 1ad060877bd19ee41a042ec3d77d394c
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8d0eed207a4fa5f4e95c02757a9cfedf
-  - enabled: 0
-    path: Assets/Scenes/OLD/MainMenu OLD.unity
-    guid: f0c612c52e7d9834a80f353af3bc2abf
   - enabled: 1
     path: Assets/Scenes/OLD/Game.unity
     guid: 0e741307b55f3844d81afa2c08259e06
-  - enabled: 0
-    path: Assets/Scenes/OLD/GameOver.unity
-    guid: 0565c9959e9fd91449ae1db0997f147e
-  - enabled: 0
-    path: Assets/Scenes/OLD/Game Easy.unity
-    guid: 15bab17ebd5770049bf6597e13c53d97
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 9992607566793c3429432cac8a614cbe
@@ -38,12 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level Intro.unity
     guid: 496df180977da3941b789bf358b4b778
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Test Level.unity
     guid: 1b5d86ae78fff214bb11d9553b03d205
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Endless/Level Endless.unity
+    guid: 5765e8865c758694392fda930b67b344
   - enabled: 1
     path: Assets/Scenes/Levels/Level 0/Level 0.unity
     guid: 1eeb3d245e30be34cafb65e208b1acf9
@@ -57,11 +45,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 1/Level 1 Intro.unity
     guid: 5685da1994c619f45ac7a41a0dce0985
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 1/Level 1 Outro.unity
+    guid: 53f98eccbad7f754ea3f88d9f2baa3da
+  - enabled: 1
     path: Assets/Scenes/Levels/Level 2/Level 2.unity
     guid: f67f9c1767c49eb46adf2f547d279cc6
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level Endless/Level Endless.unity
-    guid: 5765e8865c758694392fda930b67b344
   - enabled: 1
     path: Assets/Scenes/Levels/Level 3/Level 3.unity
     guid: a941d2338fe11064b9d1c80ad2ed98e9
@@ -78,6 +66,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 7/Level 7.unity
     guid: 6bd26c558d2e16448b76b8ea4c2b81f1
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1/Level 1 Outro.unity
-    guid: 53f98eccbad7f754ea3f88d9f2baa3da
+    path: Assets/Scenes/End Cutscene.unity
+    guid: 9310414f48a0faa4186c54dead34091d
   m_configObjects: {}
