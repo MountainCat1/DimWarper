@@ -26,17 +26,17 @@ public class CampaignMapMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetButtonDown("Up") || Input.GetButtonDown("Right"))
         {
             MoveSelectedLocation(1);   
             return;
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetButtonDown("Down") || Input.GetButtonDown("Left"))
         {
             MoveSelectedLocation(-1);    
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButton("Jump"))
         {
             Enter();
             return;
