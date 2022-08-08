@@ -1201,6 +1201,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3308943951870699195, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3308943952157456577, guid: f567a4dc2e347e648936a26eed5af420,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1445,7 +1450,7 @@ MonoBehaviour:
   renderRangeDown: 9
   deathDistance: 10
   dangerDistance: 3.5
-  timeScale: 1
+  timeScale: 2
   cameraTransform: {fileID: 350499276}
   cameraRotationSpeed: 0.8
   cameraSpeedMultiplier: 1

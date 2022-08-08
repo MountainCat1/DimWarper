@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
     {
         if (!Won && !Lost && !Paused)
         {
-            Timer += Time.deltaTime;
+            Timer += Time.deltaTime / Time.timeScale;
         }
         
         float bottomFloorHeight = BottomFloor * LevelGeneratorManager.Instance.GetActiveLevelGenerator(ExpectedHeight).floorHeight;
