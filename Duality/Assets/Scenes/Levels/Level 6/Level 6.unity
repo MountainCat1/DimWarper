@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 180
+  height: 150
   newMusicClip: {fileID: 8300000, guid: 5e00b7d3c5a88ed4aa26f4645a6e06c0, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
