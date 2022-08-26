@@ -1460,11 +1460,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.33
-  m_Text: "\n\n\n\n<b>Special thanks to:</b>\n\nBread XD - testing, feedback and
-    a gamer\n\njakub1838 - testing and feedback\n\nInvi - testing and feedback\n\nHiuston957
-    - testing and feedback\n\nbrzydkionjest -  testing and feedback\n\nG\u0119sty
-    Krystian -  testing and feedback\n\njeny nienawidze protossow  -  testing and
-    feedback\n\n\n\n\n\n\n\n"
+  m_Text: "\n\n\n\n<b>Special thanks to:</b>\n\n<b><i>Bread XD</i></b> - testing,
+    feedback, based, amazing and a gamer\n\njakub1838 - testing and feedback\n\nInvi
+    - testing and feedback\n\nHiuston957 - testing and feedback\n\nbrzydkionjest
+    -  testing and feedback\n\nG\u0119sty Krystian -  testing and feedback\n\njeny
+    nienawidze protossow  -  testing and feedback\n\n\n\n\n\n"
 --- !u!222 &1627122221
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1562,11 +1562,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.33
-  m_Text: "\n\n\n\n<b>Special thanks to:</b>\n\nBread XD - testing, feedback and
-    a gamer\n\njakub1838 - testing and feedback\n\nInvi - testing and feedback\n\nHiuston957
-    - testing and feedback\n\nbrzydkionjest -  testing and feedback\n\nG\u0119sty
-    Krystian -  testing and feedback\n\njeny nienawidze protossow  -  testing and
-    feedback\n\n\n\n\n\n"
+  m_Text: "\n\n\n\n<b>Special thanks to:</b>\n\n<b><i>Bread XD</i></b> - testing,
+    feedback, based, amazing and a gamer\n\njakub1838 - testing and feedback\n\nInvi
+    - testing and feedback\n\nHiuston957 - testing and feedback\n\nbrzydkionjest
+    -  testing and feedback\n\nG\u0119sty Krystian -  testing and feedback\n\njeny
+    nienawidze protossow  -  testing and feedback\n\n\n\n\n\n"
 --- !u!222 &1686495400
 CanvasRenderer:
   m_ObjectHideFlags: 0
