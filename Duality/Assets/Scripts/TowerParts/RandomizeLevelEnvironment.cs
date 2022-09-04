@@ -14,6 +14,8 @@ public class RandomizeLevelEnvironment : MonoBehaviour
     [SerializeField] private AudioSource soundtrackAudioSource;
     [SerializeField] private List<SpriteRenderer> boundRenderers;
 
+    [SerializeField] private bool applyEnvironmentMusic = false;
+
     [SerializeField] private List<LevelEnvironment> levelEnvironments;
 
     private void Start()
@@ -22,15 +24,16 @@ public class RandomizeLevelEnvironment : MonoBehaviour
 
         foregroundRenderer.sprite = environment.foreground;
         backgroundRenderer.sprite = environment.background;
-        soundtrackAudioSource.clip = environment.soundtrack;
+        if (applyEnvironmentMusic)
+            soundtrackAudioSource.clip = environment.soundtrack;
 
         foregroundRenderer.color = environment.foregroundTint;
         backgroundRenderer.color = environment.backgroundTint;
 
         DimensionManager.Instance.deactivatedObjectAlpha = environment.notActiveObjectAlpha;
-        
+
         boundRenderers.ForEach((spriteRenderer => spriteRenderer.sprite = environment.wall));
-        
+
         Debug.Log($"Environment randomizer have chosen: {levelEnvironments.IndexOf(environment)}");
     }
 }
@@ -43,7 +46,7 @@ public class LevelEnvironment
     public Sprite wall;
     public AudioClip soundtrack;
     public Color foregroundTint = Color.white;
-    public Color backgroundTint= Color.white;
+    public Color backgroundTint = Color.white;
     public float notActiveObjectAlpha = 0.3f;
 
 }

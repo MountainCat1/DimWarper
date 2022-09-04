@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6696153, g: 0.6703129, b: 0.6705159, a: 1}
+  m_IndirectSpecularColor: {r: 0.6695826, g: 0.670284, b: 0.67050713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 250
-  newMusicClip: {fileID: 8300000, guid: 8d22733b43fefb942bf80e619b8f8d9f, type: 3}
+  newMusicClip: {fileID: 8300000, guid: 0bef80aeee6c3354da9a22e84c3d78a7, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371683
 MonoBehaviour:
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 750
-  newMusicClip: {fileID: 8300000, guid: 9a060238057d9904eb953323aaa53d17, type: 3}
+  newMusicClip: {fileID: 8300000, guid: f18794f5fa0897f4ba24821ec651630d, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
 MonoBehaviour:
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 500
-  newMusicClip: {fileID: 8300000, guid: 296b42fe6b031644480d46ea88e2adba, type: 3}
+  newMusicClip: {fileID: 8300000, guid: e0a864c0533f1134693655c83151f874, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!114 &581371685
 MonoBehaviour:
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 1000
-  newMusicClip: {fileID: 8300000, guid: d7542d90428526b41ab2a1ca81cc6c95, type: 3}
+  newMusicClip: {fileID: 8300000, guid: 152a365b6b1857341888ade4a5cdc63f, type: 3}
   audioSource: {fileID: 1167189373}
 --- !u!1 &637183858
 GameObject:
@@ -1804,7 +1804,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9623a0dda5cc30843ba0efaaae6b7df3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2144,39 +2144,40 @@ MonoBehaviour:
   boundRenderers:
   - {fileID: 1891420397}
   - {fileID: 1364328312}
+  applyEnvironmentMusic: 0
   levelEnvironments:
   - foreground: {fileID: 21300000, guid: b022141db7c418741946dc76399fd5ef, type: 3}
     background: {fileID: 21300000, guid: 418e0455eafab8c4e80d4b8417256fc9, type: 3}
     wall: {fileID: 21300000, guid: 9db0ca447b7ccfb4b9a5d2169a75673a, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+    soundtrack: {fileID: 0}
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
     notActiveObjectAlpha: 0.15
   - foreground: {fileID: 21300000, guid: 214efbdeed1a7f44f8ca240b33ccf60f, type: 3}
     background: {fileID: 21300000, guid: 230ab2f2554e4254dab1496a704c19ce, type: 3}
     wall: {fileID: 21300000, guid: 354b5999331126c43a163f4bd45a1733, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+    soundtrack: {fileID: 0}
     foregroundTint: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     backgroundTint: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
     notActiveObjectAlpha: 0.33
   - foreground: {fileID: 21300000, guid: 686c243f3b7fc37458360451be1014dc, type: 3}
     background: {fileID: 21300000, guid: 3437e8a46b0e15d4b847bec302b4f4fd, type: 3}
     wall: {fileID: 21300000, guid: e24c1e9752a17b148a2214b2ed8e9e18, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+    soundtrack: {fileID: 0}
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
     notActiveObjectAlpha: 0.15
   - foreground: {fileID: 21300000, guid: a733747015d8e5d4f8eb992424721d01, type: 3}
     background: {fileID: 21300000, guid: 752e74b3ba33c79478992bf6164c609e, type: 3}
     wall: {fileID: 21300000, guid: 78cc8ea6bc14ee849b81f6bf220e527a, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+    soundtrack: {fileID: 0}
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
     notActiveObjectAlpha: 0.12
   - foreground: {fileID: 21300000, guid: 3bdcd58a2c59e3544a9051b677c698d8, type: 3}
     background: {fileID: 21300000, guid: 3bdcd58a2c59e3544a9051b677c698d8, type: 3}
     wall: {fileID: 21300000, guid: d7c19154f102bd547b70af0f6379d7cf, type: 3}
-    soundtrack: {fileID: 8300000, guid: bd3765dce80eb964a93f05b6dcaf4814, type: 3}
+    soundtrack: {fileID: 0}
     foregroundTint: {r: 1, g: 1, b: 1, a: 1}
     backgroundTint: {r: 1, g: 1, b: 1, a: 1}
     notActiveObjectAlpha: 0.12
