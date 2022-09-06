@@ -17,7 +17,7 @@ public abstract class OnHeightBehaviour : MonoBehaviour
             ? PlayerController.Instance.transform.position.y
             : GameManager.Instance.ExpectedHeight;
     
-        if(!fired && presentHeight >= height)
+        if(!fired && presentHeight >= height && enabled)
         {
             fired = true;
             Debug.Log($"Fired OnHeightBehaviour {gameObject.name} {this.GetType()}");
