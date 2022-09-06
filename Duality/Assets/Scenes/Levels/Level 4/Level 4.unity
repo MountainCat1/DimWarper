@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6696153, g: 0.6703129, b: 0.6705159, a: 1}
+  m_IndirectSpecularColor: {r: 0.6695826, g: 0.670284, b: 0.67050713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -572,7 +572,6 @@ GameObject:
   m_Component:
   - component: {fileID: 581371680}
   - component: {fileID: 581371681}
-  - component: {fileID: 581371682}
   - component: {fileID: 581371684}
   - component: {fileID: 581371686}
   - component: {fileID: 581371687}
@@ -619,21 +618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generators: []
---- !u!114 &581371682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581371679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 203
-  newMusicClip: {fileID: 8300000, guid: 4f8c96c115fbf6a45b92f9adf11ec3c2, type: 3}
-  audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1272,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686689176207241949, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee24308d09836cd44acb64e9994b40ff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567a4dc2e347e648936a26eed5af420, type: 3}
 --- !u!1 &1000504571
@@ -1667,7 +1656,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfbec23587b70d8408818f7094c13804, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0bef80aeee6c3354da9a22e84c3d78a7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

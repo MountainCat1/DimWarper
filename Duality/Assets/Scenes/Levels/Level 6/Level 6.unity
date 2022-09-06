@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -526,7 +526,6 @@ GameObject:
   m_Component:
   - component: {fileID: 581371680}
   - component: {fileID: 581371681}
-  - component: {fileID: 581371682}
   - component: {fileID: 581371684}
   - component: {fileID: 581371686}
   - component: {fileID: 581371687}
@@ -572,21 +571,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generators: []
---- !u!114 &581371682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581371679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61beeb8d4a25a4d45b5ad9f22ac13c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 150
-  newMusicClip: {fileID: 8300000, guid: 5e00b7d3c5a88ed4aa26f4645a6e06c0, type: 3}
-  audioSource: {fileID: 1167189373}
 --- !u!114 &581371684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,6 +1230,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686689176207241949, guid: f567a4dc2e347e648936a26eed5af420,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee24308d09836cd44acb64e9994b40ff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567a4dc2e347e648936a26eed5af420, type: 3}
 --- !u!1 &1031455142
@@ -1534,7 +1523,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee3cea97b35eeb4478278f2a70c4faa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 152a365b6b1857341888ade4a5cdc63f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
