@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     public float Timer { get; set; }
     
     // Misc? Dont really know how to call those x3
+    public AudioSource soundtrackSource;
     public Animator blackScreeAnimator;
     public Animator soundtrackAnimator;
     public MenuWindow deathScreen;
@@ -83,12 +84,20 @@ public class GameManager : MonoBehaviour
     {
         Paused = true;
         Time.timeScale = 0f;
+        
+        // Pause music, it's required to disable an animator bcs otherwise it will just reset pitch to 1
+        soundtrackSource.pitch = 0f;
+        soundtrackAnimator.enabled = false;
     }
 
     public void UnpauseGame()
     {
         Paused = false;
         Time.timeScale = timeScale;
+        
+        // Start music
+        soundtrackSource.pitch = 1f;
+        soundtrackAnimator.enabled = true;
     }
     
     private void Start()

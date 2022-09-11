@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6695826, g: 0.670284, b: 0.67050713, a: 1}
+  m_IndirectSpecularColor: {r: 0.6696153, g: 0.6703129, b: 0.6705159, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1329,6 +1329,7 @@ MonoBehaviour:
   cameraCatchUpSpeed: 4
   breakHeight: 2
   cameraSpeedChangeSpeed: 0.1
+  soundtrackSource: {fileID: 1167189373}
   blackScreeAnimator: {fileID: 1795178407}
   soundtrackAnimator: {fileID: 1167189374}
   deathScreen: {fileID: 841046801}
