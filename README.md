@@ -29,8 +29,6 @@ With each tower, player will face a new type of danger
 - Music
 ##### Mariusz Gajewski
 - Graphics and game assets
-- UI design
-- Some coding
  ------------------------
 ### Gameplay
 
