@@ -29,7 +29,8 @@ public class SteamAchievementForProgress : MonoBehaviour
     private void UnlockSteamAchievement(string id)
     {
         var steamAchievement = new Steamworks.Data.Achievement(id);
-        steamAchievement.Trigger();
+        steamAchievement.Clear();
+        Debug.Log("XDDDD");
     }
 }
 
